@@ -15,6 +15,7 @@ Modpack - 3d Armor [0.4.13]
 - [[mod] Visible Wielded Items [wieldview]](#mod-visible-wielded-items-wieldview)
 - [[mod] Shields [shields]](#mod-shields-shields)
 - [[mod] 3d Armor Stand [3d_armor_stand]](#mod-3d-armor-stand-3d_armor_stand)
+- [[mod] Technic Armor [technic_armor]](#mod-technic-armor-technic_armor)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -72,3 +73,12 @@ If you do not want shields then simply remove the shields folder from the modpac
 Depends: 3d_armor
 
 Adds a chest-like armor stand for armor storage and display.
+
+[mod] Technic Armor [technic_armor]
+-------------------------------------
+
+Depends: 3d_armor
+
+Optional depends: technic_worldgen, moreores
+
+Add additional armors using materials supplied by technic & moreores mods.
