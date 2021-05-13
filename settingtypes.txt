@@ -67,6 +67,12 @@ armor_transparent (Transparent armor) bool false
 shields_disable_sounds (Disable shield sounds) bool false
 
 
+[technic_armor]
+
+# Enable or disable technic_armor.
+armor_enable_technic (Enable technic armor) bool true
+
+
 [wieldview]
 
 # Set number of seconds between visible wielded item updates.

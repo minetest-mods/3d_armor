@@ -1,3 +1,8 @@
+
+if not core.settings:get_bool("armor_enable_technic", true) then
+	return
+end
+
 -- support for translator
 local S = armor.get_translator
 
