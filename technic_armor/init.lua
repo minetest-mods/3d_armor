@@ -1,6 +1,5 @@
--- support for i18n
-local S = armor_i18n.gettext
-local F = armor_i18n.fgettext
+-- support for translator
+local S = armor.get_translator
 
 if not minetest.get_modpath("technic_worldgen") then
 	minetest.log("warning", S("technic_armor: Mod loaded but unused."))
