@@ -1,5 +1,5 @@
 
-if not core.settings:get_bool("armor_enable_technic", true) then
+if not minetest.settings:get_bool("armor_enable_technic", true) then
 	return
 end
 
@@ -16,7 +16,9 @@ local stats = {
 	brass = { name=S("Brass"), material="technic:brass_ingot", armor=1.8, heal=0, use=650, radiation=43 },
 	cast = { name=S("Cast Iron"), material="technic:cast_iron_ingot", armor=2.5, heal=8, use=200, radiation=40 },
 	carbon = { name=S("Carbon Steel"), material="technic:carbon_steel_ingot", armor=2.7, heal=10, use=100, radiation=40 },
-	stainless = { name=S("Stainless Steel"), material="technic:stainless_steel_ingot", armor=2.7, heal=10, use=75, radiation=40 },
+	stainless = {
+		name=S("Stainless Steel"), material="technic:stainless_steel_ingot", armor=2.7, heal=10, use=75, radiation=40
+	},
 }
 if minetest.get_modpath("moreores") then
 	stats.tin = { name=S("Tin"), material="moreores:tin_ingot", armor=1.6, heal=0, use=750, radiation=37 }
@@ -56,10 +58,19 @@ for key, armor in pairs(stats) do
 	for partkey, part in pairs(parts) do
 		local partname = "technic_armor:"..partkey.."_"..key
 		minetest.register_tool(partname, {
-			-- Translators: @1 stands for material and @2 for part of the armor, so that you could use a conjunction if in your language part name comes first then material (e.g. in french 'Silver Boots' is translated in 'Bottes en argent' by using '@2 en @1' as translated string)
+			-- Translators:
+			--   @1 stands for material and @2 for part of the armor, so that you
+			--   could use a conjunction if in your language part name comes first
+			--   then material (e.g. in french 'Silver Boots' is translated in
+			--   'Bottes en argent' by using '@2 en @1' as translated string)
 			description = S("@1 @2", armor.name, part.name),
 			inventory_image = "technic_armor_inv_"..partkey.."_"..key..".png",
-			groups = {["armor_"..part.place]=math.floor(part.level*armor.armor), armor_heal=armor.heal, armor_use=armor.use, armor_radiation=math.floor(part.radlevel*armor.radiation)},
+			groups = {
+				["armor_"..part.place] = math.floor(part.level*armor.armor),
+				armor_heal = armor.heal,
+				armor_use = armor.use,
+				armor_radiation = math.floor(part.radlevel*armor.radiation)
+			},
 			wear = 0,
 		})
 		minetest.register_craft({
