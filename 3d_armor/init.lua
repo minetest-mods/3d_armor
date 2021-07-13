@@ -96,7 +96,7 @@ for _, mod in pairs(skin_mods) do
 				armor:add_preview(fn)
 			end
 		end
-		armor.skin_mod = mod
+		armor.set_skin_mod(mod)
 	end
 end
 if not minetest.get_modpath("moreores") then
