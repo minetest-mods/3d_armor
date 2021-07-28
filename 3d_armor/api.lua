@@ -487,13 +487,22 @@ end
 
 armor.equip = function(self, player, itemstack)
     local name, armor_inv = self:get_valid_player(player, "[equip]")
-    local weared_armor = self:get_weared_armor_elements(player)
     local armor_element = self:get_element(itemstack:get_name())
 	if name and armor_element then
-		if weared_armor[armor_element] ~= nil then
-			self:unequip(player, armor_element)
+		local index
+		for i=1, armor_inv:get_size("armor") do
+			local stack = armor_inv:get_stack("armor", i)
+			if self:get_element(stack:get_name()) == armor_element then
+				index = i
+				self:unequip(player, armor_element)
+				break
+			elseif not index and stack:is_empty() then
+				index = i
+			end
 		end
-		armor_inv:add_item("armor", itemstack:take_item())
+		local stack = itemstack:take_item()
+		armor_inv:set_stack("armor", index, stack)
+		self:run_callbacks("on_equip", player, index, stack)
 		self:set_player_armor(player)
 		self:save_armor_inventory(player)
 	end
@@ -502,21 +511,27 @@ end
 
 armor.unequip = function(self, player, armor_element)
     local name, armor_inv = self:get_valid_player(player, "[unequip]")
-	local weared_armor = self:get_weared_armor_elements(player)
-	if not name or not weared_armor[armor_element] then
+	if not name then
 		return
 	end
-	local itemstack = armor_inv:remove_item("armor", ItemStack(weared_armor[armor_element]))
-	minetest.after(0, function()
-		local inv = player:get_inventory()
-		if inv:room_for_item("main", itemstack) then
-			inv:add_item("main", itemstack)
-		else
-			minetest.add_item(player:get_pos(), itemstack)
+	for i=1, armor_inv:get_size("armor") do
+		local stack = armor_inv:get_stack("armor", i)
+		if self:get_element(stack:get_name()) == armor_element then
+			armor_inv:set_stack("armor", i, "")
+			minetest.after(0, function()
+				local inv = player:get_inventory()
+				if inv:room_for_item("main", stack) then
+					inv:add_item("main", stack)
+				else
+					minetest.add_item(player:get_pos(), stack)
+				end
+			end)
+			self:run_callbacks("on_unequip", player, i, stack)
+			self:set_player_armor(player)
+			self:save_armor_inventory(player)
+			return
 		end
-	end)
-    self:set_player_armor(player)
-	self:save_armor_inventory(player)
+	end
 end
 
 armor.remove_all = function(self, player)
