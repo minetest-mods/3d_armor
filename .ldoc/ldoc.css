@@ -156,6 +156,7 @@ table.index td { text-align: left; vertical-align: top; }
     vertical-align: top;
     background-color: #f0f0f0;
     overflow: visible;
+    position: fixed;
 }
 
 #navigation h2 {

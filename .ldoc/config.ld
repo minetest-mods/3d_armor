@@ -19,6 +19,7 @@ format = "markdown"
 not_luadoc = true
 boilerplate = false
 wrap = false
+style = true
 
 file = {
 	"3d_armor/api.lua",
