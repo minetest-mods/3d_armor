@@ -1,0 +1,33 @@
+name: Build Reference
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Lua
+      uses: leafo/gh-actions-lua@v8
+      with:
+        luaVersion: 5.4
+    - name: Setup Lua Rocks
+      uses: leafo/gh-actions-luarocks@v4
+    - name: Setup LDoc dependencies
+      run: luarocks install --only-deps https://raw.githubusercontent.com/lunarmodules/LDoc/master/ldoc-scm-3.rockspec
+    - name: Setup LDoc
+      run: git clone --single-branch --branch=custom https://github.com/AntumDeluge/ldoc.git .ldoc/ldoc && chmod +x .ldoc/ldoc/ldoc.lua
+    - name: Generate temp files
+      run: chmod +x .ldoc/parse_*.py && ./.ldoc/parse_src.py && ./.ldoc/parse_settings.py && ./.ldoc/parse_crafts.py
+    - name: Generate docs
+      run: ./.ldoc/ldoc/ldoc.lua --UNSAFE_NO_SANDBOX -c .ldoc/config.ld -d 3d_armor/docs/reference "$(pwd)"
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./3d_armor/docs

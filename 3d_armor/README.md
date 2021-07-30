@@ -396,6 +396,8 @@ If all of the above were made of material "wood" the player would recieve an ***
 
 ## Armor Functions
 
+See also: [API Reference](https://minetest-mods.github.io/3d_armor/reference/)
+
 ### armor set_player_armor
 
 	armor:set_player_armor(player)
