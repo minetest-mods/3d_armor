@@ -1,0 +1,1115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>3D Armor</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>3d_armor</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Settings">Settings</a></li>
+</ul>
+
+
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/api.html">api</a></li>
+  <li><strong>settings</strong></li>
+  <li><a href="../topics/helmets.html">helmets</a></li>
+  <li><a href="../topics/chestplates.html">chestplates</a></li>
+  <li><a href="../topics/leggings.html">leggings</a></li>
+  <li><a href="../topics/boots.html">boots</a></li>
+  <li><a href="../topics/shields.html">shields</a></li>
+  <li><a href="../topics/crafting.html">crafting</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Topic <code>settings</code></h1>
+<p>3D Armor Settings</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Settings">Settings</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_wood">armor_material_wood</a></td>
+	<td class="summary">Enable wood armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_cactus">armor_material_cactus</a></td>
+	<td class="summary">Enable cactus armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_steel">armor_material_steel</a></td>
+	<td class="summary">Enable steel armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_bronze">armor_material_bronze</a></td>
+	<td class="summary">Enable bronze armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_diamond">armor_material_diamond</a></td>
+	<td class="summary">Enable diamond armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_gold">armor_material_gold</a></td>
+	<td class="summary">Enable gold armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_mithril">armor_material_mithril</a></td>
+	<td class="summary">Enable mithril armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_material_crystal">armor_material_crystal</a></td>
+	<td class="summary">Enable crystal armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_init_delay">armor_init_delay</a></td>
+	<td class="summary">Initialization delay.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_init_times">armor_init_times</a></td>
+	<td class="summary">Initialization attempts.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_bones_delay">armor_bones_delay</a></td>
+	<td class="summary">Delay for bones.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_update_time">armor_update_time</a></td>
+	<td class="summary">Armor refresh rate [seconds].</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_drop">armor_drop</a></td>
+	<td class="summary">Drop armor on death.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_destroy">armor_destroy</a></td>
+	<td class="summary">Pulverize armor on death.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_level_multiplier">armor_level_multiplier</a></td>
+	<td class="summary">Armor effectiveness multiplier.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_heal_multiplier">armor_heal_multiplier</a></td>
+	<td class="summary">Armor healing multiplier.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_set_elements">armor_set_elements</a></td>
+	<td class="summary">Armor set items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_set_multiplier">armor_set_multiplier</a></td>
+	<td class="summary">Armor Set Bonus multiplier.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_water_protect">armor_water_protect</a></td>
+	<td class="summary">Enable water protection.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_fire_protect">armor_fire_protect</a></td>
+	<td class="summary">Enable fire protection.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_fire_protect_torch">armor_fire_protect_torch</a></td>
+	<td class="summary">Enable fire protection torch damage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_punch_damage">armor_punch_damage</a></td>
+	<td class="summary">Enable damage effects.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_migrate_old_inventory">armor_migrate_old_inventory</a></td>
+	<td class="summary">Migrate old armor inventories.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor_transparent">armor_transparent</a></td>
+	<td class="summary">Transparent armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#shields_disable_sounds">shields_disable_sounds</a></td>
+	<td class="summary">Disable shield sounds.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#wieldview_update_time">wieldview_update_time</a></td>
+	<td class="summary">Wieldview refresh rate [seconds].</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#wieldview_node_tiles">wieldview_node_tiles</a></td>
+	<td class="summary">Show nodes as tiles.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Settings"></a>Settings</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "armor_material_wood"></a>
+    <strong>armor_material_wood</strong>
+    </dt>
+    <dd>
+
+<p>Enable wood armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_material_cactus"></a>
+    <strong>armor_material_cactus</strong>
+    </dt>
+    <dd>
+
+<p>Enable cactus armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_material_steel"></a>
+    <strong>armor_material_steel</strong>
+    </dt>
+    <dd>
+
+<p>Enable steel armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_material_bronze"></a>
+    <strong>armor_material_bronze</strong>
+    </dt>
+    <dd>
+
+<p>Enable bronze armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_material_diamond"></a>
+    <strong>armor_material_diamond</strong>
+    </dt>
+    <dd>
+
+<p>Enable diamond armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_material_gold"></a>
+    <strong>armor_material_gold</strong>
+    </dt>
+    <dd>
+
+<p>Enable gold armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_material_mithril"></a>
+    <strong>armor_material_mithril</strong>
+    </dt>
+    <dd>
+
+<p>Enable mithril armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_material_crystal"></a>
+    <strong>armor_material_crystal</strong>
+    </dt>
+    <dd>
+
+<p>Enable crystal armor. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_init_delay"></a>
+    <strong>armor_init_delay</strong>
+    </dt>
+    <dd>
+
+<p>Initialization delay. </p>
+
+<p>  Increase this if you get initialization glitches when a player first joins.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>int</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>2</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_init_times"></a>
+    <strong>armor_init_times</strong>
+    </dt>
+    <dd>
+
+<p>Initialization attempts. </p>
+
+<p>  Number of initialization attempts.
+  Use in conjunction with armor<em>init</em>delay if initialization problems persist.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>int</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>10</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_bones_delay"></a>
+    <strong>armor_bones_delay</strong>
+    </dt>
+    <dd>
+
+<p>Delay for bones. </p>
+
+<p>  Increase this if armor is not getting into bones due to server lag.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>int</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>1</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_update_time"></a>
+    <strong>armor_update_time</strong>
+    </dt>
+    <dd>
+
+<p>Armor refresh rate [seconds]. </p>
+
+<p>  How often player armor items are updated.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>int</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>1</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_drop"></a>
+    <strong>armor_drop</strong>
+    </dt>
+    <dd>
+
+<p>Drop armor on death. </p>
+
+<p>  Drop armor when a player dies.
+  Uses bones mod if present, otherwise items are dropped around the player.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_destroy"></a>
+    <strong>armor_destroy</strong>
+    </dt>
+    <dd>
+
+<p>Pulverize armor on death. </p>
+
+<p>  Pulverize armor when a player dies, overrides armor_drop.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>false</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_level_multiplier"></a>
+    <strong>armor_level_multiplier</strong>
+    </dt>
+    <dd>
+
+<p>Armor effectiveness multiplier. </p>
+
+<p>  You can use this to increase or decrease overall armor effectiveness,
+  eg: level_multiplier = 0.5 will reduce armor level by half.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>float</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>1</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_heal_multiplier"></a>
+    <strong>armor_heal_multiplier</strong>
+    </dt>
+    <dd>
+
+<p>Armor healing multiplier. </p>
+
+<p>  You can use this to increase or decrease overall armor healing,
+  eg: armor<em>heal</em>multiplier = 0 will disable healing altogether.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>float</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>1</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_set_elements"></a>
+    <strong>armor_set_elements</strong>
+    </dt>
+    <dd>
+
+<p>Armor set items. </p>
+
+<p>  Armor set item names, remove or add items to include them or remove them from whats considered an Armor set.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <a href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>head</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_set_multiplier"></a>
+    <strong>armor_set_multiplier</strong>
+    </dt>
+    <dd>
+
+<p>Armor Set Bonus multiplier. </p>
+
+<p>  Bonus multiplier when wearing armor set, set to the same as armor<em>level</em>multiplier to disable</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>float</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>1.1</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_water_protect"></a>
+    <strong>armor_water_protect</strong>
+    </dt>
+    <dd>
+
+<p>Enable water protection. </p>
+
+<p>  Enable water protection (periodically restores breath when activated).</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_fire_protect"></a>
+    <strong>armor_fire_protect</strong>
+    </dt>
+    <dd>
+
+<p>Enable fire protection. </p>
+
+<p>  Enable fire protection (defaults true if using ethereal mod).</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>false</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_fire_protect_torch"></a>
+    <strong>armor_fire_protect_torch</strong>
+    </dt>
+    <dd>
+
+<p>Enable fire protection torch damage. </p>
+
+<p>  Enable fire damage from torches (defaults true if using ethereal mod).</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>false</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_punch_damage"></a>
+    <strong>armor_punch_damage</strong>
+    </dt>
+    <dd>
+
+<p>Enable damage effects. </p>
+
+<p>  Enable punch damage effects.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_migrate_old_inventory"></a>
+    <strong>armor_migrate_old_inventory</strong>
+    </dt>
+    <dd>
+
+<p>Migrate old armor inventories. </p>
+
+<p>  Enable migration of old armor inventories.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>true</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor_transparent"></a>
+    <strong>armor_transparent</strong>
+    </dt>
+    <dd>
+
+<p>Transparent armor. </p>
+
+<p>  Armor is not visible on player model when enabled.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>false</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "shields_disable_sounds"></a>
+    <strong>shields_disable_sounds</strong>
+    </dt>
+    <dd>
+
+<p>Disable shield sounds. </p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>false</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "wieldview_update_time"></a>
+    <strong>wieldview_update_time</strong>
+    </dt>
+    <dd>
+
+<p>Wieldview refresh rate [seconds]. </p>
+
+<p>  Set number of seconds between visible wielded item updates.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>int</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>2</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "wieldview_node_tiles"></a>
+    <strong>wieldview_node_tiles</strong>
+    </dt>
+    <dd>
+
+<p>Show nodes as tiles. </p>
+
+<p>  Show nodes as tiles, disabled by default.</p>
+
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+    <li><span style="font-size:80%;"><code>type:</code></span> <code>bool</code></li>
+    <li><span style="font-size:80%;"><code>default:</code></span> <code>false</code></li>
+</ul>
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/custom">LDoc 1.4.6-antum-dev</a></i>
+<i style="float:right;">Last updated 2021-07-30 14:13:01 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

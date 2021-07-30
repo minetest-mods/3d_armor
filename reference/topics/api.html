@@ -1,0 +1,1587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>3D Armor</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>3d_armor</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables </a></li>
+<li><a href="#Methods">Methods </a></li>
+<li><a href="#Armor_Callbacks_Registration">Armor Callbacks Registration </a></li>
+</ul>
+
+
+<h2>Topics</h2>
+<ul class="">
+  <li><strong>api</strong></li>
+  <li><a href="../topics/settings.html">settings</a></li>
+  <li><a href="../topics/helmets.html">helmets</a></li>
+  <li><a href="../topics/chestplates.html">chestplates</a></li>
+  <li><a href="../topics/leggings.html">leggings</a></li>
+  <li><a href="../topics/boots.html">boots</a></li>
+  <li><a href="../topics/shields.html">shields</a></li>
+  <li><a href="../topics/crafting.html">crafting</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Topic <code>api</code></h1>
+<p>3D Armor API</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Tables">Tables </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ArmorDef">ArmorDef</a></td>
+	<td class="summary">Armor definition table used for registering armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArmorDef.groups">ArmorDef.groups</a></td>
+	<td class="summary">Groups table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArmorDef.armor_groups">ArmorDef.armor_groups</a></td>
+	<td class="summary">Armor groups table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ArmorDef.damage_groups">ArmorDef.damage_groups</a></td>
+	<td class="summary">Damage groups table.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#armor:register_armor">armor:register_armor (name, def)</a></td>
+	<td class="summary">Registers a new armor item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:register_armor_group">armor:register_armor_group (group, base)</a></td>
+	<td class="summary">Registers a new armor group.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:run_callbacks">armor:run_callbacks (callback, player, index, stack)</a></td>
+	<td class="summary">Runs callbacks.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:update_player_visuals">armor:update_player_visuals (player)</a></td>
+	<td class="summary">Updates visuals.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:set_player_armor">armor:set_player_armor (player)</a></td>
+	<td class="summary">Sets player's armor attributes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:punch">armor:punch (player, hitter[, time_from_last_punch[, tool_capabilities]])</a></td>
+	<td class="summary">Action when armor is punched.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:damage">armor:damage (player, index, stack, use)</a></td>
+	<td class="summary">Action when armor is damaged.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:get_weared_armor_elements">armor:get_weared_armor_elements (player)</a></td>
+	<td class="summary">Get elements of equipped armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:equip">armor:equip (player, itemstack)</a></td>
+	<td class="summary">Equips a piece of armor to a player.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:unequip">armor:unequip (player, armor_element)</a></td>
+	<td class="summary">Unequips a piece of armor from a player.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:remove_all">armor:remove_all (player)</a></td>
+	<td class="summary">Removes all armor worn by player.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:get_player_skin">armor:get_player_skin (name)</a></td>
+	<td class="summary">Retrieves player's current skin.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:update_skin">armor:update_skin (name)</a></td>
+	<td class="summary">Updates skin.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:add_preview">armor:add_preview (preview)</a></td>
+	<td class="summary">Adds preview for armor inventory.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:get_preview">armor:get_preview (name)</a></td>
+	<td class="summary">Retrieves preview for armor inventory.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:get_armor_formspec">armor:get_armor_formspec (name[, listring])</a></td>
+	<td class="summary">Retrieves armor formspec.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:get_element">armor:get_element (item_name)</a></td>
+	<td class="summary">Retrieves element.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:serialize_inventory_list">armor:serialize_inventory_list (list)</a></td>
+	<td class="summary">Serializes armor inventory.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:deserialize_inventory_list">armor:deserialize_inventory_list (list_string)</a></td>
+	<td class="summary">Deserializes armor inventory.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:load_armor_inventory">armor:load_armor_inventory (player)</a></td>
+	<td class="summary">Loads armor inventory.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:save_armor_inventory">armor:save_armor_inventory (player)</a></td>
+	<td class="summary">Saves armor inventory.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:update_inventory">armor:update_inventory (player)</a></td>
+	<td class="summary">Updates inventory.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:set_inventory_stack">armor:set_inventory_stack (player, i, stack)</a></td>
+	<td class="summary">Sets inventory stack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:get_valid_player">armor:get_valid_player (player, msg)</a></td>
+	<td class="summary">Checks for a player that can use armor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor.drop_armor">armor.drop_armor (pos, stack)</a></td>
+	<td class="summary">Drops armor item at given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor.set_skin_mod">armor.set_skin_mod (mod)</a></td>
+	<td class="summary">Allows skin mod to be set manually.</td>
+	</tr>
+</table>
+<h2><a href="#Armor_Callbacks_Registration">Armor Callbacks Registration </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#armor:register_on_update">armor:register_on_update (func)</a></td>
+	<td class="summary">Registers a callback for when player visuals are update.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:register_on_equip">armor:register_on_equip (func)</a></td>
+	<td class="summary">Registers a callback for when armor is equipped.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:register_on_unequip">armor:register_on_unequip (func)</a></td>
+	<td class="summary">Registers a callback for when armor is unequipped.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:register_on_damage">armor:register_on_damage (func)</a></td>
+	<td class="summary">Registers a callback for when armor is damaged.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#armor:register_on_destroy">armor:register_on_destroy (func)</a></td>
+	<td class="summary">Registers a callback for when armor is destroyed.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Tables"></a>Tables </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "ArmorDef"></a>
+    <strong>ArmorDef</strong>
+    </dt>
+    <dd>
+    Armor definition table used for registering armor.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">description</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Human-readable name/description.
+        </li>
+        <li><span class="parameter">inventory_image</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Image filename used for icon.
+        </li>
+        <li><span class="parameter">groups</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         See: <a href="../topics/api.html#ArmorDef.groups">ArmorDef.groups</a>
+        </li>
+        <li><span class="parameter">armor_groups</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         See: <a href="../topics/api.html#ArmorDef.armor_groups">ArmorDef.armor_groups</a>
+        </li>
+        <li><span class="parameter">damage_groups</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         See: <a href="../topics/api.html#ArmorDef.damage_groups">ArmorDef.damage_groups</a>
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="https://minetest.gitlab.io/minetest/definition-tables/#item-definition">ItemDef</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> def = {
+   description = <span class="string">"Wood Helmet"</span>,
+   inventory_image = <span class="string">"3d_armor_inv_helmet_wood.png"</span>,
+   groups = {armor_head=<span class="number">1</span>, armor_heal=<span class="number">0</span>, armor_use=<span class="number">2000</span>, flammable=<span class="number">1</span>},
+   armor_groups = {fleshy=<span class="number">5</span>},
+   damage_groups = {cracky=<span class="number">3</span>, snappy=<span class="number">2</span>, choppy=<span class="number">3</span>, crumbly=<span class="number">2</span>, level=<span class="number">1</span>},
+ }</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ArmorDef.groups"></a>
+    <strong>ArmorDef.groups</strong>
+    </dt>
+    <dd>
+    Groups table. </p>
+
+<p>  General groups defining item behavior.</p>
+
+<p>  Some commonly used groups: <strong><em>armor_&lt;type&gt;</em></strong>, <strong><em>armor_heal</em></strong>, <strong><em>armor_use</em></strong>
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">armor_type</span>
+            <span class="types"><span class="type">int</span></span>
+         The armor type. "head", "torso", "hands", "shield", etc.
+  (<strong>Note:</strong> replace "type" with actual type).
+        </li>
+        <li><span class="parameter">armor_heal</span>
+            <span class="types"><span class="type">int</span></span>
+         Healing value of armor when equipped.
+        </li>
+        <li><span class="parameter">armor_use</span>
+            <span class="types"><span class="type">int</span></span>
+         Amount of uses/damage before armor "breaks".
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="https://minetest.gitlab.io/minetest/groups/">groups</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">groups = {
+   armor_head = <span class="number">1</span>,
+   armor_heal = <span class="number">5</span>,
+   armor_use = <span class="number">2000</span>,
+   flammable = <span class="number">1</span>,
+ }</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ArmorDef.armor_groups"></a>
+    <strong>ArmorDef.armor_groups</strong>
+    </dt>
+    <dd>
+    Armor groups table. </p>
+
+<p>  Groups that this item is effective against when taking damage.</p>
+
+<p>  Some commonly used groups: <strong><em>fleshy</em></strong>
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">armor_groups = {
+   fleshy = <span class="number">5</span>,
+ }</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ArmorDef.damage_groups"></a>
+    <strong>ArmorDef.damage_groups</strong>
+    </dt>
+    <dd>
+    Damage groups table. </p>
+
+<p>  Groups that this item is effective on when used as a weapon/tool.</p>
+
+<p>  Some commonly used groups: <strong><em>cracky</em></strong>, <strong><em>snappy</em></strong>, <strong><em>choppy</em></strong>, <strong><em>crumbly</em></strong>, <strong><em>level</em></strong>
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="https://minetest.gitlab.io/minetest/entity-damage-mechanism/">entity_damage_mechanism</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">damage_groups = {
+   cracky = <span class="number">3</span>,
+   snappy = <span class="number">2</span>,
+   choppy = <span class="number">3</span>,
+   crumbly = <span class="number">2</span>,
+   level = <span class="number">1</span>,
+ }</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "armor:register_armor"></a>
+    <strong>armor:register_armor (name, def)</strong>
+    </dt>
+    <dd>
+    Registers a new armor item.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Armor item technical name (ex: "3d_armor:helmet_gold").
+        </li>
+        <li><span class="parameter">def</span>
+            <span class="types"><a class="type" href="../topics/api.html#ArmorDef">ArmorDef</a></span>
+         Armor definition table.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">armor:register_armor(<span class="string">"3d_armor:helmet_wood"</span>, {
+   description = <span class="string">"Wood Helmet"</span>,
+   inventory_image = <span class="string">"3d_armor_inv_helmet_wood.png"</span>,
+   groups = {armor_head=<span class="number">1</span>, armor_heal=<span class="number">0</span>, armor_use=<span class="number">2000</span>, flammable=<span class="number">1</span>},
+   armor_groups = {fleshy=<span class="number">5</span>},
+   damage_groups = {cracky=<span class="number">3</span>, snappy=<span class="number">2</span>, choppy=<span class="number">3</span>, crumbly=<span class="number">2</span>, level=<span class="number">1</span>},
+ })</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "armor:register_armor_group"></a>
+    <strong>armor:register_armor_group (group, base)</strong>
+    </dt>
+    <dd>
+    Registers a new armor group.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">group</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Group ID.
+        </li>
+        <li><span class="parameter">base</span>
+            <span class="types"><span class="type">int</span></span>
+         Base armor value.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:run_callbacks"></a>
+    <strong>armor:run_callbacks (callback, player, index, stack)</strong>
+    </dt>
+    <dd>
+    Runs callbacks.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">callback</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to execute.
+        </li>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+         First parameter passed to callback.
+        </li>
+        <li><span class="parameter">index</span>
+            <span class="types"><span class="type">int</span></span>
+         Second parameter passed to callback.
+        </li>
+        <li><span class="parameter">stack</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#itemstack">ItemStack</a></span>
+         Callback owner.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:update_player_visuals"></a>
+    <strong>armor:update_player_visuals (player)</strong>
+    </dt>
+    <dd>
+    Updates visuals.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:set_player_armor"></a>
+    <strong>armor:set_player_armor (player)</strong>
+    </dt>
+    <dd>
+    Sets player's armor attributes.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:punch"></a>
+    <strong>armor:punch (player, hitter[, time_from_last_punch[, tool_capabilities]])</strong>
+    </dt>
+    <dd>
+    Action when armor is punched.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+         Player wearing the armor.
+        </li>
+        <li><span class="parameter">hitter</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+         Entity attacking player.
+        </li>
+        <li><span class="parameter">time_from_last_punch</span>
+            <span class="types"><span class="type">int</span></span>
+         Time in seconds since last punch action.
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">tool_capabilities</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         See <a href="https://minetest.gitlab.io/minetest/entity-damage-mechanism/">entity_damage_mechanism</a>.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:damage"></a>
+    <strong>armor:damage (player, index, stack, use)</strong>
+    </dt>
+    <dd>
+    Action when armor is damaged.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">index</span>
+            <span class="types"><span class="type">int</span></span>
+         Inventory index where armor is equipped.
+        </li>
+        <li><span class="parameter">stack</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#itemstack">ItemStack</a></span>
+         Armor item receiving damaged.
+        </li>
+        <li><span class="parameter">use</span>
+            <span class="types"><span class="type">int</span></span>
+         Amount of wear to add to armor item.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:get_weared_armor_elements"></a>
+    <strong>armor:get_weared_armor_elements (player)</strong>
+    </dt>
+    <dd>
+    Get elements of equipped armor.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        List of equipped armors.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:equip"></a>
+    <strong>armor:equip (player, itemstack)</strong>
+    </dt>
+    <dd>
+    Equips a piece of armor to a player.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+         Player to whom item is equipped.
+        </li>
+        <li><span class="parameter">itemstack</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#itemstack">ItemStack</a></span>
+         Armor item to be equipped.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#itemstack">ItemStack</a></span>
+        Leftover item stack.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:unequip"></a>
+    <strong>armor:unequip (player, armor_element)</strong>
+    </dt>
+    <dd>
+    Unequips a piece of armor from a player.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+         Player from whom item is removed.
+        </li>
+        <li><span class="parameter">armor_element</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Armor type identifier associated with the item
+  to be removed ("head", "torso", "hands", "shield", "legs", "feet", etc.).
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:remove_all"></a>
+    <strong>armor:remove_all (player)</strong>
+    </dt>
+    <dd>
+    Removes all armor worn by player.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:get_player_skin"></a>
+    <strong>armor:get_player_skin (name)</strong>
+    </dt>
+    <dd>
+    Retrieves player's current skin.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Player name.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Skin filename.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:update_skin"></a>
+    <strong>armor:update_skin (name)</strong>
+    </dt>
+    <dd>
+    Updates skin.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Player name.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:add_preview"></a>
+    <strong>armor:add_preview (preview)</strong>
+    </dt>
+    <dd>
+    Adds preview for armor inventory.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">preview</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Preview image filename.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:get_preview"></a>
+    <strong>armor:get_preview (name)</strong>
+    </dt>
+    <dd>
+    Retrieves preview for armor inventory.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Player name.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Preview image filename.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:get_armor_formspec"></a>
+    <strong>armor:get_armor_formspec (name[, listring])</strong>
+    </dt>
+    <dd>
+    Retrieves armor formspec.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Player name.
+        </li>
+        <li><span class="parameter">listring</span>
+            <span class="types"><span class="type">bool</span></span>
+         Use <code>listring</code> formspec element (default: <code>false</code>).
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Formspec formatted string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:get_element"></a>
+    <strong>armor:get_element (item_name)</strong>
+    </dt>
+    <dd>
+    Retrieves element.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item_name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Armor element.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:serialize_inventory_list"></a>
+    <strong>armor:serialize_inventory_list (list)</strong>
+    </dt>
+    <dd>
+    Serializes armor inventory.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Inventory contents.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:deserialize_inventory_list"></a>
+    <strong>armor:deserialize_inventory_list (list_string)</strong>
+    </dt>
+    <dd>
+    Deserializes armor inventory.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list_string</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Serialized inventory contents.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:load_armor_inventory"></a>
+    <strong>armor:load_armor_inventory (player)</strong>
+    </dt>
+    <dd>
+    Loads armor inventory.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:save_armor_inventory"></a>
+    <strong>armor:save_armor_inventory (player)</strong>
+    </dt>
+    <dd>
+    Saves armor inventory. </p>
+
+<p>  Inventory is stored in <a href="https://minetest.gitlab.io/minetest/class-reference/#playermetaref">PlayerMetaRef</a> string "3d_armor_inventory".
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:update_inventory"></a>
+    <strong>armor:update_inventory (player)</strong>
+    </dt>
+    <dd>
+    Updates inventory. </p>
+
+<p>  DEPRECATED: Legacy inventory support.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:set_inventory_stack"></a>
+    <strong>armor:set_inventory_stack (player, i, stack)</strong>
+    </dt>
+    <dd>
+    Sets inventory stack.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">i</span>
+            <span class="types"><span class="type">int</span></span>
+         Armor inventory index.
+        </li>
+        <li><span class="parameter">stack</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#itemstack">ItemStack</a></span>
+         Armor item.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor:get_valid_player"></a>
+    <strong>armor:get_valid_player (player, msg)</strong>
+    </dt>
+    <dd>
+    Checks for a player that can use armor.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#objectref">ObjectRef</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">msg</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Additional info for log messages.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">list</span></span>
+        Player name &amp; armor inventory.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> name, inv = armor:get_valid_player(player, <span class="string">"[equip]"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "armor.drop_armor"></a>
+    <strong>armor.drop_armor (pos, stack)</strong>
+    </dt>
+    <dd>
+    Drops armor item at given position.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pos</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/representations-of-simple-things/#positionvector">vector</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">stack</span>
+            <span class="types"><a class="type" href="https://minetest.gitlab.io/minetest/class-reference/#itemstack">ItemStack</a></span>
+         Armor item to be dropped.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "armor.set_skin_mod"></a>
+    <strong>armor.set_skin_mod (mod)</strong>
+    </dt>
+    <dd>
+    Allows skin mod to be set manually. </p>
+
+<p>  Useful for skin mod forks that do not use the same name.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">mod</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of skin mod. Recognized names are "simple_skins", "u_skins", &amp; "wardrobe".
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Armor_Callbacks_Registration"></a>Armor Callbacks Registration </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "armor:register_on_update"></a>
+    <strong>armor:register_on_update (func)</strong>
+    </dt>
+    <dd>
+    Registers a callback for when player visuals are update.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to be executed.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../topics/api.html#armor:update_player_visuals">armor:update_player_visuals</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">armor:register_on_update(<span class="keyword">function</span>(player, index, stack)
+   <span class="comment">-- code to execute
+</span> <span class="keyword">end</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "armor:register_on_equip"></a>
+    <strong>armor:register_on_equip (func)</strong>
+    </dt>
+    <dd>
+    Registers a callback for when armor is equipped.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to be executed.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">armor:register_on_equip(<span class="keyword">function</span>(player, index, stack)
+   <span class="comment">-- code to execute
+</span> <span class="keyword">end</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "armor:register_on_unequip"></a>
+    <strong>armor:register_on_unequip (func)</strong>
+    </dt>
+    <dd>
+    Registers a callback for when armor is unequipped.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to be executed.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">armor:register_on_unequip(<span class="keyword">function</span>(player, index, stack)
+   <span class="comment">-- code to execute
+</span> <span class="keyword">end</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "armor:register_on_damage"></a>
+    <strong>armor:register_on_damage (func)</strong>
+    </dt>
+    <dd>
+    Registers a callback for when armor is damaged.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to be executed.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../topics/api.html#armor:damage">armor:damage</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">armor:register_on_damage(<span class="keyword">function</span>(player, index, stack)
+   <span class="comment">-- code to execute
+</span> <span class="keyword">end</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "armor:register_on_destroy"></a>
+    <strong>armor:register_on_destroy (func)</strong>
+    </dt>
+    <dd>
+    Registers a callback for when armor is destroyed.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to be executed.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../topics/api.html#armor:damage">armor:damage</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">armor:register_on_destroy(<span class="keyword">function</span>(player, index, stack)
+   <span class="comment">-- code to execute
+</span> <span class="keyword">end</span>)</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/custom">LDoc 1.4.6-antum-dev</a></i>
+<i style="float:right;">Last updated 2021-07-30 14:13:01 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
