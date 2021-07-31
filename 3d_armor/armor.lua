@@ -518,7 +518,7 @@ end
 if armor.materials.diamond then
 	--- Diamond Helmet
 	--
-	--  @helmet 3d_armor:_diamond
+	--  @helmet 3d_armor:helmet_diamond
 	--  @img 3d_armor_inv_helmet_diamond.png
 	--  @grp armor_head 1
 	--  @grp armor_heal 12
@@ -807,7 +807,7 @@ if armor.materials.crystal then
 	})
 	--- Crystal Chestplate
 	--
-	--  @chestplate 3d_armor:_crystal
+	--  @chestplate 3d_armor:chestplate_crystal
 	--  @img 3d_armor_inv_chestplate_crystal.png
 	--  @grp armor_torso 1
 	--  @grp armor_heal 12
