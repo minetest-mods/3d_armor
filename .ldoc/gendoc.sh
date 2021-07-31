@@ -15,31 +15,47 @@ cd "${d_ldoc}/.."
 d_root="$(pwd)"
 d_export="${d_export:-${d_root}/3d_armor/docs/reference}"
 
+cmd_ldoc="${d_ldoc}/ldoc/ldoc.lua"
+if test -f "${cmd_ldoc}"; then
+	if test ! -x "${cmd_ldoc}"; then
+		chmod +x "${cmd_ldoc}"
+	fi
+else
+	cmd_ldoc="ldoc"
+fi
+
 
 # clean old files
 rm -rf "${d_export}"
 
-# generate items & settings topics temp files
-./.ldoc/parse_src.py
-./.ldoc/parse_settings.py
-./.ldoc/parse_crafts.py
+# generate items, settings, & crafts topics temp files
+echo -e "\ngenerating temp files ..."
+for script in "src" "settings" "crafts"; do
+	script="${d_ldoc}/parse_${script}.py"
+	if test ! -f "${script}"; then
+		echo "ERROR: script doesn't exist: ${script}"
+	else
+		# check script's executable bit
+		if test ! -x "${script}"; then
+			chmod +x "${script}"
+		fi
+		# execute script
+		"${script}"
+	fi
+done
 
 echo
 
 # generate new doc files
-ldoc --UNSAFE_NO_SANDBOX --multimodule -c "${f_config}" -d "${d_export}" "${d_root}"
-retval=$?
+"${cmd_ldoc}" --UNSAFE_NO_SANDBOX -c "${f_config}" -d "${d_export}" "${d_root}" && retval=$?
+
+# check exit status
 if test ${retval} -ne 0; then
-	# doesn't support "UNSAFE_NO_SANDBOX" or "multimodule" flag
-	echo
-	ldoc -c "${f_config}" -d "${d_export}" "."
-	retval=$?
-	if test ${retval} -ne 0; then
-		exit ${retval}
-	fi
+	echo -e "\nan error occurred (ldoc return code: ${retval}"
+	exit ${retval}
 fi
 
-# cleanup
-rm -f ./.ldoc/*.luadoc
+echo -e "\ncleaning temp files ..."
+rm -vf "${d_ldoc}/"*.luadoc
 
 echo -e "\nDone!"
