@@ -1,4 +1,5 @@
--- Place this file in mod "docs" directory
+
+-- place this file in mod ".ldoc" directory
 
 local print, type, string, table, tostring, tonumber, error, pairs, ipairs
 if import then
@@ -29,7 +30,8 @@ file = {
 	".ldoc/chestplates.luadoc",
 	".ldoc/leggings.luadoc",
 	".ldoc/boots.luadoc",
-	".ldoc/shields.luadoc",
+	--".ldoc/shields.luadoc",
+	"shields/init.lua",
 	".ldoc/crafting.luadoc",
 }
 
@@ -75,18 +77,9 @@ custom_tags = {
 	{
 		-- specify image basename only
 		"img",
-		title = "Image",
+		title = "Inventory Image",
 		format = function(value)
-			local img = "<img src=\"https://raw.githubusercontent.com/minetest-mods/3d_armor/master/"
-			if string then
-				if string.find(value, "shields_") == 1 then
-					img = img .. "shields/"
-				else
-					img = img .. "3d_armor/"
-				end
-			end
-
-			return img .. "textures/" .. value .. "\" style=\"width:32px; height:32px;\" />"
+			return "<img src=\"../data/" .. value .. "\" style=\"width:32px; height:32px;\" />"
 		end,
 	},
 	{
@@ -223,6 +216,11 @@ local registered = {
 }
 
 local function setting_handler(item)
+	-- avoid parsing again
+	if registered.settings[item.name] then
+		return item
+	end
+
 	if not ipairs or not type then
 		return item
 	end
@@ -275,15 +273,7 @@ end
 
 function custom_display_name_handler(item, default_handler)
 	if item.type == "setting" then
-		-- avoid parsing again
-		if not registered.settings[item.name] then
-			item = setting_handler(item)
-		end
-	elseif item.type == "armor" and string then
-		-- HACK: not sure why "shields:" is being trimmed from item name
-		if string.find(item.name, "shield_") == 1 then
-			item.name = "shields:" .. item.name
-		end
+		item = setting_handler(item)
 	end
 
 	if item then

@@ -1,5 +1,5 @@
 
---- Registered shields.
+--- 3D Armor Shields
 --
 --  @topic shields
 
