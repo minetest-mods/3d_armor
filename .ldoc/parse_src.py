@@ -17,7 +17,7 @@ armor_types = {
 	"chestplate": {"topic": "Chestplates", "values": []},
 	"leggings": {"topic": "Leggings", "values": []},
 	"boots": {"topic": "Boots", "values": []},
-	"shield": {"topic": "Shields", "values": []},
+	#"shield": {"topic": "Shields", "values": []},
 }
 
 def parse_file(f):

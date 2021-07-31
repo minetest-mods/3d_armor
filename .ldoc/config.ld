@@ -30,7 +30,8 @@ file = {
 	".ldoc/chestplates.luadoc",
 	".ldoc/leggings.luadoc",
 	".ldoc/boots.luadoc",
-	".ldoc/shields.luadoc",
+	--".ldoc/shields.luadoc",
+	"shields/init.lua",
 	".ldoc/crafting.luadoc",
 }
 
@@ -215,6 +216,11 @@ local registered = {
 }
 
 local function setting_handler(item)
+	-- avoid parsing again
+	if registered.settings[item.name] then
+		return item
+	end
+
 	if not ipairs or not type then
 		return item
 	end
@@ -267,15 +273,7 @@ end
 
 function custom_display_name_handler(item, default_handler)
 	if item.type == "setting" then
-		-- avoid parsing again
-		if not registered.settings[item.name] then
-			item = setting_handler(item)
-		end
-	elseif item.type == "armor" and string then
-		-- HACK: not sure why "shields:" is being trimmed from item name
-		if string.find(item.name, "shield_") == 1 then
-			item.name = "shields:" .. item.name
-		end
+		item = setting_handler(item)
 	end
 
 	if item then

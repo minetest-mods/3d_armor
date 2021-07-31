@@ -48,16 +48,25 @@ done
 echo
 
 # generate new doc files
-"${cmd_ldoc}" --UNSAFE_NO_SANDBOX -c "${f_config}" -d "${d_export}" "${d_root}" && retval=$?
+"${cmd_ldoc}" --UNSAFE_NO_SANDBOX -c "${f_config}" -d "${d_export}" "${d_root}"; retval=$?
 
 # check exit status
 if test ${retval} -ne 0; then
-	echo -e "\nan error occurred (ldoc return code: ${retval}"
+	echo -e "\nan error occurred (ldoc return code: ${retval})"
 	exit ${retval}
 fi
 
 echo -e "\ncleaning temp files ..."
 rm -vf "${d_ldoc}/"*.luadoc
+
+# HACK: ldoc does not seem to like the "shields:" prefix
+echo -e "\ncompensating for LDoc's issue with \"shields:\" prefix ..."
+sed -i \
+	-e 's/<strong>shield_/<strong>shields:shield_/' \
+	-e 's/<td class="name\(.*\)>shield_/<td class="name\1>shields:shield_/' \
+	-e 's/<a href="#shield_/<a href="#shields:shield_/' \
+	-e 's/<a name.*"shield_/<a name="shields:shield_/' \
+	"${d_export}/topics/shields.html"
 
 # copy textures to data directory
 printf "\ncopying textures ..."
