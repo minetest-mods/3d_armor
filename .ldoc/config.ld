@@ -1,4 +1,5 @@
--- Place this file in mod "docs" directory
+
+-- place this file in mod ".ldoc" directory
 
 local print, type, string, table, tostring, tonumber, error, pairs, ipairs
 if import then
