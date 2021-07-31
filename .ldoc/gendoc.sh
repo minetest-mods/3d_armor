@@ -14,6 +14,7 @@ cd "${d_ldoc}/.."
 
 d_root="$(pwd)"
 d_export="${d_export:-${d_root}/3d_armor/docs/reference}"
+d_data="${d_export}/data"
 
 cmd_ldoc="${d_ldoc}/ldoc/ldoc.lua"
 if test -f "${cmd_ldoc}"; then
@@ -58,4 +59,21 @@ fi
 echo -e "\ncleaning temp files ..."
 rm -vf "${d_ldoc}/"*.luadoc
 
-echo -e "\nDone!"
+# copy textures to data directory
+printf "\ncopying textures ..."
+mkdir -p "${d_data}"
+texture_count=0
+for d_mod in "3d_armor" "shields"; do
+	printf "\rcopying textures from ${d_mod} ...\n"
+	for png in $(find "${d_root}/${d_mod}/textures" -maxdepth 1 -type f -name "*.png"); do
+		if test -f "${d_data}/$(basename ${png})"; then
+			echo "WARNING: not overwriting existing file: ${png}"
+		else
+			cp "${png}" "${d_data}"
+			texture_count=$((texture_count + 1))
+			printf "\rcopied ${texture_count} textures"
+		fi
+	done
+done
+
+echo -e "\n\nDone!"

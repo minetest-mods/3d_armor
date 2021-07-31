@@ -76,18 +76,9 @@ custom_tags = {
 	{
 		-- specify image basename only
 		"img",
-		title = "Image",
+		title = "Inventory Image",
 		format = function(value)
-			local img = "<img src=\"https://raw.githubusercontent.com/minetest-mods/3d_armor/master/"
-			if string then
-				if string.find(value, "shields_") == 1 then
-					img = img .. "shields/"
-				else
-					img = img .. "3d_armor/"
-				end
-			end
-
-			return img .. "textures/" .. value .. "\" style=\"width:32px; height:32px;\" />"
+			return "<img src=\"../data/" .. value .. "\" style=\"width:32px; height:32px;\" />"
 		end,
 	},
 	{
