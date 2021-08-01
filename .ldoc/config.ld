@@ -21,6 +21,7 @@ not_luadoc = true
 boilerplate = false
 wrap = false
 style = true
+favicon = "https://www.minetest.net/media/icon.svg"
 
 file = {
 	"3d_armor/api.lua",
