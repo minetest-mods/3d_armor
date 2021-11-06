@@ -370,6 +370,35 @@ if armor.materials.crystal then
 	})
 end
 
+if armor.materials.nether then
+	--- Nether Shield
+	--
+	--  @shield shields:shield_nether
+	--  @img shields_inv_shield_nether.png
+	--  @grp armor_shield 1
+	--  @grp armor_heal 12
+	--  @grp armor_use 100
+	--  @grp armor_fire 1
+	--  @armorgrp fleshy 15
+	--  @damagegrp cracky 2
+	--  @damagegrp snappy 1
+	--  @damagegrp level 3
+	armor:register_armor("shields:shield_nether", {
+		description = S("Nether Shield"),
+		inventory_image = "shields_inv_shield_nether.png",
+		groups = {armor_shield=1, armor_heal=12, armor_use=100, armor_fire=1},
+		armor_groups = {fleshy=15},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		reciprocate_damage = true,
+		on_damage = function(player, index, stack)
+			play_sound_effect(player, "default_glass_footstep")
+		end,
+		on_destroy = function(player, index, stack)
+			play_sound_effect(player, "default_break_glass")
+		end,
+	})
+end
+
 for k, v in pairs(armor.materials) do
 	minetest.register_craft({
 		output = "shields:shield_"..k,
