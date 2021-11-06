@@ -7,6 +7,7 @@ Admin Shield=
 Bronze Shield=
 Cactus Shield=
 Crystal Shield=
+Nether Shield=
 Diamond Shield=
 Enhanced Cactus Shield=
 Enhanced Wood Shield=
