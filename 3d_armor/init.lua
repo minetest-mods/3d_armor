@@ -105,6 +105,9 @@ end
 if not minetest.get_modpath("ethereal") then
 	armor.materials.crystal = nil
 end
+if not minetest.get_modpath("nether") then
+	armor.materials.nether = nil
+end
 
 dofile(modpath.."/armor.lua")
 

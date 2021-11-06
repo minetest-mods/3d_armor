@@ -53,6 +53,7 @@ Change the following default settings by going to Main Menu>>Settings(Tab)>>All 
     armor_material_gold = true
     armor_material_mithril = true
     armor_material_crystal = true
+    armor_material_nether = true
 
 ### Initialization glitches when a player first joins
  **Increase to prevent glitches**

@@ -15,6 +15,7 @@ ARMOR_MATERIALS = {
 	gold = "default:gold_ingot",
 	mithril = "moreores:mithril_ingot",
 	crystal = "ethereal:crystal_ingot",
+	nether = "nether:nether_ingot",
 }
 
 -- Enable fire protection (defaults true if using ethereal mod)
