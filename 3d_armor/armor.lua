@@ -868,6 +868,95 @@ if armor.materials.crystal then
 end
 
 
+--- Nether
+--
+--  Requires `armor_material_nether`.
+--
+--  @section nether
+
+if armor.materials.nether then
+	--- Nether Helmet
+	--
+	--  @helmet 3d_armor:helmet_nether
+	--  @img 3d_armor_inv_helmet_nether.png
+	--  @grp armor_head 1
+	--  @grp armor_heal 12
+	--  @grp armor_use 100
+	--  @grp armor_fire 1
+	--  @armorgrp fleshy 15
+	--  @damagegrp cracky 2
+	--  @damagegrp snappy 1
+	--  @damagegrp level 3
+	armor:register_armor("3d_armor:helmet_nether", {
+		description = S("Nether Helmet"),
+		inventory_image = "3d_armor_inv_helmet_nether.png",
+		groups = {armor_head=1, armor_heal=12, armor_use=100, armor_fire=1},
+		armor_groups = {fleshy=15},
+		damage_groups = {cracky=2, snappy=1, level=3},
+	})
+	--- Nether Chestplate
+	--
+	--  @chestplate 3d_armor:chestplate_nether
+	--  @img 3d_armor_inv_chestplate_nether.png
+	--  @grp armor_torso 1
+	--  @grp armor_heal 12
+	--  @grp armor_use 100
+	--  @grp armor_fire 1
+	--  @armorgrp fleshy 20
+	--  @damagegrp cracky 2
+	--  @damagegrp snappy 1
+	--  @damagegrp level 3
+	armor:register_armor("3d_armor:chestplate_nether", {
+		description = S("Nether Chestplate"),
+		inventory_image = "3d_armor_inv_chestplate_nether.png",
+		groups = {armor_torso=1, armor_heal=12, armor_use=100, armor_fire=1},
+		armor_groups = {fleshy=20},
+		damage_groups = {cracky=2, snappy=1, level=3},
+	})
+	--- Nether Leggings
+	--
+	--  @leggings 3d_armor:leggings_nether
+	--  @img 3d_armor_inv_leggings_nether.png
+	--  @grp armor_legs 1
+	--  @grp armor_heal 12
+	--  @grp armor_use 100
+	--  @grp armor_fire 1
+	--  @armorgrp fleshy 20
+	--  @damagegrp cracky 2
+	--  @damagegrp snappy 1
+	--  @damagegrp level 3
+	armor:register_armor("3d_armor:leggings_nether", {
+		description = S("Nether Leggings"),
+		inventory_image = "3d_armor_inv_leggings_nether.png",
+		groups = {armor_legs=1, armor_heal=12, armor_use=100, armor_fire=1},
+		armor_groups = {fleshy=20},
+		damage_groups = {cracky=2, snappy=1, level=3},
+	})
+	--- Nether Boots
+	--
+	--  @boots 3d_armor:boots_nether
+	--  @img 3d_armor_inv_boots_nether.png
+	--  @grp armor_feet 1
+	--  @grp armor_heal 12
+	--  @grp armor_use 100
+	--  @grp physics_speed 1
+	--  @grp physics_jump 0.5
+	--  @grp armor_fire 1
+	--  @armorgrp fleshy 15
+	--  @damagegrp cracky 2
+	--  @damagegrp snappy 1
+	--  @damagegrp level 3
+	armor:register_armor("3d_armor:boots_nether", {
+		description = S("Nether Boots"),
+		inventory_image = "3d_armor_inv_boots_nether.png",
+		groups = {armor_feet=1, armor_heal=12, armor_use=100, physics_speed=1,
+				physics_jump=0.5, armor_fire=1},
+		armor_groups = {fleshy=15},
+		damage_groups = {cracky=2, snappy=1, level=3},
+	})
+end
+
+
 --- Crafting
 --
 --  @section craft
@@ -886,6 +975,7 @@ end
 --    - gold:    default:gold_ingot
 --    - mithril: moreores:mithril_ingot
 --    - crystal: ethereal:crystal_ingot
+--    - nether:  nether:nether_ingot
 --
 --  helmet:        chestplate:    leggings:
 --  ┌───┬───┬───┐  ┌───┬───┬───┐  ┌───┬───┬───┐
