@@ -880,12 +880,11 @@ if armor.materials.nether then
 	--  @helmet 3d_armor:helmet_nether
 	--  @img 3d_armor_inv_helmet_nether.png
 	--  @grp armor_head 1
-	--  @grp armor_heal 12
-	--  @grp armor_use 100
-	--  @grp armor_fire 1
-	--  @armorgrp fleshy 15
-	--  @damagegrp cracky 2
-	--  @damagegrp snappy 1
+	--  @grp armor_heal 14
+	--  @grp armor_use 200
+	--  @armorgrp fleshy 18
+	--  @damagegrp cracky 3
+	--  @damagegrp snappy 2
 	--  @damagegrp level 3
 	armor:register_armor("3d_armor:helmet_nether", {
 		description = S("Nether Helmet"),
@@ -899,12 +898,11 @@ if armor.materials.nether then
 	--  @chestplate 3d_armor:chestplate_nether
 	--  @img 3d_armor_inv_chestplate_nether.png
 	--  @grp armor_torso 1
-	--  @grp armor_heal 12
-	--  @grp armor_use 100
-	--  @grp armor_fire 1
-	--  @armorgrp fleshy 20
-	--  @damagegrp cracky 2
-	--  @damagegrp snappy 1
+	--  @grp armor_heal 14
+	--  @grp armor_use 200
+	--  @armorgrp fleshy 25
+	--  @damagegrp cracky 3
+	--  @damagegrp snappy 2
 	--  @damagegrp level 3
 	armor:register_armor("3d_armor:chestplate_nether", {
 		description = S("Nether Chestplate"),
@@ -918,12 +916,11 @@ if armor.materials.nether then
 	--  @leggings 3d_armor:leggings_nether
 	--  @img 3d_armor_inv_leggings_nether.png
 	--  @grp armor_legs 1
-	--  @grp armor_heal 12
-	--  @grp armor_use 100
-	--  @grp armor_fire 1
-	--  @armorgrp fleshy 20
-	--  @damagegrp cracky 2
-	--  @damagegrp snappy 1
+	--  @grp armor_heal 14
+	--  @grp armor_use 200
+	--  @armorgrp fleshy 25
+	--  @damagegrp cracky 3
+	--  @damagegrp snappy 2
 	--  @damagegrp level 3
 	armor:register_armor("3d_armor:leggings_nether", {
 		description = S("Nether Leggings"),
@@ -937,14 +934,11 @@ if armor.materials.nether then
 	--  @boots 3d_armor:boots_nether
 	--  @img 3d_armor_inv_boots_nether.png
 	--  @grp armor_feet 1
-	--  @grp armor_heal 12
-	--  @grp armor_use 100
-	--  @grp physics_speed 1
-	--  @grp physics_jump 0.5
-	--  @grp armor_fire 1
-	--  @armorgrp fleshy 15
-	--  @damagegrp cracky 2
-	--  @damagegrp snappy 1
+	--  @grp armor_heal 14
+	--  @grp armor_use 200
+	--  @armorgrp fleshy 18
+	--  @damagegrp cracky 3
+	--  @damagegrp snappy 2
 	--  @damagegrp level 3
 	armor:register_armor("3d_armor:boots_nether", {
 		description = S("Nether Boots"),
