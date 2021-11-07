@@ -376,19 +376,18 @@ if armor.materials.nether then
 	--  @shield shields:shield_nether
 	--  @img shields_inv_shield_nether.png
 	--  @grp armor_shield 1
-	--  @grp armor_heal 12
-	--  @grp armor_use 100
-	--  @grp armor_fire 1
-	--  @armorgrp fleshy 15
-	--  @damagegrp cracky 2
-	--  @damagegrp snappy 1
+	--  @grp armor_heal 17
+	--  @grp armor_use 200
+	--  @armorgrp fleshy 20
+	--  @damagegrp cracky 3
+	--  @damagegrp snappy 2
 	--  @damagegrp level 3
 	armor:register_armor("shields:shield_nether", {
 		description = S("Nether Shield"),
 		inventory_image = "shields_inv_shield_nether.png",
-		groups = {armor_shield=1, armor_heal=12, armor_use=100, armor_fire=1},
-		armor_groups = {fleshy=15},
-		damage_groups = {cracky=2, snappy=1, level=3},
+		groups = {armor_shield=1, armor_heal=17, armor_use=200},
+		armor_groups = {fleshy=20},
+		damage_groups = {cracky=3, snappy=2, level=3},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
 			play_sound_effect(player, "default_glass_footstep")
