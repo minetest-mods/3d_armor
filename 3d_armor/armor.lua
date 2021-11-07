@@ -890,9 +890,9 @@ if armor.materials.nether then
 	armor:register_armor("3d_armor:helmet_nether", {
 		description = S("Nether Helmet"),
 		inventory_image = "3d_armor_inv_helmet_nether.png",
-		groups = {armor_head=1, armor_heal=12, armor_use=100, armor_fire=1},
-		armor_groups = {fleshy=15},
-		damage_groups = {cracky=2, snappy=1, level=3},
+		groups = {armor_head=1, armor_heal=14, armor_use=100},
+		armor_groups = {fleshy=18},
+		damage_groups = {cracky=3, snappy=2, level=3},
 	})
 	--- Nether Chestplate
 	--
@@ -909,9 +909,9 @@ if armor.materials.nether then
 	armor:register_armor("3d_armor:chestplate_nether", {
 		description = S("Nether Chestplate"),
 		inventory_image = "3d_armor_inv_chestplate_nether.png",
-		groups = {armor_torso=1, armor_heal=12, armor_use=100, armor_fire=1},
-		armor_groups = {fleshy=20},
-		damage_groups = {cracky=2, snappy=1, level=3},
+		groups = {armor_torso=1, armor_heal=14, armor_use=200},
+		armor_groups = {fleshy=25},
+		damage_groups = {cracky=3, snappy=2, level=3},
 	})
 	--- Nether Leggings
 	--
@@ -928,9 +928,9 @@ if armor.materials.nether then
 	armor:register_armor("3d_armor:leggings_nether", {
 		description = S("Nether Leggings"),
 		inventory_image = "3d_armor_inv_leggings_nether.png",
-		groups = {armor_legs=1, armor_heal=12, armor_use=100, armor_fire=1},
-		armor_groups = {fleshy=20},
-		damage_groups = {cracky=2, snappy=1, level=3},
+		groups = {armor_legs=1, armor_heal=14, armor_use=200},
+		armor_groups = {fleshy=25},
+		damage_groups = {cracky=3, snappy=2, level=3},
 	})
 	--- Nether Boots
 	--
@@ -949,10 +949,9 @@ if armor.materials.nether then
 	armor:register_armor("3d_armor:boots_nether", {
 		description = S("Nether Boots"),
 		inventory_image = "3d_armor_inv_boots_nether.png",
-		groups = {armor_feet=1, armor_heal=12, armor_use=100, physics_speed=1,
-				physics_jump=0.5, armor_fire=1},
-		armor_groups = {fleshy=15},
-		damage_groups = {cracky=2, snappy=1, level=3},
+		groups = {armor_feet=1, armor_heal=14, armor_use=200},
+		armor_groups = {fleshy=18},
+		damage_groups = {cracky=3, snappy=2, level=3},
 	})
 end
 
