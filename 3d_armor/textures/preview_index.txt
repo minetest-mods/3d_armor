@@ -38,6 +38,11 @@
 3d_armor/textures/3d_armor_leggings_crystal.png:legs
 3d_armor/textures/3d_armor_boots_crystal.png:feet
 
+3d_armor/textures/3d_armor_helmet_nether.png:head
+3d_armor/textures/3d_armor_chestplate_nether.png:torso
+3d_armor/textures/3d_armor_leggings_nether.png:legs
+3d_armor/textures/3d_armor_boots_nether.png:feet
+
 3d_armor/textures/3d_armor_helmet_admin.png:head
 3d_armor/textures/3d_armor_chestplate_admin.png:torso
 3d_armor/textures/3d_armor_leggings_admin.png:legs

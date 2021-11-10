@@ -1,0 +1,62 @@
+# textdomain: 3d_armor
+
+
+### api.lua ###
+
+3d_armor: Detached armor inventory is nil @1=3d_armor : Abgetrennter Rüstungsbestand ist nicht gesetzt: @1
+3d_armor: Player name is nil @1=3d_armor : Spielername ist nicht gesetzt: @1
+3d_armor: Player reference is nil @1=3d_armor : Spielerreferenz ist nicht gesetzt: @1
+
+### armor.lua ###
+
+Admin Boots=Adminstiefel
+Admin Chestplate=Adminbrustplatte
+Admin Helmet=Adminhelm
+Admin Leggings=Adminhose
+Bronze Boots=Bronzestiefel
+Bronze Chestplate=Bronzebrustplatte
+Bronze Helmet=Bronzehelm
+Bronze Leggings=Bronzehose
+Cactus Boots=Kaktusstiefel
+Cactus Chestplate=Kaktusbrustplatte
+Cactus Helmet=Kaktushelm
+Cactus Leggings=Kaktushose
+Crystal Boots=Kristallstiefel
+Crystal Chestplate=Kristallbrustplatte
+Crystal Helmet=Kristallhelm
+Crystal Leggings=Kristallhose
+Nether Boots=Netherstiefel
+Nether Chestplate=Netherbrustplatte
+Nether Helmet=Netherhelm
+Nether Leggings=Netherhose
+Diamond Boots=Diamantstiefel
+Diamond Chestplate=Diamantbrustplatte
+Diamond Helmet=Diamanthelm
+Diamond Leggings=Diamanthose
+Gold Boots=Goldstiefel
+Gold Chestplate=Goldbrustplatte
+Gold Helmet=Goldhelm
+Gold Leggings=Goldhose
+Mithril Boots=Mithrilstiefel
+Mithril Chestplate=Mithrilbrustplatte
+Mithril Helmet=Mithrilhelm
+Mithril Leggings=Mithrilhose
+Steel Boots=Stahlstiefel
+Steel Chestplate=Stahlbrustplatte
+Steel Helmet=Stahlhelm
+Steel Leggings=Stahlhose
+Wood Boots=Holzstiefel
+Wood Chestplate=Holzbrustplatte
+Wood Helmet=Holzhelm
+Wood Leggings=Holzhose
+
+### init.lua ###
+
+3d_armor: Failed to initialize player=3d_armor : Initialisierung des Spielers fehlgeschlagen
+Fire=Feuer
+Heal=Heilen
+Level=Stufe
+Radiation=Strahlen
+Your @1 got destroyed!=Deine @1 wurde zerstört!
+Your @1 is almost broken!=Deine @1 ist fast kaputt!
+[3d_armor] Fire Nodes disabled=[3d_armor] Feuer-Knoten deaktiviert

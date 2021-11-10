@@ -1,0 +1,17 @@
+# textdomain: shields
+
+
+### init.lua ###
+
+Admin Shield=Adminschild
+Bronze Shield=Bronzeschild
+Cactus Shield=Kaktusschild
+Crystal Shield=Kristallschild
+Nether Shield=Netherschild
+Diamond Shield=Diamantschild
+Enhanced Cactus Shield=verbessert Kaktusschild
+Enhanced Wood Shield=verbessert Holzschild
+Gold Shield=Goldschild
+Mithril Shield=Mithrilschild
+Steel Shield=Stahlschild
+Wooden Shield=Holzschild
