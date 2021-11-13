@@ -378,6 +378,7 @@ if armor.materials.nether then
 	--  @grp armor_shield 1
 	--  @grp armor_heal 17
 	--  @grp armor_use 200
+	--  @grp armor_fire 1
 	--  @armorgrp fleshy 20
 	--  @damagegrp cracky 3
 	--  @damagegrp snappy 2
@@ -385,7 +386,7 @@ if armor.materials.nether then
 	armor:register_armor("shields:shield_nether", {
 		description = S("Nether Shield"),
 		inventory_image = "shields_inv_shield_nether.png",
-		groups = {armor_shield=1, armor_heal=17, armor_use=200},
+		groups = {armor_shield=1, armor_heal=17, armor_use=200, armor_fire=1},
 		armor_groups = {fleshy=20},
 		damage_groups = {cracky=3, snappy=2, level=3},
 		reciprocate_damage = true,
