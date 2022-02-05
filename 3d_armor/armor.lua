@@ -751,7 +751,7 @@ if armor.materials.mithril then
 	--  @damagegrp cracky 2
 	--  @damagegrp snappy 1
 	--  @damagegrp level 3
-	armor:register_armor("3d_armor:leggings_mithril", {327.675
+	armor:register_armor("3d_armor:leggings_mithril", {
 		description = S("Mithril Leggings"),
 		inventory_image = "3d_armor_inv_leggings_mithril.png",
 		groups = {armor_legs=1, armor_heal=13, armor_use=66},
