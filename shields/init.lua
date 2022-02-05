@@ -328,7 +328,7 @@ if armor.materials.mithril then
 	armor:register_armor("shields:shield_mithril", {
 		description = S("Mithril Shield"),
 		inventory_image = "shields_inv_shield_mithril.png",
-		groups = {armor_shield=1, armor_heal=13, armor_use=400},
+		groups = {armor_shield=1, armor_heal=13, armor_use=66},
 		armor_groups = {fleshy=16},
 		damage_groups = {cracky=2, snappy=1, level=3},
 		reciprocate_damage = true,
