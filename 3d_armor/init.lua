@@ -299,7 +299,7 @@ end
 
 -- Armor Player Model
 
-default.player_register_model("3d_armor_character.b3d", {
+player_api.register_model("3d_armor_character.b3d", {
 	animation_speed = 30,
 	textures = {
 		armor.default_skin..".png",
