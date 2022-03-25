@@ -18,6 +18,7 @@ read_globals = {
 
 	-- deps
 	"default",
+	"player_api",
 	"minetest",
 	"unified_inventory",
 	"wardrobe",
