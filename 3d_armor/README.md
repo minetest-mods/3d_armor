@@ -254,7 +254,7 @@ The above allows armor to block/prevent new damage types but you also need to as
 ## Groups used by 3d_Armor
 3d_armor has many default groups already registered, these are categorized under 4 main headings
  - **Elements:** armor_head, armor_torso, armor_legs, armor_feet
- - **Attributes:** armor_heal, armor_fire, armor_water
+ - **Attributes:** armor_heal, armor_fire, armor_water, armor_feather
  - **Physics:** physics_jump, physics_speed, physics_gravity
  - **Durability:** armor_use, flammable
  
@@ -333,6 +333,9 @@ The below Diamond chestplate has a 12% chance to completely block all damage (ar
 		armor_groups = {fleshy=5},
 		damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
 	})
+
+#### Armor_feather
+***"Armor_feather"*** will slow a player when falling. This only has one level or state, which is armor_feather=1
 
 ### Physics
 The physics attributes supported by 3d_armor are ***physics_jump, physics_speed and physics_gravity***. Although 3d_armor supports the use of this with no other mods it is recommended that the mod [player_monoids](https://forum.minetest.net/viewtopic.php?t=14895) is used to help with intermod compatability. 
