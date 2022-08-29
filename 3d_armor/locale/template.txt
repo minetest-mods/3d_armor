@@ -41,10 +41,6 @@ Mithril Boots=
 Mithril Chestplate=
 Mithril Helmet=
 Mithril Leggings=
-Wood Boots=
-Wood Chestplate=
-Wood Helmet=
-Wood Leggings=
 
 ### init.lua ###
 
