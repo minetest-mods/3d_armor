@@ -9,10 +9,6 @@
 
 ### armor.lua ###
 
-Crystal Boots=
-Crystal Chestplate=
-Crystal Helmet=
-Crystal Leggings=
 Nether Boots=
 Nether Chestplate=
 Nether Helmet=
