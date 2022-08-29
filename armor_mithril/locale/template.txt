@@ -13,6 +13,10 @@ Nether Boots=
 Nether Chestplate=
 Nether Helmet=
 Nether Leggings=
+Mithril Boots=
+Mithril Chestplate=
+Mithril Helmet=
+Mithril Leggings=
 
 ### init.lua ###
 

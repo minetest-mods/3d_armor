@@ -13,14 +13,6 @@ Nether Boots=Stivali di nether
 Nether Chestplate=Corazza di nether
 Nether Helmet=Elmo di nether
 Nether Leggings=Gambali di nether
-Gold Boots=Stivali d'oro
-Gold Chestplate=Corazza d'oro
-Gold Helmet=Elmo d'oro
-Gold Leggings=Gambali d'oro
-Mithril Boots=Stivali di mithril
-Mithril Chestplate=Corazza di mithril
-Mithril Helmet=Elmo di mithril
-Mithril Leggings=Gambali di mithril
 
 ### init.lua ###
 

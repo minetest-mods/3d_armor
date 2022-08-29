@@ -13,14 +13,6 @@ Nether Boots=Bottes en nether
 Nether Chestplate=Cuirasse en nether
 Nether Helmet=Casque en nether
 Nether Leggings=Jambières en nether
-Gold Boots=Bottes en or
-Gold Chestplate=Cuirasse en or
-Gold Helmet=Casque en or
-Gold Leggings=Jambières en or
-Mithril Boots=Bottes en mithril
-Mithril Chestplate=Cuirasse en mithril
-Mithril Helmet=Casque en mithril
-Mithril Leggings=Jambières en mithril
 
 ### init.lua ###
 

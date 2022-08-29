@@ -13,14 +13,6 @@ Nether Boots=Netherstiefel
 Nether Chestplate=Netherbrustplatte
 Nether Helmet=Netherhelm
 Nether Leggings=Netherhose
-Gold Boots=Goldstiefel
-Gold Chestplate=Goldbrustplatte
-Gold Helmet=Goldhelm
-Gold Leggings=Goldhose
-Mithril Boots=Mithrilstiefel
-Mithril Chestplate=Mithrilbrustplatte
-Mithril Helmet=Mithrilhelm
-Mithril Leggings=Mithrilhose
 
 ### init.lua ###
 

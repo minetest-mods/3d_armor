@@ -9,14 +9,10 @@
 
 ### armor.lua ###
 
-Gold Boots=золотые ботинки
-Gold Chestplate=золотой бронежилет
-Gold Helmet=золотой шлем
-Gold Leggings=золотые гамаши
-Mithril Boots=мифриловые ботинки
-Mithril Chestplate=мифриловый бронежилет
-Mithril Helmet=мифриловый шлем
-Mithril Leggings=мифриловые гамаши
+Nether Boots=адские ботинки
+Nether Chestplate=адский бронежилет
+Nether Helmet=адский шлем
+Nether Leggings=адские гамаши
 
 ### init.lua ###
 
