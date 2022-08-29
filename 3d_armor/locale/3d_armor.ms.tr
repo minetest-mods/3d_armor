@@ -7,13 +7,6 @@
 3d_armor: Player name is nil @1=3d_armor: Nama pemain tiada nilai @1
 3d_armor: Player reference is nil @1=3d_armor: Rujukan pemain tiada nilai @1
 
-### armor.lua ###
-
-Nether Boots=But Nether
-Nether Chestplate=Perisai Dada Nether
-Nether Helmet=Helmet Nether
-Nether Leggings=Perisai Kaki Nether
-
 ### init.lua ###
 
 3d_armor: Failed to initialize player=3d_armor: Gagal mengasalkan pemain

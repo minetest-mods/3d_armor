@@ -7,13 +7,6 @@
 3d_armor: Player name is nil @1=3d_armor: Имя игрока является nil @1
 3d_armor: Player reference is nil @1=3d_armor: Ссылка игрока является nil @1
 
-### armor.lua ###
-
-Nether Boots=адские ботинки
-Nether Chestplate=адский бронежилет
-Nether Helmet=адский шлем
-Nether Leggings=адские гамаши
-
 ### init.lua ###
 
 3d_armor: Failed to initialize player=3d_armor: не смог подготовить игрока

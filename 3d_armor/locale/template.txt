@@ -7,13 +7,6 @@
 3d_armor: Player name is nil @1=
 3d_armor: Player reference is nil @1=
 
-### armor.lua ###
-
-Nether Boots=
-Nether Chestplate=
-Nether Helmet=
-Nether Leggings=
-
 ### init.lua ###
 
 3d_armor: Failed to initialize player=
