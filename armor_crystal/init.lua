@@ -27,7 +27,7 @@ if armor.materials.crystal then
 	--  @damagegrp cracky 2
 	--  @damagegrp snappy 1
 	--  @damagegrp level 3
-	armor:register_armor("3d_armor:helmet_crystal", {
+	armor:register_armor(":3d_armor:helmet_crystal", {
 		description = S("Crystal Helmet"),
 		inventory_image = "3d_armor_inv_helmet_crystal.png",
 		groups = {armor_head=1, armor_heal=12, armor_use=100, armor_fire=1},
@@ -46,7 +46,7 @@ if armor.materials.crystal then
 	--  @damagegrp cracky 2
 	--  @damagegrp snappy 1
 	--  @damagegrp level 3
-	armor:register_armor("3d_armor:chestplate_crystal", {
+	armor:register_armor(":3d_armor:chestplate_crystal", {
 		description = S("Crystal Chestplate"),
 		inventory_image = "3d_armor_inv_chestplate_crystal.png",
 		groups = {armor_torso=1, armor_heal=12, armor_use=100, armor_fire=1},
@@ -65,7 +65,7 @@ if armor.materials.crystal then
 	--  @damagegrp cracky 2
 	--  @damagegrp snappy 1
 	--  @damagegrp level 3
-	armor:register_armor("3d_armor:leggings_crystal", {
+	armor:register_armor(":3d_armor:leggings_crystal", {
 		description = S("Crystal Leggings"),
 		inventory_image = "3d_armor_inv_leggings_crystal.png",
 		groups = {armor_legs=1, armor_heal=12, armor_use=100, armor_fire=1},
@@ -86,7 +86,7 @@ if armor.materials.crystal then
 	--  @damagegrp cracky 2
 	--  @damagegrp snappy 1
 	--  @damagegrp level 3
-	armor:register_armor("3d_armor:boots_crystal", {
+	armor:register_armor(":3d_armor:boots_crystal", {
 		description = S("Crystal Boots"),
 		inventory_image = "3d_armor_inv_boots_crystal.png",
 		groups = {armor_feet=1, armor_heal=12, armor_use=100, physics_speed=1,

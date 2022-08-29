@@ -27,7 +27,7 @@ if armor.materials.cactus then
 	--  @damagegrp choppy 2
 	--  @damagegrp crumbly 2
 	--  @damagegrp level 1
-	armor:register_armor("3d_armor:helmet_cactus", {
+	armor:register_armor(":3d_armor:helmet_cactus", {
 		description = S("Cactus Helmet"),
 		inventory_image = "3d_armor_inv_helmet_cactus.png",
 		groups = {armor_head=1, armor_heal=0, armor_use=1000},
@@ -47,7 +47,7 @@ if armor.materials.cactus then
 	--  @damagegrp choppy 2
 	--  @damagegrp crumbly 2
 	--  @damagegrp level 1
-	armor:register_armor("3d_armor:chestplate_cactus", {
+	armor:register_armor(":3d_armor:chestplate_cactus", {
 		description = S("Cactus Chestplate"),
 		inventory_image = "3d_armor_inv_chestplate_cactus.png",
 		groups = {armor_torso=1, armor_heal=0, armor_use=1000},
@@ -67,7 +67,7 @@ if armor.materials.cactus then
 	--  @damagegrp choppy 2
 	--  @damagegrp crumbly 2
 	--  @damagegrp level 1
-	armor:register_armor("3d_armor:leggings_cactus", {
+	armor:register_armor(":3d_armor:leggings_cactus", {
 		description = S("Cactus Leggings"),
 		inventory_image = "3d_armor_inv_leggings_cactus.png",
 		groups = {armor_legs=1, armor_heal=0, armor_use=1000},
@@ -87,7 +87,7 @@ if armor.materials.cactus then
 	--  @damagegrp choppy 2
 	--  @damagegrp crumbly 2
 	--  @damagegrp level 1
-	armor:register_armor("3d_armor:boots_cactus", {
+	armor:register_armor(":3d_armor:boots_cactus", {
 		description = S("Cactus Boots"),
 		inventory_image = "3d_armor_inv_boots_cactus.png",
 		groups = {armor_feet=1, armor_heal=0, armor_use=1000},
