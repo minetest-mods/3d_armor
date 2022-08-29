@@ -148,8 +148,8 @@ end
 --  │ m │   │ m │  │   │ m │   │
 --  └───┴───┴───┘  └───┴───┴───┘
 
-s = "cactus"
-m = armor.materials.cactus
+local s = "cactus"
+local m = armor.materials.cactus
 minetest.register_craft({
 	output = "3d_armor:helmet_"..s,
 	recipe = {

@@ -131,8 +131,8 @@ end
 --  │ m │   │ m │  │   │ m │   │
 --  └───┴───┴───┘  └───┴───┴───┘
 
-s = "diamond"
-m = armor.materials.diamond
+local s = "diamond"
+local m = armor.materials.diamond
 minetest.register_craft({
 	output = "3d_armor:helmet_"..s,
 	recipe = {

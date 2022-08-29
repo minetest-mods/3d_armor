@@ -127,8 +127,8 @@ end
 --  │ m │   │ m │  │   │ m │   │
 --  └───┴───┴───┘  └───┴───┴───┘
 
-s = "mithril"
-m = armor.materials.mithril
+local s = "mithril"
+local m = armor.materials.mithril
 minetest.register_craft({
 	output = "3d_armor:helmet_"..s,
 	recipe = {

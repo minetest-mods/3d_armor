@@ -99,17 +99,7 @@ for _, mod in pairs(skin_mods) do
 		armor.set_skin_mod(mod)
 	end
 end
-if not minetest.get_modpath("moreores") then
-	armor.materials.mithril = nil
-end
-if not minetest.get_modpath("ethereal") then
-	armor.materials.crystal = nil
-end
-if not minetest.get_modpath("nether") then
-	armor.materials.nether = nil
-end
 
-dofile(modpath.."/armor.lua")
 
 -- Armor Initialization
 

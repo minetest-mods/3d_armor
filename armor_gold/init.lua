@@ -148,8 +148,8 @@ end
 --  │ m │   │ m │  │   │ m │   │
 --  └───┴───┴───┘  └───┴───┴───┘
 
-s = "gold"
-m = armor.materials.gold
+local s = "gold"
+local m = armor.materials.gold
 minetest.register_craft({
 	output = "3d_armor:helmet_"..s,
 	recipe = {

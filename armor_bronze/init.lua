@@ -146,8 +146,8 @@ end
 --  │ m │   │ m │  │   │ m │   │
 --  └───┴───┴───┘  └───┴───┴───┘
 
-s = "bronze"
-m = armor.materials.bronze
+local s = "bronze"
+local m = armor.materials.bronze
 minetest.register_craft({
 	output = "3d_armor:helmet_"..s,
 	recipe = {
