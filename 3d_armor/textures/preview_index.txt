@@ -8,11 +8,6 @@
 3d_armor/textures/3d_armor_leggings_cactus.png:legs
 3d_armor/textures/3d_armor_boots_cactus.png:feet
 
-3d_armor/textures/3d_armor_helmet_steel.png:head
-3d_armor/textures/3d_armor_chestplate_steel.png:torso
-3d_armor/textures/3d_armor_leggings_steel.png:legs
-3d_armor/textures/3d_armor_boots_steel.png:feet
-
 3d_armor/textures/3d_armor_helmet_bronze.png:head
 3d_armor/textures/3d_armor_chestplate_bronze.png:torso
 3d_armor/textures/3d_armor_leggings_bronze.png:legs

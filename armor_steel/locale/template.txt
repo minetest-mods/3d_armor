@@ -1,0 +1,9 @@
+# textdomain: 3d_armor
+
+
+### init.lua ###
+
+Steel Boots=
+Steel Chestplate=
+Steel Helmet=
+Steel Leggings=

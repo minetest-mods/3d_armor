@@ -1,0 +1,4 @@
+3d_armor/textures/3d_armor_helmet_steel.png:head
+3d_armor/textures/3d_armor_chestplate_steel.png:torso
+3d_armor/textures/3d_armor_leggings_steel.png:legs
+3d_armor/textures/3d_armor_boots_steel.png:feet

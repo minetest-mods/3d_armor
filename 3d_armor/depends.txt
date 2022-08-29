@@ -7,3 +7,4 @@ ethereal?
 bakedclay?
 moreores?
 nether?
+3d_armor_steel?
