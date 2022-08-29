@@ -150,8 +150,8 @@ if armor.materials.wood then
 	--  │ m │   │ m │  │   │ m │   │
 	--  └───┴───┴───┘  └───┴───┴───┘
 
-	s = "wood"
-	m = armor.materials.wood
+	local s = "wood"
+	local m = armor.materials.wood
 	minetest.register_craft({
 		output = "3d_armor:helmet_"..s,
 		recipe = {
