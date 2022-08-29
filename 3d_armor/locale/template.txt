@@ -9,10 +9,6 @@
 
 ### armor.lua ###
 
-Cactus Boots=
-Cactus Chestplate=
-Cactus Helmet=
-Cactus Leggings=
 Crystal Boots=
 Crystal Chestplate=
 Crystal Helmet=
