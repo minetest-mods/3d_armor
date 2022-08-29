@@ -91,77 +91,78 @@ if armor.materials.nether then
 		armor_groups = {fleshy=18},
 		damage_groups = {cracky=3, snappy=2, level=3},
 	})
+
+
+	--- Crafting
+	--
+	--  @section craft
+
+	--- Craft recipes for helmets, chestplates, leggings, boots, & shields.
+	--
+	--  @craft armor
+	--  @usage
+	--  Key:
+	--  - m: material
+	--    - wood:    group:wood
+	--    - cactus:  default:cactus
+	--    - steel:   default:steel_ingot
+	--    - bronze:  default:bronze_ingot
+	--    - diamond: default:diamond
+	--    - gold:    default:gold_ingot
+	--    - mithril: moreores:mithril_ingot
+	--    - crystal: ethereal:crystal_ingot
+	--    - nether:  nether:nether_ingot
+	--
+	--  helmet:        chestplate:    leggings:
+	--  ┌───┬───┬───┐  ┌───┬───┬───┐  ┌───┬───┬───┐
+	--  │ m │ m │ m │  │ m │   │ m │  │ m │ m │ m │
+	--  ├───┼───┼───┤  ├───┼───┼───┤  ├───┼───┼───┤
+	--  │ m │   │ m │  │ m │ m │ m │  │ m │   │ m │
+	--  ├───┼───┼───┤  ├───┼───┼───┤  ├───┼───┼───┤
+	--  │   │   │   │  │ m │ m │ m │  │ m │   │ m │
+	--  └───┴───┴───┘  └───┴───┴───┘  └───┴───┴───┘
+	--
+	--  boots:         shield:
+	--  ┌───┬───┬───┐  ┌───┬───┬───┐
+	--  │   │   │   │  │ m │ m │ m │
+	--  ├───┼───┼───┤  ├───┼───┼───┤
+	--  │ m │   │ m │  │ m │ m │ m │
+	--  ├───┼───┼───┤  ├───┼───┼───┤
+	--  │ m │   │ m │  │   │ m │   │
+	--  └───┴───┴───┘  └───┴───┴───┘
+
+	local s = "nether"
+	local m = armor.materials.nether
+	minetest.register_craft({
+		output = "3d_armor:helmet_"..s,
+		recipe = {
+			{m, m, m},
+			{m, "", m},
+			{"", "", ""},
+		},
+	})
+	minetest.register_craft({
+		output = "3d_armor:chestplate_"..s,
+		recipe = {
+			{m, "", m},
+			{m, m, m},
+			{m, m, m},
+		},
+	})
+	minetest.register_craft({
+		output = "3d_armor:leggings_"..s,
+		recipe = {
+			{m, m, m},
+			{m, "", m},
+			{m, "", m},
+		},
+	})
+	minetest.register_craft({
+		output = "3d_armor:boots_"..s,
+		recipe = {
+			{m, "", m},
+			{m, "", m},
+		},
+	})
+
 end
-
-
---- Crafting
---
---  @section craft
-
---- Craft recipes for helmets, chestplates, leggings, boots, & shields.
---
---  @craft armor
---  @usage
---  Key:
---  - m: material
---    - wood:    group:wood
---    - cactus:  default:cactus
---    - steel:   default:steel_ingot
---    - bronze:  default:bronze_ingot
---    - diamond: default:diamond
---    - gold:    default:gold_ingot
---    - mithril: moreores:mithril_ingot
---    - crystal: ethereal:crystal_ingot
---    - nether:  nether:nether_ingot
---
---  helmet:        chestplate:    leggings:
---  ┌───┬───┬───┐  ┌───┬───┬───┐  ┌───┬───┬───┐
---  │ m │ m │ m │  │ m │   │ m │  │ m │ m │ m │
---  ├───┼───┼───┤  ├───┼───┼───┤  ├───┼───┼───┤
---  │ m │   │ m │  │ m │ m │ m │  │ m │   │ m │
---  ├───┼───┼───┤  ├───┼───┼───┤  ├───┼───┼───┤
---  │   │   │   │  │ m │ m │ m │  │ m │   │ m │
---  └───┴───┴───┘  └───┴───┴───┘  └───┴───┴───┘
---
---  boots:         shield:
---  ┌───┬───┬───┐  ┌───┬───┬───┐
---  │   │   │   │  │ m │ m │ m │
---  ├───┼───┼───┤  ├───┼───┼───┤
---  │ m │   │ m │  │ m │ m │ m │
---  ├───┼───┼───┤  ├───┼───┼───┤
---  │ m │   │ m │  │   │ m │   │
---  └───┴───┴───┘  └───┴───┴───┘
-
-local s = "nether"
-local m = armor.materials.nether
-minetest.register_craft({
-	output = "3d_armor:helmet_"..s,
-	recipe = {
-		{m, m, m},
-		{m, "", m},
-		{"", "", ""},
-	},
-})
-minetest.register_craft({
-	output = "3d_armor:chestplate_"..s,
-	recipe = {
-		{m, "", m},
-		{m, m, m},
-		{m, m, m},
-	},
-})
-minetest.register_craft({
-	output = "3d_armor:leggings_"..s,
-	recipe = {
-		{m, m, m},
-		{m, "", m},
-		{m, "", m},
-	},
-})
-minetest.register_craft({
-	output = "3d_armor:boots_"..s,
-	recipe = {
-		{m, "", m},
-		{m, "", m},
-	},
-})
