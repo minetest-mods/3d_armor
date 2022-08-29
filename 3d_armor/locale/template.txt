@@ -9,10 +9,6 @@
 
 ### armor.lua ###
 
-Admin Boots=
-Admin Chestplate=
-Admin Helmet=
-Admin Leggings=
 Bronze Boots=
 Bronze Chestplate=
 Bronze Helmet=
