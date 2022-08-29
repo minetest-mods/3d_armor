@@ -9,10 +9,6 @@
 
 ### armor.lua ###
 
-Bronze Boots=
-Bronze Chestplate=
-Bronze Helmet=
-Bronze Leggings=
 Cactus Boots=
 Cactus Chestplate=
 Cactus Helmet=
