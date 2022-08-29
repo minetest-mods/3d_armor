@@ -118,7 +118,15 @@ end
 --  @usage
 --  Key:
 --  - m: material
+--    - wood:    group:wood
+--    - cactus:  default:cactus
 --    - steel:   default:steel_ingot
+--    - bronze:  default:bronze_ingot
+--    - diamond: default:diamond
+--    - gold:    default:gold_ingot
+--    - mithril: moreores:mithril_ingot
+--    - crystal: ethereal:crystal_ingot
+--    - nether:  nether:nether_ingot
 --
 --  helmet:        chestplate:    leggings:
 --  ┌───┬───┬───┐  ┌───┬───┬───┐  ┌───┬───┬───┐
