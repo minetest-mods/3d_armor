@@ -1,4 +1,12 @@
 
+--- Registered armors.
+--
+--  @topic armor
+
+
+-- support for i18n
+local S = armor.get_translator
+
 --- Wood
 --
 --  Requires setting `armor_material_wood`.

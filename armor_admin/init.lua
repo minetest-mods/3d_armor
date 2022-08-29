@@ -1,4 +1,12 @@
 
+--- Registered armors.
+--
+--  @topic armor
+
+
+-- support for i18n
+local S = armor.get_translator
+
 --- Admin Helmet
 --
 --  @helmet 3d_armor:helmet_admin
