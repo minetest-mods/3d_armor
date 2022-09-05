@@ -491,10 +491,13 @@ armor.set_player_armor = function(self, player)
 		armor_monoid.monoid:add_change(player, change, "3d_armor:armor")
 	else
 		-- Preserve immortal group (damage disabled for player)
-		local immortal = player:get_armor_groups().immortal
+		local player_groups = player:get_armor_groups()
+		local immortal = player_groups.immortal
 		if immortal and immortal ~= 0 then
 			groups.immortal = 1
 		end
+		-- Preserve fall_damage_add_percent group (fall damage modifier)
+		groups.fall_damage_add_percent = player_groups.fall_damage_add_percent
 		player:set_armor_groups(groups)
 	end
 	if use_player_monoids then
