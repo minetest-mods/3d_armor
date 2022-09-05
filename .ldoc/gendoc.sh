@@ -31,7 +31,7 @@ rm -rf "${d_export}"
 
 # generate items, settings, & crafts topics temp files
 echo -e "\ngenerating temp files ..."
-for script in "src" "settings" "crafts"; do
+for script in src settings; do
 	script="${d_ldoc}/parse_${script}.py"
 	if test ! -f "${script}"; then
 		echo "ERROR: script doesn't exist: ${script}"
@@ -57,7 +57,7 @@ if test ${retval} -ne 0; then
 fi
 
 echo -e "\ncleaning temp files ..."
-rm -vf "${d_ldoc}/"*.luadoc
+find "${d_ldoc}" -type f -name "*.luadoc" ! -name "crafting.luadoc" -exec rm -vf {} +
 
 # HACK: ldoc does not seem to like the "shields:" prefix
 echo -e "\ncompensating for LDoc's issue with \"shields:\" prefix ..."
@@ -72,7 +72,7 @@ sed -i \
 printf "\ncopying textures ..."
 mkdir -p "${d_data}"
 texture_count=0
-for d_mod in "3d_armor" "shields"; do
+for d_mod in armor_* shields; do
 	printf "\rcopying textures from ${d_mod} ...\n"
 	for png in $(find "${d_root}/${d_mod}/textures" -maxdepth 1 -type f -name "*.png"); do
 		if test -f "${d_data}/$(basename ${png})"; then
