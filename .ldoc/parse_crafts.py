@@ -13,7 +13,7 @@ d_ldoc = os.path.join(d_root, ".ldoc")
 craftfile = os.path.realpath(os.path.join(d_root, "3d_armor/armor.lua"))
 if not os.path.isfile(craftfile):
 	print("ERROR: craft file does not exist for parsing: {}".format(craftfile))
-	sys.exit(errnor.ENOENT)
+	sys.exit(errno.ENOENT)
 
 buffer = codecs.open(craftfile, "r", "utf-8")
 if not buffer:
