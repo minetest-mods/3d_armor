@@ -7,45 +7,6 @@
 3d_armor: Player name is nil @1=3d_armor: Имя игрока является nil @1
 3d_armor: Player reference is nil @1=3d_armor: Ссылка игрока является nil @1
 
-### armor.lua ###
-
-Admin Boots=ботинки админа
-Admin Chestplate=бронежилет админа
-Admin Helmet=шлем админа
-Admin Leggings=гамаши админа
-Bronze Boots=бронзовые ботинки
-Bronze Chestplate=бронзовый бронежилет
-Bronze Helmet=бронзовый шлем
-Bronze Leggings=бронзовые гамаши
-Cactus Boots=кактусовые ботинки
-Cactus Chestplate=кактусовый бронежилет
-Cactus Helmet=кактусовый шлем
-Cactus Leggings=кактусовые гамаши
-Crystal Boots=кристалловые ботинки
-Crystal Chestplate=кристалловый бронежилет
-Crystal Helmet=кристалловый шлем
-Crystal Leggings=кристалловые гамаши
-Diamond Boots=алмазные ботинки
-Diamond Chestplate=алмазный бронежилет
-Diamond Helmet=алмазный шлем
-Diamond Leggings=алмазные гамаши
-Gold Boots=золотые ботинки
-Gold Chestplate=золотой бронежилет
-Gold Helmet=золотой шлем
-Gold Leggings=золотые гамаши
-Mithril Boots=мифриловые ботинки
-Mithril Chestplate=мифриловый бронежилет
-Mithril Helmet=мифриловый шлем
-Mithril Leggings=мифриловые гамаши
-Steel Boots=стальные ботинки
-Steel Chestplate=стальной бронежилет
-Steel Helmet=стальной шлем
-Steel Leggings=стальные гамаши
-Wood Boots=деревянные ботинки
-Wood Chestplate=деревянный бронежилет
-Wood Helmet=деревянный шлем
-Wood Leggings=деревянные гамаши
-
 ### init.lua ###
 
 3d_armor: Failed to initialize player=3d_armor: не смог подготовить игрока

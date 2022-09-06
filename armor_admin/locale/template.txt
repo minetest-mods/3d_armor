@@ -1,0 +1,9 @@
+# textdomain: armor_admin
+
+
+### init.lua ###
+
+Admin Boots=
+Admin Chestplate=
+Admin Helmet=
+Admin Leggings=

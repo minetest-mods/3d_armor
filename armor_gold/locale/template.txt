@@ -1,0 +1,9 @@
+# textdomain: armor_gold
+
+
+### init.lua ###
+
+Gold Boots=
+Gold Chestplate=
+Gold Helmet=
+Gold Leggings=

@@ -1,0 +1,9 @@
+# textdomain: armor_diamond
+
+
+### init.lua ###
+
+Diamond Boots=
+Diamond Chestplate=
+Diamond Helmet=
+Diamond Leggings=
