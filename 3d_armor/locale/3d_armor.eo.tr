@@ -1,0 +1,9 @@
+# textdomain: 3d_armor
+
+Radiation=Radiado
+Level=Nivelo
+Heal=Sanigi
+Fire=Fajro
+Your @1 is almost broken!=Via @1 estas preskaŭ rompita!
+Your @1 got destroyed!=Via @1 detruiĝis!
+3d_armor: Failed to initialize player=3d_armour: Malsukcesis pravalorigi la ludanton
