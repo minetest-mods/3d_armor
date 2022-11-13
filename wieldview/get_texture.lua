@@ -7,13 +7,13 @@ if not node_tiles then
 end
 
 -- https://github.com/minetest/minetest/blob/9fc018ded10225589d2559d24a5db739e891fb31/doc/lua_api.txt#L453-L462
-function escape_texture(texturestring)
+local function escape_texture(texturestring)
 	-- store in a variable so we don't return both rvs of gsub
 	local v = texturestring:gsub("%^", "\\^"):gsub(":", "\\:")
 	return v
 end
 
-function memoize(func)
+local function memoize(func)
 	local memo = {}
 	return function(arg)
 		if arg == nil then
