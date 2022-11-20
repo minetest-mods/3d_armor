@@ -933,6 +933,10 @@ armor.get_valid_player = function(self, player, msg)
 		minetest.log("warning", ("3d_armor%s: Player reference is nil"):format(msg))
 		return
 	end
+	if type(player) ~= "userdata" then
+		-- Fake player, fail silently
+		return
+	end
 	local name = player:get_player_name()
 	if not name then
 		minetest.log("warning", ("3d_armor%s: Player name is nil"):format(msg))
