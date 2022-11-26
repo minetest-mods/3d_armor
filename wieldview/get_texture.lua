@@ -39,7 +39,7 @@ local function is_vertical_frames(animation)
 end
 
 local function get_single_frame(animation, image_name)
-	return ("smartshop_animation_mask.png^[resize:%ix%i^[mask:%s"):format(
+	return ("[combine:%ix%i^[noalpha^[colorize:#FFF:255^[mask:%s"):format(
 		animation.aspect_w,
 		animation.aspect_h,
 		image_name
