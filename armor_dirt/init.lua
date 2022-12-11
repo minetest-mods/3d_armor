@@ -7,107 +7,107 @@
 -- support for i18n
 local S = armor.get_translator
 
---- Wood
+--- Dirt
 --
---  Requires setting `armor_material_wood`.
+--  Requires setting `armor_material_dirt`.
 --
---  @section wood
+--  @section dirt
 
-if armor.materials.wood then
-	--- Wood Helmet
+if armor.materials.dirt then
+	--- Dirt Helmet
 	--
-	--  @helmet 3d_armor:helmet_wood
-	--  @img 3d_armor_inv_helmet_wood.png
+	--  @helmet 3d_armor:helmet_dirt
+	--  @img 3d_armor_inv_helmet_dirt.png
 	--  @grp armor_head 1
 	--  @grp armor_heal 0
-	--  @grp armor_use 2000
+	--  @grp armor_use 1500
 	--  @grp flammable 1
 	--  @armorgrp fleshy 5
-	--  @damagegrp cracky 3
-	--  @damagegrp snappy 2
-	--  @damagegrp choppy 3
-	--  @damagegrp crumbly 2
+	--  @damagegrp cracky 4
+	--  @damagegrp snappy 3
+	--  @damagegrp choppy 4
+	--  @damagegrp crumbly 3
 	--  @damagegrp level 1
-	armor:register_armor(":3d_armor:helmet_wood", {
-		description = S("Wood Helmet"),
-		inventory_image = "3d_armor_inv_helmet_wood.png",
-		groups = {armor_head=1, armor_heal=0, armor_use=2000, flammable=1},
+	armor:register_armor(":3d_armor:helmet_dirt", {
+		description = S("Dirt Helmet"),
+		inventory_image = "3d_armor_inv_helmet_dirt.png",
+		groups = {armor_head=1, armor_heal=0, armor_use=1500, flammable=1},
 		armor_groups = {fleshy=5},
-		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
+		damage_groups = {cracky=4, snappy=3, choppy=4, crumbly=3, level=1},
 	})
-	--- Wood Chestplate
+	--- Dirt Chestplate
 	--
-	--  @chestplate 3d_armor:chestplate_wood
-	--  @img 3d_armor_inv_chestplate_wood.png
+	--  @chestplate 3d_armor:chestplate_dirt
+	--  @img 3d_armor_inv_chestplate_dirt.png
 	--  @grp armor_torso 1
 	--  @grp armor_heal 0
-	--  @grp armor_use 2000
+	--  @grp armor_use 1500
 	--  @grp flammable 1
 	--  @armorgrp fleshy 10
-	--  @damagegrp cracky 3
-	--  @damagegrp snappy 2
-	--  @damagegrp choppy 3
-	--  @damagegrp crumbly 2
+	--  @damagegrp cracky 4
+	--  @damagegrp snappy 3
+	--  @damagegrp choppy 4
+	--  @damagegrp crumbly 3
 	--  @damagegrp level 1
-	armor:register_armor(":3d_armor:chestplate_wood", {
-		description = S("Wood Chestplate"),
-		inventory_image = "3d_armor_inv_chestplate_wood.png",
-		groups = {armor_torso=1, armor_heal=0, armor_use=2000, flammable=1},
+	armor:register_armor(":3d_armor:chestplate_dirt", {
+		description = S("Dirt Chestplate"),
+		inventory_image = "3d_armor_inv_chestplate_dirt.png",
+		groups = {armor_torso=1, armor_heal=0, armor_use=1500, flammable=1},
 		armor_groups = {fleshy=10},
-		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
+		damage_groups = {cracky=4, snappy=3, choppy=4, crumbly=3, level=1},
 	})
-	--- Wood Leggings
+	--- Dirt Leggings
 	--
-	--  @leggings 3d_armor:leggings_wood
-	--  @img 3d_armor_inv_leggings_wood.png
+	--  @leggings 3d_armor:leggings_dirt
+	--  @img 3d_armor_inv_leggings_dirt.png
 	--  @grp armor_legs 1
 	--  @grp armor_heal 0
-	--  @grp armor_use 1000
+	--  @grp armor_use 1500
 	--  @grp flammable 1
 	--  @armorgrp fleshy 10
-	--  @damagegrp cracky 3
-	--  @damagegrp snappy 2
-	--  @damagegrp choppy 3
-	--  @damagegrp crumbly 2
+	--  @damagegrp cracky 4
+	--  @damagegrp snappy 3
+	--  @damagegrp choppy 4
+	--  @damagegrp crumbly 3
 	--  @damagegrp level 1
-	armor:register_armor(":3d_armor:leggings_wood", {
-		description = S("Wood Leggings"),
-		inventory_image = "3d_armor_inv_leggings_wood.png",
-		groups = {armor_legs=1, armor_heal=0, armor_use=2000, flammable=1},
+	armor:register_armor(":3d_armor:leggings_dirt", {
+		description = S("Dirt Leggings"),
+		inventory_image = "3d_armor_inv_leggings_dirt.png",
+		groups = {armor_legs=1, armor_heal=0, armor_use=1500, flammable=1},
 		armor_groups = {fleshy=10},
-		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
+		damage_groups = {cracky=4, snappy=3, choppy=4, crumbly=3, level=1},
 	})
-	--- Wood Boots
+	--- Dirt Boots
 	--
-	--  @boots 3d_armor:boots_wood
-	--  @img 3d_armor_inv_boots_wood.png
+	--  @boots 3d_armor:boots_dirt
+	--  @img 3d_armor_inv_boots_dirt.png
 	--  @grp armor_feet 1
 	--  @grp armor_heal 0
-	--  @grp armor_use 2000
+	--  @grp armor_use 1500
 	--  @grp flammable 1
 	--  @armorgrp fleshy 5
-	--  @damagegrp cracky 3
-	--  @damagegrp snappy 2
-	--  @damagegrp choppy 3
-	--  @damagegrp crumbly 2
+	--  @damagegrp cracky 4
+	--  @damagegrp snappy 3
+	--  @damagegrp choppy 4
+	--  @damagegrp crumbly 3
 	--  @damagegrp level 1
-	armor:register_armor(":3d_armor:boots_wood", {
-		description = S("Wood Boots"),
-		inventory_image = "3d_armor_inv_boots_wood.png",
+	armor:register_armor(":3d_armor:boots_dirt", {
+		description = S("Dirt Boots"),
+		inventory_image = "3d_armor_inv_boots_dirt.png",
 		armor_groups = {fleshy=5},
-		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
-		groups = {armor_feet=1, armor_heal=0, armor_use=2000, flammable=1},
+		damage_groups = {cracky=4, snappy=3, choppy=4, crumbly=3, level=1},
+		groups = {armor_feet=1, armor_heal=0, armor_use=1500, flammable=1},
 	})
-	local wood_armor_fuel = {
-		helmet = 6,
-		chestplate = 8,
-		leggings = 7,
-		boots = 5
+	local dirt_armor_fuel = {
+		helmet = 5,
+		chestplate = 7,
+		leggings = 6,
+		boots = 4
 	}
-	for armor, burn in pairs(wood_armor_fuel) do
+	for armor, burn in pairs(dirt_armor_fuel) do
 		minetest.register_craft({
 			type = "fuel",
-			recipe = "3d_armor:" .. armor .. "_wood",
+			recipe = "3d_armor:" .. armor .. "_dirt",
 			burntime = burn,
 		})
 	end
@@ -122,7 +122,7 @@ if armor.materials.wood then
 	--  @usage
 	--  Key:
 	--  - m: material
-	--    - wood:    group:wood
+	--    - dirt:    group:dirt
 	--    - cactus:  default:cactus
 	--    - steel:   default:steel_ingot
 	--    - bronze:  default:bronze_ingot
@@ -150,8 +150,8 @@ if armor.materials.wood then
 	--  │ m │   │ m │  │   │ m │   │
 	--  └───┴───┴───┘  └───┴───┴───┘
 
-	local s = "wood"
-	local m = armor.materials.wood
+	local s = "dirt"
+	local m = armor.materials.dirt
 	minetest.register_craft({
 		output = "3d_armor:helmet_"..s,
 		recipe = {

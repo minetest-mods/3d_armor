@@ -1,9 +1,9 @@
-# textdomain: armor_wood
+# textdomain: armor_dirt
 
 
 ### init.lua ###
 
-Wood Boots=
-Wood Chestplate=
-Wood Helmet=
-Wood Leggings=
+Dirt Boots=
+Dirt Chestplate=
+Dirt Helmet=
+Dirt Leggings=
