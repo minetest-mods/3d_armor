@@ -179,3 +179,6 @@ if armor.materials.bronze then
 		},
 	})
 end
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor - Armor Bronze loaded")
