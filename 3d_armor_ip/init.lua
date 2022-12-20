@@ -36,3 +36,6 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		inventory_plus.set_inventory_formspec(player, formspec)
 	end
 end)
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor IP loaded")
