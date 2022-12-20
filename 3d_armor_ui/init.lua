@@ -59,3 +59,6 @@ unified_inventory.register_page("armor", {
 		return {formspec=formspec}
 	end,
 })
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor UI loaded")
