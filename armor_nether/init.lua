@@ -166,3 +166,6 @@ if armor.materials.nether then
 	})
 
 end
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor - Armor Nether loaded")
