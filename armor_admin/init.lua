@@ -92,3 +92,6 @@ minetest.register_alias("adminboots", "3d_armor:boots_admin")
 minetest.register_alias("adminhelmet", "3d_armor:helmet_admin")
 minetest.register_alias("adminchestplate", "3d_armor:chestplate_admin")
 minetest.register_alias("adminleggings", "3d_armor:leggings_admin")
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor - Armor Admin loaded")
