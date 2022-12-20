@@ -164,3 +164,6 @@ if armor.materials.diamond then
 		},
 	})
 end
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor - Armor Diamond loaded")
