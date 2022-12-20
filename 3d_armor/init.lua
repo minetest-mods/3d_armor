@@ -509,3 +509,6 @@ if armor.config.fire_protect == true then
 		return hp_change
 	end, true)
 end
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor loaded")
