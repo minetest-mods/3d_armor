@@ -75,3 +75,6 @@ minetest.register_globalstep(function(dtime)
 		time = 0
 	end
 end)
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor - Wield View  loaded")
