@@ -181,3 +181,6 @@ if armor.materials.cactus then
 		},
 	})
 end
+
+-- print to log after mod was loaded successfully
+print ("[MOD] 3D Armor - Armor Cactus loaded")
