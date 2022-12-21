@@ -19,3 +19,11 @@ armor:register_on_update(function(player)
 		sfinv.set_player_inventory_formspec(player)
 	end
 end)
+
+-- print to log after mod was loaded successfully
+local load_message = "[MOD] 3D Armor SF Inv loaded"
+if minetest.log then
+	minetest.log("info", load_message) -- aims at state of the art MT software
+else
+	print (load_message)  -- aims at legacy MT software used in the field
+end

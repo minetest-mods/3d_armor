@@ -92,3 +92,11 @@ minetest.register_alias("adminboots", "3d_armor:boots_admin")
 minetest.register_alias("adminhelmet", "3d_armor:helmet_admin")
 minetest.register_alias("adminchestplate", "3d_armor:chestplate_admin")
 minetest.register_alias("adminleggings", "3d_armor:leggings_admin")
+
+-- print to log after mod was loaded successfully
+local load_message = "[MOD] 3D Armor - Armor Admin loaded"
+if minetest.log then
+	minetest.log("info", load_message) -- aims at state of the art MT software
+else
+	print (load_message)  -- aims at legacy MT software used in the field
+end

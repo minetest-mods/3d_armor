@@ -164,3 +164,11 @@ if armor.materials.diamond then
 		},
 	})
 end
+
+-- print to log after mod was loaded successfully
+local load_message = "[MOD] 3D Armor - Armor Diamond loaded"
+if minetest.log then
+	minetest.log("info", load_message) -- aims at state of the art MT software
+else
+	print (load_message)  -- aims at legacy MT software used in the field
+end

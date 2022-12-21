@@ -509,3 +509,11 @@ if armor.config.fire_protect == true then
 		return hp_change
 	end, true)
 end
+
+-- print to log after mod was loaded successfully
+local load_message = "[MOD] 3D Armor loaded"
+if minetest.log then
+	minetest.log("info", load_message) -- aims at state of the art MT software
+else
+	print (load_message)  -- aims at legacy MT software used in the field
+end
