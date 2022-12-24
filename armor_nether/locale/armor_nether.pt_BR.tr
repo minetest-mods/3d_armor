@@ -1,9 +1,5 @@
 # textdomain: armor_nether
-
-
-### init.lua ###
-
-Nether Boots=Botas de Nether
-Nether Chestplate=Peitoral de Nether
 Nether Helmet=Capacete de Nether
+Nether Chestplate=Peitoral de Nether
 Nether Leggings=Calças de Nether
+Nether Boots=Botas de Nether

@@ -1,12 +1,8 @@
 # textdomain: 3d_armor_ui
-
-
-### init.lua ###
-
-3d Armor=
-Armor=
+3D Armor=
 Armor not initialized!=
-Fire=
-Heal=
+Armor=
 Level=
+Heal=
+Fire=
 Radiation=

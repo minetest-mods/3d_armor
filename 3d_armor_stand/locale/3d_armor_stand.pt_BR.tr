@@ -1,10 +1,5 @@
 # textdomain: 3d_armor_stand
-
-
-### init.lua ###
-
+Armor Stand Top=Topo do suporte de armadura
 Armor Stand=Suporte de Armadura
+Locked Armor Stand=Suporte de armadura trancado
 Armor Stand (owned by @1)=Suporte de Armadura (dono: @1)
-Armor stand=Suporte de armadura
-Armor stand top=Topo do suporte de armadura
-Locked Armor stand=Suporte de armadura trancado

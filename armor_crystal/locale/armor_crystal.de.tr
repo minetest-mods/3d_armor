@@ -1,9 +1,5 @@
 # textdomain: armor_crystal
-
-
-### init.lua ###
-
-Crystal Boots=Kristallstiefel
-Crystal Chestplate=Kristallbrustplatte
 Crystal Helmet=Kristallhelm
+Crystal Chestplate=Kristallbrustplatte
 Crystal Leggings=Kristallhose
+Crystal Boots=Kristallstiefel

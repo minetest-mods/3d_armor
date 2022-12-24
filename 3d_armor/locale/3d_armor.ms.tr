@@ -1,47 +1,7 @@
 # textdomain: 3d_armor
-
-
-### api.lua ###
-
-3d_armor: Detached armor inventory is nil @1=3d_armor: Inventori perisai terpisah tiada nilai @1
-3d_armor: Player name is nil @1=3d_armor: Nama pemain tiada nilai @1
-3d_armor: Player reference is nil @1=3d_armor: Rujukan pemain tiada nilai @1
-
-### init.lua ###
-
-3d_armor: Failed to initialize player=3d_armor: Gagal mengasalkan pemain
-Fire=Api
-Heal=Pulih
-Level=Tahap
 Radiation=Radiasi
-Your @1 got destroyed!=@1 anda telah musnah!
+Level=Tahap
+Heal=Pulih
+Fire=Api
 Your @1 is almost broken!=
-[3d_armor] Fire Nodes disabled=[3d_armor] Nod-nod Api dilumpuhkan
-
-
-##### not used anymore #####
-
-3d_armor_ip: Mod loaded but unused.=3d_armor_ip: Mods dimuatkan tetapi tidak digunakan.
-Back=Kembali
-Armor=Perisai
-3d_armor_sfinv: Mod loaded but unused.=3d_armor_sfinv: Mods dimuatkan tetapi tidak digunakan.
-Armor stand top=Bhg atas dirian perisai
-Armor stand=Dirian perisai
-Armor Stand=Dirian Perisai
-Locked Armor stand=Dirian perisai Berkunci
-Armor Stand (owned by @1)=Dirian Perisai (milik @1)
-3d_armor_ui: Mod loaded but unused.=3d_armor_ui: Mods dimuatkan tetapi tidak digunakan.
-3d Armor=Perisai 3d
-Armor not initialized!=Perisai tidak diasalkan!
-Admin Shield=Perisai Pegang Pentadbir
-Wooden Shield=Perisai Pegang Kayu
-Enhanced Wood Shield=Perisai Pegang Kayu Kukuh
-Cactus Shield=Perisai Pegang Kaktus
-Enhanced Cactus Shield=Perisai Pegang Kaktus Kukuh
-Steel Shield=Perisai Pegang Keluli
-Bronze Shield=Perisai Pegang Gangsa
-Diamond Shield=Perisai Pegang Intan
-Gold Shield=Perisai Pegang Emas
-Mithril Shield=Perisai Pegang Mithril
-Crystal Shield=Perisai Pegang Kristal
-Nether Shield=Perisai Pegang Nether
+Your @1 got destroyed!=@1 anda telah musnah!

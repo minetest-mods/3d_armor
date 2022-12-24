@@ -1,8 +1,3 @@
 # textdomain: 3d_armor_ip
-
-
-### init.lua ###
-
-3d_armor_ip: Mod loaded but unused.=3d_armor_ip: Mod carregado porém sem uso.
-Armor=Armadura
 Back=Voltar
+Armor=Armadura

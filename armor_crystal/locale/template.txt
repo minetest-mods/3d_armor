@@ -1,9 +1,5 @@
 # textdomain: armor_crystal
-
-
-### init.lua ###
-
-Crystal Boots=
-Crystal Chestplate=
 Crystal Helmet=
+Crystal Chestplate=
 Crystal Leggings=
+Crystal Boots=

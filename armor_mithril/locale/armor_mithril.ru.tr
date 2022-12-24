@@ -1,9 +1,5 @@
 # textdomain: armor_mithril
-
-
-### init.lua ###
-
-Mithril Boots=мифриловые ботинки
-Mithril Chestplate=мифриловый бронежилет
 Mithril Helmet=мифриловый шлем
+Mithril Chestplate=мифриловый бронежилет
 Mithril Leggings=мифриловые гамаши
+Mithril Boots=мифриловые ботинки

@@ -1,9 +1,5 @@
 # textdomain: armor_wood
-
-
-### init.lua ###
-
-Wood Boots=Holzstiefel
-Wood Chestplate=Holzbrustplatte
 Wood Helmet=Holzhelm
+Wood Chestplate=Holzbrustplatte
 Wood Leggings=Holzhose
+Wood Boots=Holzstiefel

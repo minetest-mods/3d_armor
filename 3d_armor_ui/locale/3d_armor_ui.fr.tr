@@ -1,12 +1,8 @@
 # textdomain: 3d_armor_ui
-
-
-### init.lua ###
-
-3d Armor=Armure 3d
-Armor=Armure
+3D Armor=Armure 3D
 Armor not initialized!=Armure non initialisée !
-Fire=Feu
-Heal=Soins
+Armor=Armure
 Level=Niveau
+Heal=Soins
+Fire=Feu
 Radiation=Radiation

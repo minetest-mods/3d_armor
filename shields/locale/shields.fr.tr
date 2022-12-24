@@ -1,17 +1,13 @@
 # textdomain: shields
-
-
-### init.lua ###
-
 Admin Shield=Bouclier d'admin
-Bronze Shield=Bouclier en bronze
-Cactus Shield=Bouclier en cactus
-Crystal Shield=Bouclier en cristal
-Nether Shield=Bouclier en nether
-Diamond Shield=Bouclier en diamant
-Enhanced Cactus Shield=Bouclier en cactus amélioré
+Wooden Shield=Bouclier en bois
 Enhanced Wood Shield=Bouclier en bois amélioré
+Cactus Shield=Bouclier en cactus
+Enhanced Cactus Shield=Bouclier en cactus amélioré
+Steel Shield=Bouclier en acier
+Bronze Shield=Bouclier en bronze
+Diamond Shield=Bouclier en diamant
 Gold Shield=Bouclier en or
 Mithril Shield=Bouclier en mithril
-Steel Shield=Bouclier en acier
-Wooden Shield=Bouclier en bois
+Crystal Shield=Bouclier en cristal
+Nether Shield=Bouclier en nether

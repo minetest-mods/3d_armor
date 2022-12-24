@@ -1,9 +1,5 @@
 # textdomain: armor_bronze
-
-
-### init.lua ###
-
-Bronze Boots=
-Bronze Chestplate=
 Bronze Helmet=
+Bronze Chestplate=
 Bronze Leggings=
+Bronze Boots=

@@ -1,9 +1,5 @@
 # textdomain: armor_diamond
-
-
-### init.lua ###
-
-Diamond Boots=алмазные ботинки
-Diamond Chestplate=алмазный бронежилет
 Diamond Helmet=алмазный шлем
+Diamond Chestplate=алмазный бронежилет
 Diamond Leggings=алмазные гамаши
+Diamond Boots=алмазные ботинки

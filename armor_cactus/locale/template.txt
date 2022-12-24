@@ -1,9 +1,5 @@
 # textdomain: armor_cactus
-
-
-### init.lua ###
-
-Cactus Boots=
-Cactus Chestplate=
 Cactus Helmet=
+Cactus Chestplate=
 Cactus Leggings=
+Cactus Boots=

@@ -1,9 +1,5 @@
 # textdomain: armor_steel
-
-
-### init.lua ###
-
-Steel Boots=Stahlstiefel
-Steel Chestplate=Stahlbrustplatte
 Steel Helmet=Stahlhelm
+Steel Chestplate=Stahlbrustplatte
 Steel Leggings=Stahlhose
+Steel Boots=Stahlstiefel

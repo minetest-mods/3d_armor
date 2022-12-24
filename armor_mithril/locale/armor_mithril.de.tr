@@ -1,9 +1,5 @@
 # textdomain: armor_mithril
-
-
-### init.lua ###
-
-Mithril Boots=Mithrilstiefel
-Mithril Chestplate=Mithrilbrustplatte
 Mithril Helmet=Mithrilhelm
+Mithril Chestplate=Mithrilbrustplatte
 Mithril Leggings=Mithrilhose
+Mithril Boots=Mithrilstiefel

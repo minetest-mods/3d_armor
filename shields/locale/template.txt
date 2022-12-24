@@ -1,17 +1,13 @@
 # textdomain: shields
-
-
-### init.lua ###
-
 Admin Shield=
-Bronze Shield=
-Cactus Shield=
-Crystal Shield=
-Nether Shield=
-Diamond Shield=
-Enhanced Cactus Shield=
+Wooden Shield=
 Enhanced Wood Shield=
+Cactus Shield=
+Enhanced Cactus Shield=
+Steel Shield=
+Bronze Shield=
+Diamond Shield=
 Gold Shield=
 Mithril Shield=
-Steel Shield=
-Wooden Shield=
+Crystal Shield=
+Nether Shield=

@@ -1,9 +1,5 @@
 # textdomain: armor_steel
-
-
-### init.lua ###
-
-Steel Boots=
-Steel Chestplate=
 Steel Helmet=
+Steel Chestplate=
 Steel Leggings=
+Steel Boots=

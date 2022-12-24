@@ -1,9 +1,5 @@
 # textdomain: armor_gold
-
-
-### init.lua ###
-
-Gold Boots=Goldstiefel
-Gold Chestplate=Goldbrustplatte
 Gold Helmet=Goldhelm
+Gold Chestplate=Goldbrustplatte
 Gold Leggings=Goldhose
+Gold Boots=Goldstiefel

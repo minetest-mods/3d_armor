@@ -134,7 +134,7 @@ local function remove_hidden_node(pos)
 end
 
 minetest.register_node("3d_armor_stand:top", {
-	description = S("Armor stand top"),
+	description = S("Armor Stand Top"),
 	paramtype = "light",
 	drawtype = "plantlike",
 	sunlight_propagates = true,
@@ -149,7 +149,7 @@ minetest.register_node("3d_armor_stand:top", {
 })
 
 minetest.register_node("3d_armor_stand:armor_stand", {
-	description = S("Armor stand"),
+	description = S("Armor Stand"),
 	drawtype = "mesh",
 	mesh = "3d_armor_stand.obj",
 	tiles = {"3d_armor_stand.png"},
@@ -218,7 +218,7 @@ minetest.register_node("3d_armor_stand:armor_stand", {
 })
 
 minetest.register_node("3d_armor_stand:locked_armor_stand", {
-	description = S("Locked Armor stand"),
+	description = S("Locked Armor Stand"),
 	drawtype = "mesh",
 	mesh = "3d_armor_stand.obj",
 	tiles = {"3d_armor_stand_locked.png"},

@@ -1,17 +1,13 @@
 # textdomain: shields
-
-
-### init.lua ###
-
 Admin Shield=Escudo de Administrador
-Bronze Shield=Escudo de Bronze
-Cactus Shield=Escudo de Cacto
-Crystal Shield=Escudo de Cristal
-Nether Shield=Escudo de Nether
-Diamond Shield=Escudo de Diamante
-Enhanced Cactus Shield=Escude de Cacto Encantado
+Wooden Shield=Escudo de Madeira
 Enhanced Wood Shield=Escudo de Madeira Encantado
+Cactus Shield=Escudo de Cacto
+Enhanced Cactus Shield=Escude de Cacto Encantado
+Steel Shield=Escudo de Aço
+Bronze Shield=Escudo de Bronze
+Diamond Shield=Escudo de Diamante
 Gold Shield=Escudo de Ouro
 Mithril Shield=Escudo de Mithril
-Steel Shield=Escudo de Aço
-Wooden Shield=Escudo de Madeira
+Crystal Shield=Escudo de Cristal
+Nether Shield=Escudo de Nether
