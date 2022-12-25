@@ -1,9 +1,5 @@
 # textdomain: armor_nether
-
-
-### init.lua ###
-
-Nether Boots=адские ботинки
-Nether Chestplate=адский бронежилет
 Nether Helmet=адский шлем
+Nether Chestplate=адский бронежилет
 Nether Leggings=адские гамаши
+Nether Boots=адские ботинки

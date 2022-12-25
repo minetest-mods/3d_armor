@@ -1,9 +1,5 @@
 # textdomain: armor_gold
-
-
-### init.lua ###
-
-Gold Boots=золотые ботинки
-Gold Chestplate=золотой бронежилет
 Gold Helmet=золотой шлем
+Gold Chestplate=золотой бронежилет
 Gold Leggings=золотые гамаши
+Gold Boots=золотые ботинки

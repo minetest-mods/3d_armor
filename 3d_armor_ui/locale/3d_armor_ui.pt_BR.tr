@@ -1,12 +1,8 @@
 # textdomain: 3d_armor_ui
-
-
-### init.lua ###
-
-3d Armor=3d Armor
-Armor=Armadura
+3D Armor=3D Armor
 Armor not initialized!=Armadura não inicializada!
-Fire=Fogo
-Heal=Vida
+Armor=Armadura
 Level=Nível
+Heal=Vida
+Fire=Fogo
 Radiation=Radiação

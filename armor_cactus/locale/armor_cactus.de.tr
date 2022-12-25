@@ -1,9 +1,5 @@
 # textdomain: armor_cactus
-
-
-### init.lua ###
-
-Cactus Boots=Kaktusstiefel
-Cactus Chestplate=Kaktusbrustplatte
 Cactus Helmet=Kaktushelm
+Cactus Chestplate=Kaktusbrustplatte
 Cactus Leggings=Kaktushose
+Cactus Boots=Kaktusstiefel

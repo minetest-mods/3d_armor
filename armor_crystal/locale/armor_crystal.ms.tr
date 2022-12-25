@@ -1,9 +1,5 @@
 # textdomain: armor_crystal
-
-
-### init.lua ###
-
-Crystal Boots=But Kristal
-Crystal Chestplate=Perisai Dada Kristal
 Crystal Helmet=Helmet Kristal
+Crystal Chestplate=Perisai Dada Kristal
 Crystal Leggings=Perisai Kaki Kristal
+Crystal Boots=But Kristal

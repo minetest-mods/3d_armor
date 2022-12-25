@@ -1,9 +1,5 @@
 # textdomain: armor_diamond
-
-
-### init.lua ###
-
-Diamond Boots=Diamantstiefel
-Diamond Chestplate=Diamantbrustplatte
 Diamond Helmet=Diamanthelm
+Diamond Chestplate=Diamantbrustplatte
 Diamond Leggings=Diamanthose
+Diamond Boots=Diamantstiefel

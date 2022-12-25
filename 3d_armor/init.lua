@@ -453,7 +453,7 @@ minetest.register_globalstep(function(dtime)
 		local remove = init_player_armor(player) == true
 		pending_players[player] = count + 1
 		if remove == false and count > armor.config.init_times then
-			minetest.log("warning", S("3d_armor: Failed to initialize player"))
+			minetest.log("warning", "3d_armor: Failed to initialize player")
 			remove = true
 		end
 		if remove == true then

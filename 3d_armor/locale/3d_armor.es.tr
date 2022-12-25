@@ -1,19 +1,7 @@
 # textdomain: 3d_armor
-
-
-### api.lua ###
-
-3d_armor: Detached armor inventory is nil @1=3d_armor: La armadura desconectada es nula @1
-3d_armor: Player name is nil @1=3d_armor: El nombre del jugador es nulo @1
-3d_armor: Player reference is nil @1=3d_armor: La referencia del jugador es nula @1
-
-### init.lua ###
-
-3d_armor: Failed to initialize player=3d_armor: Fallo en la inicialización del jugador
-Fire=Fuego
-Heal=Salud
-Level=Nivel
 Radiation=Radiación
-Your @1 got destroyed!=¡Tu @1 fue destruído!
+Level=Nivel
+Heal=Salud
+Fire=Fuego
 Your @1 is almost broken!=¡Tu @1 esta a punto de romperse!
-[3d_armor] Fire Nodes disabled=[3d_armor] Nodos de fuego desabilitados
+Your @1 got destroyed!=¡Tu @1 fue destruído!

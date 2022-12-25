@@ -1,9 +1,5 @@
 # textdomain: armor_crystal
-
-
-### init.lua ###
-
-Crystal Boots=кристалловые ботинки
-Crystal Chestplate=кристалловый бронежилет
 Crystal Helmet=кристалловый шлем
+Crystal Chestplate=кристалловый бронежилет
 Crystal Leggings=кристалловые гамаши
+Crystal Boots=кристалловые ботинки

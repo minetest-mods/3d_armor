@@ -1,9 +1,5 @@
 # textdomain: armor_admin
-
-
-### init.lua ###
-
-Admin Boots=Adminstiefel
-Admin Chestplate=Adminbrustplatte
 Admin Helmet=Adminhelm
+Admin Chestplate=Adminbrustplatte
 Admin Leggings=Adminhose
+Admin Boots=Adminstiefel

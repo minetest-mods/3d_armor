@@ -1,9 +1,5 @@
 # textdomain: armor_wood
-
-
-### init.lua ###
-
-Wood Boots=Bottes en bois
-Wood Chestplate=Cuirasse en bois
 Wood Helmet=Casque en bois
+Wood Chestplate=Cuirasse en bois
 Wood Leggings=Jambières en bois
+Wood Boots=Bottes en bois
