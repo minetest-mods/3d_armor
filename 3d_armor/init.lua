@@ -303,6 +303,10 @@ player_api.register_model("3d_armor_character.b3d", {
 		mine = {x=189, y=198},
 		walk_mine = {x=200, y=219},
 		sit = {x=81, y=160},
+		-- compatibility w/ the emote mod
+		wave = {x = 192, y = 196, override_local = true},
+		point = {x = 196, y = 196, override_local = true},
+		freeze = {x = 205, y = 205, override_local = true},
 	},
 })
 
