@@ -477,22 +477,14 @@ minetest.register_globalstep(function(dtime)
 	end
 end)
 
--- Fire Protection, added by TenPlus1.
 if armor.config.fire_protect == true then
-	-- override any hot nodes that do not already deal damage
-	for _, row in pairs(armor.fire_nodes) do
-		if minetest.registered_nodes[row[1]] then
-			local damage = minetest.registered_nodes[row[1]].damage_per_second
-			if not damage or damage == 0 then
-				minetest.override_item(row[1], {damage_per_second = row[3]})
-			end
-		end
-	end
-else
-	print ("[3d_armor] Fire Nodes disabled")
-end
 
-if armor.config.fire_protect == true then
+	-- make torches hurt
+	minetest.override_item("default:torch", {damage_per_second = 1})
+	minetest.override_item("default:torch_wall", {damage_per_second = 1})
+	minetest.override_item("default:torch_ceiling", {damage_per_second = 1})
+
+	-- check player damage for any hot nodes we may be protected against
 	minetest.register_on_player_hpchange(function(player, hp_change, reason)
 
 		if reason.type == "node_damage" and reason.node then
@@ -501,9 +493,7 @@ if armor.config.fire_protect == true then
 				local name = player:get_player_name()
 				for _,igniter in pairs(armor.fire_nodes) do
 					if reason.node == igniter[1] then
-						if armor.def[name].fire < igniter[2] then
-							armor:punch(player, "fire")
-						else
+						if armor.def[name].fire >= igniter[2] then
 							hp_change = 0
 						end
 					end
