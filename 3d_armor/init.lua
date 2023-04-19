@@ -414,21 +414,29 @@ if armor.config.punch_damage == true then
 end
 
 minetest.register_on_player_hpchange(function(player, hp_change, reason)
-	if player and reason.type ~= "drown" and reason.hunger == nil
-			and hp_change < 0 then
-		local name = player:get_player_name()
-		if name then
-			local heal = armor.def[name].heal
-			if heal >= math.random(100) then
-				hp_change = 0
-			end
-			-- check if armor damage was handled by fire or on_punchplayer
-			local time = last_punch_time[name] or 0
-			if time == 0 or time + 1 < minetest.get_gametime() then
-				armor:punch(player)
-			end
+	if not minetest.is_player(player) then
+		return hp_change
+	end
+
+	if reason.type == "drown" or reason.hunger or hp_change >= 0 then
+		return hp_change
+	end
+
+	local name = player:get_player_name()
+	local properties = player:get_properties()
+	local hp = player:get_hp()
+	if hp + hp_change < properties.hp_max then
+		local heal = armor.def[name].heal
+		if heal >= math.random(100) then
+			hp_change = 0
+		end
+		-- check if armor damage was handled by fire or on_punchplayer
+		local time = last_punch_time[name] or 0
+		if time == 0 or time + 1 < minetest.get_gametime() then
+			armor:punch(player)
 		end
 	end
+
 	return hp_change
 end, true)
 
