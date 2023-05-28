@@ -224,6 +224,11 @@ local function init_player_armor(initplayer)
 			if player:get_player_name() ~= name then
 				return 0
 			end
+			--cursed items cannot be unequiped by the player
+			local is_cursed = minetest.get_item_group(stack:get_name(), "cursed") ~= 0
+			if not minetest.is_creative_enabled(player) and is_cursed then
+				return 0
+			end
 			return stack:get_count()
 		end,
 		allow_move = function(inv, from_list, from_index, to_list, to_index, count, player)
@@ -355,9 +360,12 @@ if armor.config.drop == true or armor.config.destroy == true then
 		for i=1, armor_inv:get_size("armor") do
 			local stack = armor_inv:get_stack("armor", i)
 			if stack:get_count() > 0 then
-				table.insert(drop, stack)
-				armor:run_callbacks("on_unequip", player, i, stack)
-				armor_inv:set_stack("armor", i, nil)
+				--soulbound armors remain equipped after death
+				if minetest.get_item_group(stack:get_name(), "soulbound") == 0 then
+					table.insert(drop, stack)
+					armor:run_callbacks("on_unequip", player, i, stack)
+					armor_inv:set_stack("armor", i, nil)
+				end
 			end
 		end
 		armor:save_armor_inventory(player)
@@ -393,8 +401,8 @@ if armor.config.drop == true or armor.config.destroy == true then
 			end)
 		end
 	end)
-else -- reset un-dropped armor and it's effects
 	minetest.register_on_respawnplayer(function(player)
+		-- reset un-dropped armor and it's effects
 		armor:set_player_armor(player)
 	end)
 end
