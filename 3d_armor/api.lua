@@ -681,6 +681,10 @@ armor.equip = function(self, player, itemstack)
 		for i=1, armor_inv:get_size("armor") do
 			local stack = armor_inv:get_stack("armor", i)
 			if self:get_element(stack:get_name()) == armor_element then
+				--prevents equiping an armor that would unequip a cursed armor.
+				if minetest.get_item_group(stack:get_name(), "cursed") ~= 0 then
+					return itemstack
+				end
 				index = i
 				self:unequip(player, armor_element)
 				break
