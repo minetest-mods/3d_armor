@@ -631,6 +631,9 @@ end
 armor.damage = function(self, player, index, stack, use)
 	local old_stack = ItemStack(stack)
 	local worn_armor = armor:get_weared_armor_elements(player)
+	if not worn_armor then
+		return
+	end
 	local armor_worn_cnt = 0
 	for k,v in pairs(worn_armor) do
 		armor_worn_cnt = armor_worn_cnt + 1
