@@ -1,7 +1,7 @@
 # textdomain: 3d_armor
-Radiation=Strahlen
+Radiation=Strahlung
 Level=Stufe
-Heal=Heilen
+Heal=Heliung
 Fire=Feuer
-Your @1 is almost broken!=Deine @1 ist fast kaputt!
-Your @1 got destroyed!=Deine @1 wurde zerstört!
+Your @1 is almost broken!=@1 ist fast kaputt!
+Your @1 got destroyed!=@1 wurde zerstört!
