@@ -6,7 +6,7 @@
 |-[Armor Configuration](#armor-configuration)                               |||- - [3d_Armor Item Storage](#3d_armor-item-storage)
 |- - [disable_specific_materials](#to-disable-individual-armor-materials)   |||- - [Armor Registration](#armor-registration)
 |- - [armor_init_delay](#initialization-glitches-when-a-player-first-joins) |||- - [Registering Armor Groups](#registering-armor-groups)
-|- - [armor_init_times](#number-of-initialization-attempts)                 |||- - [Groups used by 3d_Armor](#groups-used-by-3d_armor)
+|- - [wieldview_update_time](#how-often-player-wield-items-are-updated)     |||- - [Groups used by 3d_Armor](#groups-used-by-3d_armor)
 |- - [armor_bones_delay](#armor-not-in-bones-due-to-server-lag)             |||- - - [Elements](#elements)
 |- - [armor_update_time](#how-often-player-armor-items-are-updated)         |||- - - [Attributes](#attributes)
 |- - [armor_drop](#drop-armor-when-a-player-dies)                           |||- - - [Physics](#physics)
@@ -19,7 +19,7 @@
 |- - [armor_fire_protect](#enable-fire-protection)                          |||- - - [armor:remove_all](#armor-remove_all)
 |- - [armor_punch_damage](#enable-punch-damage-effects)                     |||- - - [armor:equip](#armor-equip)
 |- - [armor_migrate_old_inventory](#migration-of-old-armor-inventories)     |||- - - [armor:unequip](#armor-unequip)
-|- - [wieldview_update_time](#how-often-player-wield-items-are-updated)     |||- - - [armor:update_skin](#armor-update_skin)
+|                                                                           |||- - - [armor:update_skin](#armor-update_skin)
 |-[Credits](#credits)                                                       |||- - [Callbacks](#Callbacks)
 |                                                                           |||- - - [Item callbacks](#item-callbacks)
 |                                                                           |||- - - [Global callbacks](#global-callbacks)
@@ -59,11 +59,6 @@ Change the following default settings by going to Main Menu>>Settings(Tab)>>All 
  **Increase to prevent glitches**
  
     armor_init_delay = 2
-
-### Number of initialization attempts
- **Increase to prevent glitches - Use in conjunction with armor_init_delay if initialization problems persist.**
-
-    armor_init_times = 10
 
 ### Armor not in bones due to server lag
  **Increase to help resolve**
