@@ -312,7 +312,7 @@ minetest.register_entity("3d_armor_stand:armor_entity", {
 	on_activate = function(self)
 		local pos = self.object:get_pos()
 		if pos then
-			self._pospos = vector.round(pos)
+			self._pos = vector.round(pos)
 			update_entity(pos)
 		end
 	end,
