@@ -300,26 +300,27 @@ minetest.register_node("3d_armor_stand:locked_armor_stand", {
 })
 
 minetest.register_entity("3d_armor_stand:armor_entity", {
-	physical = true,
-	visual = "mesh",
-	mesh = "3d_armor_entity.obj",
-	visual_size = {x=1, y=1},
-	collisionbox = {0,0,0,0,0,0},
-	textures = {"3d_armor_trans.png"},
-	pos = nil,
-	timer = 0,
+	initial_properties = {
+		physical = true,
+		visual = "mesh",
+		mesh = "3d_armor_entity.obj",
+		visual_size = {x=1, y=1},
+		collisionbox = {0,0,0,0,0,0},
+		textures = {"3d_armor_trans.png"},
+	},
+	_pos = nil,
 	on_activate = function(self)
 		local pos = self.object:get_pos()
 		if pos then
-			self.pos = vector.round(pos)
+			self._pos = vector.round(pos)
 			update_entity(pos)
 		end
 	end,
 	on_blast = function(self, damage)
 		local drops = {}
-		local node = minetest.get_node(self.pos)
+		local node = minetest.get_node(self._pos)
 		if node.name == "3d_armor_stand:armor_stand" then
-			drop_armor(self.pos)
+			drop_armor(self._pos)
 			self.object:remove()
 		end
 		return false, false, drops
