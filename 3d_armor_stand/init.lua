@@ -308,7 +308,7 @@ minetest.register_entity("3d_armor_stand:armor_entity", {
 		collisionbox = {0,0,0,0,0,0},
 		textures = {"3d_armor_trans.png"},
 	},
-	_pos = nil
+	_pos = nil,
 	on_activate = function(self)
 		local pos = self.object:get_pos()
 		if pos then
