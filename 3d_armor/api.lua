@@ -162,7 +162,6 @@ armor = {
 
 armor.config = {
 	init_delay = 2,
-	init_times = 10,
 	bones_delay = 1,
 	update_time = 1,
 	drop = minetest.get_modpath("bones") ~= nil,
@@ -809,9 +808,6 @@ end
 --  @tparam[opt] bool listring Use `listring` formspec element (default: `false`).
 --  @treturn string Formspec formatted string.
 armor.get_armor_formspec = function(self, name, listring)
-	if armor.def[name].init_time == 0 then
-		return "label[0,0;Armor not initialized!]"
-	end
 	local formspec = armor.formspec..
 		"list[detached:"..name.."_armor;armor;0,0.5;2,3;]"
 	if listring == true then
