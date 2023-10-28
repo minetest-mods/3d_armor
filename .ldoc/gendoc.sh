@@ -48,7 +48,7 @@ done
 echo
 
 # generate new doc files
-"${cmd_ldoc}" --UNSAFE_NO_SANDBOX -c "${f_config}" -d "${d_export}" "${d_root}"; retval=$?
+"${cmd_ldoc}" --unsafe_no_sandbox -c "${f_config}" -d "${d_export}" "${d_root}"; retval=$?
 
 # check exit status
 if test ${retval} -ne 0; then
