@@ -81,7 +81,7 @@ armor:register_armor(":3d_armor:boots_admin", {
 	description = S("Admin Boots"),
 	inventory_image = "3d_armor_inv_boots_admin.png",
 	armor_groups = {fleshy=100},
-	groups = {armor_feet=1, armor_heal=100, armor_use=0,
+	groups = {armor_feet=1, armor_heal=100, armor_use=0, physics_speed=1,
 			not_in_creative_inventory=1},
 	on_drop = function(itemstack, dropper, pos)
 		return
