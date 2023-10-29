@@ -240,23 +240,23 @@
     <h3>Fields:</h3>
     <ul>
         <li><span class="parameter">description</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Human-readable name/description.
         </li>
         <li><span class="parameter">inventory_image</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Image filename used for icon.
         </li>
         <li><span class="parameter">groups</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.6">table</a></span>
          See: <a href="../topics/api.html#ArmorDef.groups">ArmorDef.groups</a>
         </li>
         <li><span class="parameter">armor_groups</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.6">table</a></span>
          See: <a href="../topics/api.html#ArmorDef.armor_groups">ArmorDef.armor_groups</a>
         </li>
         <li><span class="parameter">damage_groups</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.6">table</a></span>
          See: <a href="../topics/api.html#ArmorDef.damage_groups">ArmorDef.damage_groups</a>
         </li>
     </ul>
@@ -434,7 +434,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Armor item technical name (ex: "3d_armor:helmet_gold").
         </li>
         <li><span class="parameter">def</span>
@@ -448,7 +448,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">armor:register_armor(<span class="string">"3d_armor:helmet_wood"</span>, {
+        <pre class="example">armor:<span class="function-name">register_armor</span>(<span class="string">"3d_armor:helmet_wood"</span>, {
    description = <span class="string">"Wood Helmet"</span>,
    inventory_image = <span class="string">"3d_armor_inv_helmet_wood.png"</span>,
    groups = {armor_head=<span class="number">1</span>, armor_heal=<span class="number">0</span>, armor_use=<span class="number">2000</span>, flammable=<span class="number">1</span>},
@@ -478,7 +478,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">group</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Group ID.
         </li>
         <li><span class="parameter">base</span>
@@ -631,7 +631,7 @@
          (<em>optional</em>)
         </li>
         <li><span class="parameter">tool_capabilities</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.6">table</a></span>
          See <a href="https://minetest.gitlab.io/minetest/entity-damage-mechanism/">entity_damage_mechanism</a>.
          (<em>optional</em>)
         </li>
@@ -716,7 +716,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.6">table</a></span>
         List of equipped armors.
     </ol>
 
@@ -788,7 +788,7 @@
          Player from whom item is removed.
         </li>
         <li><span class="parameter">armor_element</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Armor type identifier associated with the item
   to be removed ("head", "torso", "hands", "shield", "legs", "feet", etc.).
         </li>
@@ -851,7 +851,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Player name.
         </li>
     </ul>
@@ -859,7 +859,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
         Skin filename.
     </ol>
 
@@ -887,7 +887,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Player name.
         </li>
     </ul>
@@ -917,7 +917,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">preview</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Preview image filename.
         </li>
     </ul>
@@ -947,7 +947,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Player name.
         </li>
     </ul>
@@ -955,7 +955,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
         Preview image filename.
     </ol>
 
@@ -983,7 +983,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Player name.
         </li>
         <li><span class="parameter">listring</span>
@@ -996,7 +996,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
         Formspec formatted string.
     </ol>
 
@@ -1024,7 +1024,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">item_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
 
 
 
@@ -1061,7 +1061,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.6">table</a></span>
          Inventory contents.
         </li>
     </ul>
@@ -1069,7 +1069,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
 
 
 
@@ -1099,7 +1099,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list_string</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Serialized inventory contents.
         </li>
     </ul>
@@ -1107,7 +1107,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.6">table</a></span>
 
 
 
@@ -1290,7 +1290,7 @@
 
         </li>
         <li><span class="parameter">msg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Additional info for log messages.
         </li>
     </ul>
@@ -1306,7 +1306,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> name, inv = armor:get_valid_player(player, <span class="string">"[equip]"</span>)</pre>
+        <pre class="example"><span class="keyword">local</span> name, inv = armor:<span class="function-name">get_valid_player</span>(player, <span class="string">"[equip]"</span>)</pre>
     </ul>
 
 </dd>
@@ -1368,7 +1368,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">mod</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.4/manual.html#6.4">string</a></span>
          Name of skin mod. Recognized names are "simple_skins", "u_skins", &amp; "wardrobe".
         </li>
     </ul>
@@ -1416,7 +1416,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">armor:register_on_update(<span class="keyword">function</span>(player, index, stack)
+        <pre class="example">armor:<span class="function-name">register_on_update</span>(<span class="keyword">function</span>(player, index, stack)
    <span class="comment">-- code to execute
 </span> <span class="keyword">end</span>)</pre>
     </ul>
@@ -1452,7 +1452,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">armor:register_on_equip(<span class="keyword">function</span>(player, index, stack)
+        <pre class="example">armor:<span class="function-name">register_on_equip</span>(<span class="keyword">function</span>(player, index, stack)
    <span class="comment">-- code to execute
 </span> <span class="keyword">end</span>)</pre>
     </ul>
@@ -1488,7 +1488,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">armor:register_on_unequip(<span class="keyword">function</span>(player, index, stack)
+        <pre class="example">armor:<span class="function-name">register_on_unequip</span>(<span class="keyword">function</span>(player, index, stack)
    <span class="comment">-- code to execute
 </span> <span class="keyword">end</span>)</pre>
     </ul>
@@ -1528,7 +1528,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">armor:register_on_damage(<span class="keyword">function</span>(player, index, stack)
+        <pre class="example">armor:<span class="function-name">register_on_damage</span>(<span class="keyword">function</span>(player, index, stack)
    <span class="comment">-- code to execute
 </span> <span class="keyword">end</span>)</pre>
     </ul>
@@ -1568,7 +1568,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">armor:register_on_destroy(<span class="keyword">function</span>(player, index, stack)
+        <pre class="example">armor:<span class="function-name">register_on_destroy</span>(<span class="keyword">function</span>(player, index, stack)
    <span class="comment">-- code to execute
 </span> <span class="keyword">end</span>)</pre>
     </ul>
@@ -1580,8 +1580,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/custom">LDoc 1.4.6-antum-dev</a></i>
-<i style="float:right;">Last updated 2023-04-20 05:36:49 </i>
+<i>generated by <a href="https://github.com/AntumDeluge/LDoc/tree/custom">LDoc 1.4.6-antum-dev</a></i>
+<i style="float:right;">Last updated 2023-10-29 18:09:21 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
