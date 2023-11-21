@@ -5,8 +5,7 @@
 
 
 -- support for i18n
-local S = armor.get_translator
-
+local S = minetest.get_translator(minetest.get_current_modname())
 --- Bronze
 --
 --  Requires setting `armor_material_bronze`.
