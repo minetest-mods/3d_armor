@@ -299,6 +299,84 @@ minetest.register_node("3d_armor_stand:locked_armor_stand", {
 	end,
 })
 
+minetest.register_node("3d_armor_stand:shared_armor_stand", {
+	description = S("Shared Armor Stand"),
+	drawtype = "mesh",
+	mesh = "3d_armor_stand.obj",
+	tiles = {"3d_armor_stand_shared.png"},
+	use_texture_alpha = "clip",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.4375, -0.25, 0.25, 1.4, 0.25},
+			{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+		},
+	},
+	groups = {choppy=2, oddly_breakable_by_hand=2},
+	sounds = default.node_sound_wood_defaults(),
+	on_construct = function(pos)
+		local meta = minetest.get_meta(pos)
+		meta:set_string("formspec", armor_stand_formspec)
+		meta:set_string("infotext", S("Shared Armor Stand"))
+		local inv = meta:get_inventory()
+		for _, element in pairs(elements) do
+			inv:set_size("armor_"..element, 1)
+		end
+	end,
+	can_dig = function(pos, player)
+		local meta = minetest.get_meta(pos)
+		local inv = meta:get_inventory()
+		for _, element in pairs(elements) do
+			if not inv:is_empty("armor_"..element) then
+				return false
+			end
+		end
+		return true
+	end,
+	after_place_node = function(pos, placer)
+		minetest.add_entity(pos, "3d_armor_stand:armor_entity")
+		local meta = minetest.get_meta(pos)
+		meta:set_string("infotext", S("Shared Armor Stand"))
+		add_hidden_node(pos, placer)
+	end,
+	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+		if not minetest.is_player(player) or minetest.is_protected(pos, player:get_player_name()) then
+			return 0
+		end
+		local def = stack:get_definition() or {}
+		local groups = def.groups or {}
+		if groups[listname] then
+			return 1
+		end
+		return 0
+	end,
+	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+		if not minetest.is_player(player) or minetest.is_protected(pos, player:get_player_name()) then
+			return 0
+		end
+		return stack:get_count()
+	end,
+	allow_metadata_inventory_move = function(pos)
+		return 0
+	end,
+	on_metadata_inventory_put = function(pos)
+		update_entity(pos)
+	end,
+	on_metadata_inventory_take = function(pos)
+		update_entity(pos)
+	end,
+	after_destruct = function(pos)
+		update_entity(pos)
+		remove_hidden_node(pos)
+	end,
+	on_blast = function(pos)
+		-- Not affected by TNT
+	end,
+})
+
 minetest.register_entity("3d_armor_stand:armor_entity", {
 	initial_properties = {
 		physical = true,
@@ -328,7 +406,7 @@ minetest.register_entity("3d_armor_stand:armor_entity", {
 })
 
 minetest.register_abm({
-	nodenames = {"3d_armor_stand:locked_armor_stand", "3d_armor_stand:armor_stand"},
+	nodenames = {"3d_armor_stand:locked_armor_stand", "3d_armor_stand:shared_armor_stand", "3d_armor_stand:armor_stand"},
 	interval = 15,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
@@ -352,5 +430,12 @@ minetest.register_craft({
 	output = "3d_armor_stand:locked_armor_stand",
 	recipe = {
 		{"3d_armor_stand:armor_stand", "default:steel_ingot"},
+	}
+})
+
+minetest.register_craft({
+	output = "3d_armor_stand:shared_armor_stand",
+	recipe = {
+		{"3d_armor_stand:armor_stand", "default:copper_ingot"},
 	}
 })
