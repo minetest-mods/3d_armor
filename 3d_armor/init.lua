@@ -322,7 +322,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 end)
 
 minetest.register_on_joinplayer(function(player)
-	default.player_set_model(player, "3d_armor_character.b3d")
+	player_api.set_model(player, "3d_armor_character.b3d")
 	init_player_armor(player)
 end)
 
