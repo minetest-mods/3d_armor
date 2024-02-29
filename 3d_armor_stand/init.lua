@@ -144,6 +144,7 @@ minetest.register_node("3d_armor_stand:top", {
 	buildable_to = false,
 	drop = "",
 	groups = {not_in_creative_inventory = 1},
+	is_ground_content = false,
 	on_blast = function() end,
 	tiles = {"3d_armor_trans.png"},
 })
@@ -165,6 +166,7 @@ minetest.register_node("3d_armor_stand:armor_stand", {
 		},
 	},
 	groups = {choppy=2, oddly_breakable_by_hand=2},
+	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
@@ -234,6 +236,7 @@ minetest.register_node("3d_armor_stand:locked_armor_stand", {
 		},
 	},
 	groups = {choppy=2, oddly_breakable_by_hand=2},
+	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
@@ -316,6 +319,7 @@ minetest.register_node("3d_armor_stand:shared_armor_stand", {
 		},
 	},
 	groups = {choppy=2, oddly_breakable_by_hand=2},
+	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
