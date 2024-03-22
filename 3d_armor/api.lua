@@ -415,7 +415,7 @@ armor.set_player_armor = function(self, player)
 				end
 				-- DEPRECATED, use armor_groups instead
 				if def.groups["armor_radiation"] and levels["radiation"] then
-					levels["radiation"] = def.groups["armor_radiation"]
+					levels["radiation"] = levels["radiation"] + def.groups["armor_radiation"]
 				end
 			end
 			local item = stack:get_name()
