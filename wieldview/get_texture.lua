@@ -92,7 +92,7 @@ local get_image_from_tile = memoize(function(tile)
 		end
 	end
 
-	return "3d_armor_trans.png"
+	return "blank.png"
 end)
 
 local function get_image_cube(tiles)
@@ -139,7 +139,7 @@ local function get_image_cube(tiles)
 		)
 	end
 
-	return "3d_armor_trans.png"
+	return "blank.png"
 end
 
 local function is_normal_node(drawtype)
@@ -158,7 +158,7 @@ armor.get_wield_image = memoize(function(item)
 	item = ItemStack(item)
 
 	if item:is_empty() then
-		return "3d_armor_trans.png"
+		return "blank.png"
 	end
 
 	local def = item:get_definition()
@@ -169,7 +169,7 @@ armor.get_wield_image = memoize(function(item)
 	local meta = item:get_meta()
 	local color = meta:get("color") or def.color
 
-	local image = "3d_armor_trans.png"
+	local image = "blank.png"
 
 	if def.wield_image and def.wield_image ~= "" then
 		local parts = {def.wield_image}
@@ -193,7 +193,7 @@ armor.get_wield_image = memoize(function(item)
 
 	elseif def.type == "node" then
 		if def.drawtype == "nodebox" or def.drawtype == "mesh" then
-			image = "3d_armor_trans.png"
+			image = "blank.png"
 
 		else
 			local tiles = def.tiles
