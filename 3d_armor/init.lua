@@ -268,8 +268,8 @@ local function init_player_armor(initplayer)
 	local skin = armor:get_player_skin(name)
 	armor.textures[name] = {
 		skin = skin,
-		armor = "3d_armor_trans.png",
-		wielditem = "3d_armor_trans.png",
+		armor = "blank.png",
+		wielditem = "blank.png",
 		preview = armor.default_skin.."_preview.png",
 	}
 	local texture_path = minetest.get_modpath("player_textures")
@@ -291,8 +291,8 @@ player_api.register_model("3d_armor_character.b3d", {
 	animation_speed = 30,
 	textures = {
 		armor.default_skin..".png",
-		"3d_armor_trans.png",
-		"3d_armor_trans.png",
+		"blank.png",
+		"blank.png",
 	},
 	animations = {
 		stand = {x=0, y=79},
