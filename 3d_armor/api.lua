@@ -719,13 +719,14 @@ armor.unequip = function(self, player, armor_element)
 		if self:get_element(stack:get_name()) == armor_element then
 			armor_inv:set_stack("armor", i, "")
 			minetest.after(0, function()
-				-- resolve player object again in async function
-				player = minetest.get_player_by_name(name)
-				local inv = player:get_inventory()
-				if inv:room_for_item("main", stack) then
-					inv:add_item("main", stack)
-				else
-					minetest.add_item(player:get_pos(), stack)
+				local pplayer = minetest.get_player_by_name(name)
+				if pplayer then -- player is still online
+					local inv = pplayer:get_inventory()
+					if inv:room_for_item("main", stack) then
+						inv:add_item("main", stack)
+					else
+						minetest.add_item(pplayer:get_pos(), stack)
+					end
 				end
 			end)
 			self:run_callbacks("on_unequip", player, i, stack)
