@@ -444,7 +444,7 @@ minetest.register_globalstep(function(dtime)
 			local name = player:get_player_name()
 			if armor.def[name].feather > 0 then
 				local vel_y = player:get_velocity().y
-				if vel_y < 0 and vel_y < 3 then
+				if vel_y < -0.5 then
 					vel_y = -(vel_y * 0.05)
 					player:add_velocity({x = 0, y = vel_y, z = 0})
 				end
