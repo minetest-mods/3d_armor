@@ -694,6 +694,9 @@ armor.equip = function(self, player, itemstack)
 				index = i
 			end
 		end
+		if not index then -- armor inventory is full with other armor elements
+			return itemstack
+		end
 		local stack = itemstack:take_item()
 		armor_inv:set_stack("armor", index, stack)
 		self:run_callbacks("on_equip", player, index, stack)
