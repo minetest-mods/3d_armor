@@ -15,7 +15,7 @@ sfinv.register_page("3d_armor:armor", {
 	end
 })
 armor:register_on_update(function(player)
-	if sfinv.enabled then
+	if sfinv.enabled and sfinv.get_page(player) == "3d_armor:armor" then
 		sfinv.set_player_inventory_formspec(player)
 	end
 end)
