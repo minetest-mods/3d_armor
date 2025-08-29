@@ -150,6 +150,15 @@ minetest.register_node("3d_armor_stand:top", {
 })
 
 local function register_armor_stand(def)
+	local function owns_armor_stand(pos, meta, player)
+		if (def.name == "locked_armor_stand" and not has_locked_armor_stand_privilege(meta, player)) or
+		   (def.name == "shared_armor_stand" and (not minetest.is_player(player) or
+		   minetest.is_protected(pos, player:get_player_name()))) then
+			return false
+		end
+		return true
+	end
+
 	minetest.register_node("3d_armor_stand:" .. def.name, {
 		description = S(def.description),
 		drawtype = "mesh",
@@ -200,9 +209,7 @@ local function register_armor_stand(def)
 		end,
 		allow_metadata_inventory_put = function(pos, listname, index, stack, player)
 			local meta = minetest.get_meta(pos)
-			if (def.name == "locked_armor_stand" and not has_locked_armor_stand_privilege(meta, player)) or
-			   (def.name == "shared_armor_stand" and (not minetest.is_player(player) or
-			   minetest.is_protected(pos, player:get_player_name()))) then
+			if not owns_armor_stand(pos, meta, player) then
 				return 0
 			end
 			local inv = meta:get_inventory()
@@ -215,7 +222,13 @@ local function register_armor_stand(def)
 			end
 			return 0
 		end,
-		allow_metadata_inventory_take = def.allow_metadata_inventory_take,
+		allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+			local meta = minetest.get_meta(pos)
+			if not owns_armor_stand(pos, meta, player) then
+				return 0
+			end
+			return 1
+		end,
 		allow_metadata_inventory_move = function(pos)
 			return 0
 		end,
@@ -260,26 +273,13 @@ register_armor_stand({
 register_armor_stand({
 	name = "locked_armor_stand",
 	description = "Locked Armor Stand",
-	texture = "3d_armor_stand_locked.png",
-	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-		local meta = minetest.get_meta(pos)
-		if not has_locked_armor_stand_privilege(meta, player) then
-			return 0
-		end
-		return stack:get_count()
-	end
+	texture = "3d_armor_stand_locked.png"
 })
 
 register_armor_stand({
 	name = "shared_armor_stand",
 	description = "Shared Armor Stand",
-	texture = "3d_armor_stand_shared.png",
-	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-		if not minetest.is_player(player) or minetest.is_protected(pos, player:get_player_name()) then
-			return 0
-		end
-		return stack:get_count()
-	end
+	texture = "3d_armor_stand_shared.png"
 })
 
 minetest.register_entity("3d_armor_stand:armor_entity", {
