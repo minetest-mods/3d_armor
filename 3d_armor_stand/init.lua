@@ -326,7 +326,7 @@ minetest.register_lbm({
 	label = "Update armor stand inventories",
 	name = "3d_armor_stand:update_inventories",
 	nodenames = {"3d_armor_stand:locked_armor_stand", "3d_armor_stand:shared_armor_stand", "3d_armor_stand:armor_stand"},
-	run_at_every_load = true,
+	run_at_every_load = false,
 	action = function(pos, node)
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
