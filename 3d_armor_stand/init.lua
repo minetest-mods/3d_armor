@@ -333,11 +333,17 @@ minetest.register_lbm({
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		local lists = inv:get_lists()
+		for _, element in pairs(elements) do
+			if not lists["armor_"..element] then
+				-- Abort to avoid item loss in case env_meta.txt is corrupted/deleted
+				return
+			end
+		end
 		inv:set_lists({main = {
-			lists.armor_head and lists.armor_head[1] or ItemStack(),
-			lists.armor_torso and lists.armor_torso[1] or ItemStack(),
-			lists.armor_legs and lists.armor_legs[1] or ItemStack(),
-			lists.armor_feet and lists.armor_feet[1] or ItemStack()
+			lists.armor_head[1],
+			lists.armor_torso[1],
+			lists.armor_legs[1],
+			lists.armor_feet[1]
 		}})
 		meta:set_string("formspec", armor_stand_formspec)
 		update_entity(pos)
