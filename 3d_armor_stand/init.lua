@@ -162,7 +162,7 @@ local function register_armor_stand(def)
 	end
 
 	minetest.register_node("3d_armor_stand:" .. def.name, {
-		description = S(def.description),
+		description = def.description,
 		drawtype = "mesh",
 		mesh = "3d_armor_stand.obj",
 		tiles = {def.texture},
@@ -183,7 +183,7 @@ local function register_armor_stand(def)
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
 			meta:set_string("formspec", armor_stand_formspec)
-			meta:set_string("infotext", S(def.description))
+			meta:set_string("infotext", def.description)
 			if def.name == "locked_armor_stand" then
 				meta:set_string("owner", "")
 			end
@@ -205,7 +205,7 @@ local function register_armor_stand(def)
 				meta:set_string("owner", placer:get_player_name() or "")
 				meta:set_string("infotext", S("Armor Stand (owned by @1)", meta:get_string("owner")))
 			elseif def.name == "shared_armor_stand" then
-				meta:set_string("infotext", S(def.description))
+				meta:set_string("infotext", def.description)
 			end
 			add_hidden_node(pos, placer)
 		end,
@@ -263,7 +263,7 @@ end
 
 register_armor_stand({
 	name = "armor_stand",
-	description = "Armor Stand",
+	description = S("Armor Stand"),
 	texture = "3d_armor_stand.png",
 	on_blast = function(pos)
 		drop_armor(pos)
@@ -274,13 +274,13 @@ register_armor_stand({
 
 register_armor_stand({
 	name = "locked_armor_stand",
-	description = "Locked Armor Stand",
+	description = S("Locked Armor Stand"),
 	texture = "3d_armor_stand_locked.png"
 })
 
 register_armor_stand({
 	name = "shared_armor_stand",
-	description = "Shared Armor Stand",
+	description = S("Shared Armor Stand"),
 	texture = "3d_armor_stand_shared.png"
 })
 
