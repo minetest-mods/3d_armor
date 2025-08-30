@@ -151,9 +151,11 @@ minetest.register_node("3d_armor_stand:top", {
 
 local function register_armor_stand(def)
 	local function owns_armor_stand(pos, meta, player)
-		if (def.name == "locked_armor_stand" and not has_locked_armor_stand_privilege(meta, player)) or
-		   (def.name == "shared_armor_stand" and (not minetest.is_player(player) or
-		   minetest.is_protected(pos, player:get_player_name()))) then
+		if def.name == "locked_armor_stand" and not has_locked_armor_stand_privilege(meta, player) then
+			return false
+		end
+		local has_access = minetest.is_player(player) and not minetest.is_protected(pos, player:get_player_name())
+		if def.name == "shared_armor_stand" and not has_access then
 			return false
 		end
 		return true
