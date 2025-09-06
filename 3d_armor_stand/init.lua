@@ -6,27 +6,27 @@ local armor_stand_formspec = "size[8,7]" ..
 	default.gui_bg_img ..
 	default.gui_slots ..
 	default.get_hotbar_bg(0,3) ..
-	"list[current_name;armor_head;3,0.5;1,1;]" ..
-	"list[current_name;armor_torso;4,0.5;1,1;]" ..
-	"list[current_name;armor_legs;3,1.5;1,1;]" ..
-	"list[current_name;armor_feet;4,1.5;1,1;]" ..
+	"list[current_name;main;3,0.5;2,1;]" ..
+	"list[current_name;main;3,1.5;2,1;2]" ..
 	"image[3,0.5;1,1;3d_armor_stand_head.png]" ..
 	"image[4,0.5;1,1;3d_armor_stand_torso.png]" ..
 	"image[3,1.5;1,1;3d_armor_stand_legs.png]" ..
 	"image[4,1.5;1,1;3d_armor_stand_feet.png]" ..
 	"list[current_player;main;0,3;8,1;]" ..
-	"list[current_player;main;0,4.25;8,3;8]"
+	"list[current_player;main;0,4.25;8,3;8]" ..
+	"listring[current_name;main]" ..
+	"listring[current_player;main]"
 
 local elements = {"head", "torso", "legs", "feet"}
 
 local function drop_armor(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
-	for _, element in pairs(elements) do
-		local stack = inv:get_stack("armor_"..element, 1)
+	for i = 1, 4 do
+		local stack = inv:get_stack("main", i)
 		if stack and stack:get_count() > 0 then
 			armor.drop_armor(pos, stack)
-			inv:set_stack("armor_"..element, 1, nil)
+			inv:set_stack("main", i, nil)
 		end
 	end
 end
@@ -68,8 +68,8 @@ local function update_entity(pos)
 		local inv = meta:get_inventory()
 		local yaw = 0
 		if inv then
-			for _, element in pairs(elements) do
-				local stack = inv:get_stack("armor_"..element, 1)
+			for i, element in ipairs(elements) do
+				local stack = inv:get_stack("main", i)
 				if stack:get_count() == 1 then
 					local item = stack:get_name() or ""
 					local def = stack:get_definition() or {}
@@ -149,236 +149,139 @@ minetest.register_node("3d_armor_stand:top", {
 	tiles = {"blank.png"},
 })
 
-minetest.register_node("3d_armor_stand:armor_stand", {
-	description = S("Armor Stand"),
-	drawtype = "mesh",
-	mesh = "3d_armor_stand.obj",
-	tiles = {"3d_armor_stand.png"},
-	use_texture_alpha = "clip",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{-0.25, -0.4375, -0.25, 0.25, 1.4, 0.25},
-			{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
-		},
-	},
-	groups = {choppy=2, oddly_breakable_by_hand=2},
-	is_ground_content = false,
-	sounds = default.node_sound_wood_defaults(),
-	on_construct = function(pos)
-		local meta = minetest.get_meta(pos)
-		meta:set_string("formspec", armor_stand_formspec)
-		meta:set_string("infotext", S("Armor Stand"))
-		local inv = meta:get_inventory()
-		for _, element in pairs(elements) do
-			inv:set_size("armor_"..element, 1)
+local function register_armor_stand(def)
+	local function owns_armor_stand(pos, meta, player)
+		if def.name == "locked_armor_stand" and not has_locked_armor_stand_privilege(meta, player) then
+			return false
 		end
-	end,
-	can_dig = function(pos, player)
-		local meta = minetest.get_meta(pos)
-		local inv = meta:get_inventory()
-		for _, element in pairs(elements) do
-			if not inv:is_empty("armor_"..element) then
-				return false
-			end
+		local has_access = minetest.is_player(player) and not minetest.is_protected(pos, player:get_player_name())
+		if def.name == "shared_armor_stand" and not has_access then
+			return false
 		end
 		return true
-	end,
-	after_place_node = function(pos, placer)
-		minetest.add_entity(pos, "3d_armor_stand:armor_entity")
-		add_hidden_node(pos, placer)
-	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack)
-		local def = stack:get_definition() or {}
-		local groups = def.groups or {}
-		if groups[listname] then
+	end
+
+	minetest.register_node("3d_armor_stand:" .. def.name, {
+		description = def.description,
+		drawtype = "mesh",
+		mesh = "3d_armor_stand.obj",
+		tiles = {def.texture},
+		use_texture_alpha = "clip",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		walkable = false,
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.25, -0.4375, -0.25, 0.25, 1.4, 0.25},
+				{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+			},
+		},
+		groups = {choppy=2, oddly_breakable_by_hand=2},
+		is_ground_content = false,
+		sounds = default.node_sound_wood_defaults(),
+		on_construct = function(pos)
+			local meta = minetest.get_meta(pos)
+			meta:set_string("formspec", armor_stand_formspec)
+			meta:set_string("infotext", def.description)
+			if def.name == "locked_armor_stand" then
+				meta:set_string("owner", "")
+			end
+			local inv = meta:get_inventory()
+			inv:set_size("main", 4)
+		end,
+		can_dig = function(pos, player)
+			local meta = minetest.get_meta(pos)
+			local inv = meta:get_inventory()
+			if not inv:is_empty("main") then
+				return false
+			end
+			return true
+		end,
+		after_place_node = function(pos, placer)
+			local meta = minetest.get_meta(pos)
+			minetest.add_entity(pos, "3d_armor_stand:armor_entity")
+			if def.name == "locked_armor_stand" then
+				meta:set_string("owner", placer:get_player_name() or "")
+				meta:set_string("infotext", S("Armor Stand (owned by @1)", meta:get_string("owner")))
+			elseif def.name == "shared_armor_stand" then
+				meta:set_string("infotext", def.description)
+			end
+			add_hidden_node(pos, placer)
+		end,
+		allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+			local meta = minetest.get_meta(pos)
+			if not owns_armor_stand(pos, meta, player) then
+				return 0
+			end
+			local inv = meta:get_inventory()
+			local stack_def = stack:get_definition() or {}
+			local groups = stack_def.groups or {}
+			for i, element in ipairs(elements) do
+				if groups["armor_"..element] and inv:get_stack(listname, i):is_empty() then
+					return 1
+				end
+			end
+			return 0
+		end,
+		allow_metadata_inventory_take = function(pos, listname, index, stack, player)
+			local meta = minetest.get_meta(pos)
+			if not owns_armor_stand(pos, meta, player) then
+				return 0
+			end
 			return 1
-		end
-		return 0
-	end,
-	allow_metadata_inventory_move = function(pos)
-		return 0
-	end,
-	on_metadata_inventory_put = function(pos)
-		update_entity(pos)
-	end,
-	on_metadata_inventory_take = function(pos)
-		update_entity(pos)
-	end,
-	after_destruct = function(pos)
-		update_entity(pos)
-		remove_hidden_node(pos)
-	end,
+		end,
+		allow_metadata_inventory_move = function(pos)
+			return 0
+		end,
+		on_metadata_inventory_put = function(pos, listname, index, stack)
+			local meta = minetest.get_meta(pos)
+			local inv = meta:get_inventory()
+			local stack_def = stack:get_definition() or {}
+			local groups = stack_def.groups or {}
+			for i, element in ipairs(elements) do
+				if groups["armor_"..element] then
+					inv:set_stack(listname, i, stack)
+					if index ~= i then
+						inv:set_stack(listname, index, nil)
+					end
+					break
+				end
+			end
+			update_entity(pos)
+		end,
+		on_metadata_inventory_take = function(pos)
+			update_entity(pos)
+		end,
+		after_destruct = function(pos)
+			update_entity(pos)
+			remove_hidden_node(pos)
+		end,
+		on_blast = def.on_blast
+	})
+end
+
+register_armor_stand({
+	name = "armor_stand",
+	description = S("Armor Stand"),
+	texture = "3d_armor_stand.png",
 	on_blast = function(pos)
 		drop_armor(pos)
 		armor.drop_armor(pos, "3d_armor_stand:armor_stand")
 		minetest.remove_node(pos)
-	end,
+	end
 })
 
-minetest.register_node("3d_armor_stand:locked_armor_stand", {
+register_armor_stand({
+	name = "locked_armor_stand",
 	description = S("Locked Armor Stand"),
-	drawtype = "mesh",
-	mesh = "3d_armor_stand.obj",
-	tiles = {"3d_armor_stand_locked.png"},
-	use_texture_alpha = "clip",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{-0.25, -0.4375, -0.25, 0.25, 1.4, 0.25},
-			{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
-		},
-	},
-	groups = {choppy=2, oddly_breakable_by_hand=2},
-	is_ground_content = false,
-	sounds = default.node_sound_wood_defaults(),
-	on_construct = function(pos)
-		local meta = minetest.get_meta(pos)
-		meta:set_string("formspec", armor_stand_formspec)
-		meta:set_string("infotext", S("Armor Stand"))
-		meta:set_string("owner", "")
-		local inv = meta:get_inventory()
-		for _, element in pairs(elements) do
-			inv:set_size("armor_"..element, 1)
-		end
-	end,
-	can_dig = function(pos, player)
-		local meta = minetest.get_meta(pos)
-		local inv = meta:get_inventory()
-		for _, element in pairs(elements) do
-			if not inv:is_empty("armor_"..element) then
-				return false
-			end
-		end
-		return true
-	end,
-	after_place_node = function(pos, placer)
-		minetest.add_entity(pos, "3d_armor_stand:armor_entity")
-		local meta = minetest.get_meta(pos)
-		meta:set_string("owner", placer:get_player_name() or "")
-		meta:set_string("infotext", S("Armor Stand (owned by @1)", meta:get_string("owner")))
-		add_hidden_node(pos, placer)
-	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		local meta = minetest.get_meta(pos)
-		if not has_locked_armor_stand_privilege(meta, player) then
-			return 0
-		end
-		local def = stack:get_definition() or {}
-		local groups = def.groups or {}
-		if groups[listname] then
-			return 1
-		end
-		return 0
-	end,
-	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-		local meta = minetest.get_meta(pos)
-		if not has_locked_armor_stand_privilege(meta, player) then
-			return 0
-		end
-		return stack:get_count()
-	end,
-	allow_metadata_inventory_move = function(pos)
-		return 0
-	end,
-	on_metadata_inventory_put = function(pos)
-		update_entity(pos)
-	end,
-	on_metadata_inventory_take = function(pos)
-		update_entity(pos)
-	end,
-	after_destruct = function(pos)
-		update_entity(pos)
-		remove_hidden_node(pos)
-	end,
-	on_blast = function(pos)
-		-- Not affected by TNT
-	end,
+	texture = "3d_armor_stand_locked.png"
 })
 
-minetest.register_node("3d_armor_stand:shared_armor_stand", {
+register_armor_stand({
+	name = "shared_armor_stand",
 	description = S("Shared Armor Stand"),
-	drawtype = "mesh",
-	mesh = "3d_armor_stand.obj",
-	tiles = {"3d_armor_stand_shared.png"},
-	use_texture_alpha = "clip",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{-0.25, -0.4375, -0.25, 0.25, 1.4, 0.25},
-			{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
-		},
-	},
-	groups = {choppy=2, oddly_breakable_by_hand=2},
-	is_ground_content = false,
-	sounds = default.node_sound_wood_defaults(),
-	on_construct = function(pos)
-		local meta = minetest.get_meta(pos)
-		meta:set_string("formspec", armor_stand_formspec)
-		meta:set_string("infotext", S("Shared Armor Stand"))
-		local inv = meta:get_inventory()
-		for _, element in pairs(elements) do
-			inv:set_size("armor_"..element, 1)
-		end
-	end,
-	can_dig = function(pos, player)
-		local meta = minetest.get_meta(pos)
-		local inv = meta:get_inventory()
-		for _, element in pairs(elements) do
-			if not inv:is_empty("armor_"..element) then
-				return false
-			end
-		end
-		return true
-	end,
-	after_place_node = function(pos, placer)
-		minetest.add_entity(pos, "3d_armor_stand:armor_entity")
-		local meta = minetest.get_meta(pos)
-		meta:set_string("infotext", S("Shared Armor Stand"))
-		add_hidden_node(pos, placer)
-	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if not minetest.is_player(player) or minetest.is_protected(pos, player:get_player_name()) then
-			return 0
-		end
-		local def = stack:get_definition() or {}
-		local groups = def.groups or {}
-		if groups[listname] then
-			return 1
-		end
-		return 0
-	end,
-	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-		if not minetest.is_player(player) or minetest.is_protected(pos, player:get_player_name()) then
-			return 0
-		end
-		return stack:get_count()
-	end,
-	allow_metadata_inventory_move = function(pos)
-		return 0
-	end,
-	on_metadata_inventory_put = function(pos)
-		update_entity(pos)
-	end,
-	on_metadata_inventory_take = function(pos)
-		update_entity(pos)
-	end,
-	after_destruct = function(pos)
-		update_entity(pos)
-		remove_hidden_node(pos)
-	end,
-	on_blast = function(pos)
-		-- Not affected by TNT
-	end,
+	texture = "3d_armor_stand_shared.png"
 })
 
 minetest.register_entity("3d_armor_stand:armor_entity", {
@@ -417,6 +320,32 @@ minetest.register_abm({
 		local num
 		num = #minetest.get_objects_inside_radius(pos, 0.5)
 		if num > 0 then return end
+		update_entity(pos)
+	end
+})
+
+minetest.register_lbm({
+	label = "Update armor stand inventories",
+	name = "3d_armor_stand:update_inventories",
+	nodenames = {"3d_armor_stand:locked_armor_stand", "3d_armor_stand:shared_armor_stand", "3d_armor_stand:armor_stand"},
+	run_at_every_load = false,
+	action = function(pos, node)
+		local meta = minetest.get_meta(pos)
+		local inv = meta:get_inventory()
+		local lists = inv:get_lists()
+		for _, element in pairs(elements) do
+			if not lists["armor_"..element] then
+				-- Abort to avoid item loss in case env_meta.txt is corrupted/deleted
+				return
+			end
+		end
+		inv:set_lists({main = {
+			lists.armor_head[1],
+			lists.armor_torso[1],
+			lists.armor_legs[1],
+			lists.armor_feet[1]
+		}})
+		meta:set_string("formspec", armor_stand_formspec)
 		update_entity(pos)
 	end
 })
