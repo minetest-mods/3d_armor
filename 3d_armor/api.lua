@@ -679,16 +679,16 @@ armor.equip = function(self, player, itemstack)
     local name, armor_inv = self:get_valid_player(player, "[equip]")
     local armor_element = self:get_element(itemstack:get_name())
 	if name and armor_element then
-		local index
-		for i=1, armor_inv:get_size("armor") do
-			local stack = armor_inv:get_stack("armor", i)
+		local index, old_stack
+		for i, stack in ipairs(armor_inv:get_list("armor")) do
 			if self:get_element(stack:get_name()) == armor_element then
-				--prevents equiping an armor that would unequip a cursed armor.
+				-- prevents equiping an armor that would unequip a cursed armor.
 				if minetest.get_item_group(stack:get_name(), "cursed") ~= 0 then
 					return itemstack
 				end
 				index = i
-				self:unequip(player, armor_element)
+				old_stack = stack
+				self:run_callbacks("on_unequip", player, i, stack)
 				break
 			elseif not index and stack:is_empty() then
 				index = i
@@ -697,11 +697,13 @@ armor.equip = function(self, player, itemstack)
 		if not index then -- armor inventory is full with other armor elements
 			return itemstack
 		end
-		local stack = itemstack:take_item()
-		armor_inv:set_stack("armor", index, stack)
-		self:run_callbacks("on_equip", player, index, stack)
+		-- Swap the stack at 'index' with 'itemstack'
+		armor_inv:set_stack("armor", index, itemstack)
+		self:run_callbacks("on_equip", player, index, itemstack)
 		self:set_player_armor(player)
 		self:save_armor_inventory(player)
+		-- Remainder: the previous slot content
+		return old_stack or ItemStack()
 	end
 	return itemstack
 end
