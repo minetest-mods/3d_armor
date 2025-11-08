@@ -697,10 +697,12 @@ armor.equip = function(self, player, itemstack)
 		if not index then -- armor inventory is full with other armor elements
 			return itemstack
 		end
+		-- Swap the stack at 'index' with 'itemstack'
 		armor_inv:set_stack("armor", index, itemstack)
 		self:run_callbacks("on_equip", player, index, itemstack)
 		self:set_player_armor(player)
 		self:save_armor_inventory(player)
+		-- Remainder: the previous slot content
 		return old_stack or ItemStack()
 	end
 	return itemstack
