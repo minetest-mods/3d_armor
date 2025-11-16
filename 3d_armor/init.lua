@@ -1,3 +1,7 @@
+if not core.features.use_texture_alpha_string_modes then
+	error("3d_armor requires Luanti/Minetest 5.4.0 or newer. Please update.")
+end
+
 local modname = minetest.get_current_modname()
 local modpath = minetest.get_modpath(modname)
 local worldpath = minetest.get_worldpath()

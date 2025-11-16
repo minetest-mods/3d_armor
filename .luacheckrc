@@ -17,6 +17,7 @@ read_globals = {
 	"dump", "VoxelArea",
 
 	-- deps
+	"core",
 	"default",
 	"player_api",
 	"minetest",

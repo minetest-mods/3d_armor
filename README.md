@@ -22,38 +22,52 @@ Modpack - 3d Armor
 [mod] Visible Player Armor [3d_armor]
 -------------------------------------
 
-Minetest Version: 5.0.0 and newer
-
-Game: minetest_game and many derivatives
-
-Depends: default
-
 Adds craftable armor that is visible to other players. Each armor item worn contributes to
 a player's armor group level making them less vulnerable to attack.
 
 Armor takes damage when a player is hurt, however, many armor items offer a 'stackable'
 percentage chance of restoring the lost health points. Overall armor level is boosted by 10%
-when wearing a full matching set (helmet, chestplate, leggings and boots of the same material)
+when wearing a full matching set (helmet, chestplate, leggings and boots of the same material).
 
-Fire protection has been added by TenPlus1 and in use when ethereal mod is found and crystal
-armor has been enabled.  each piece of armor offers 1 fire protection, level 1 protects
-against torches, level 2 against crystal spikes, 3 for fire and 5 protects when in lava.
+Overview of all items, API and settings: **[3d_armor reference](https://minetest-mods.github.io/3d_armor/reference/)**
 
-Compatible with sfinv, inventory plus or unified inventory by enabling the appropriate
-inventory module, [3d_armor_sfinv], [3d_armor_ip] and [3d_armor_ui] respectively.
-Also compatible with [smart_inventory] without the need for additional modules.
+**Dependencies:**
 
-built in support player skins [skins] by Zeg9 and Player Textures [player_textures] by PilzAdam
-and [simple_skins] by TenPlus1.
+* Luanti/Minetest: 5.4.0 or newer
+* Mods `default` and `player_api`
+   * Provided by [minetest_game](https://github.com/luanti-org/minetest_game)
+     and many derivatives
+
+**Features:** (optional)
+
+* Fire protection (added by TenPlus1):
+   * Depends on the mod `ethereal` and the (provided) `armor_crystal` mod.
+   * Each piece of armor increases fire protection by 1 (one).
+      * level 1: protects against torches
+      * level 2: protects against crystal spikes
+      * level 3: protects against fire
+      * level 5: protects against lava
+* Inventory mod compatibility:
+   * `3d_armor_sfinv` for `sfinv` (minetest_game and derivatives)
+   * `3d_armor_ip` for `inventory_plus`
+   * `3d_armor_ui` for `unified_inventory`
+   * Compatible with `smart_inventory` without any mod dependency.
+* Supported skin mods:
+   * `skins` by Zeg9
+   * `player_textures` by PilzAdam
+   * `simple_skins` by TenPlus1
+   * Supported by `skinsdb`
+* Supported physics mods:
+   * `player_monoids`
+   * `armor_monoid`
+   * `pova`
 
 Armor can be configured by adding a file called armor.conf in 3d_armor mod or world directory.
 see armor.conf.example for all available options.
 
-For **mod installation** instructions, please visit: http://wiki.minetest.com/wiki/Installing_Mods
+**Types of armor:**
 
 The specific "armors as modpack" refactorization allows anyone to enable/disable any armors they want as mods rather than obscure settings of the past. (See [#78](https://github.com/minetest-mods/3d_armor/commit/9444afd7222a71fc17d40c9793506812d715dcc3) for further explanation.)
-
-Currently, the modpack includes:
 
 - armor_admin
 - armor_bronze
@@ -66,9 +80,7 @@ Currently, the modpack includes:
 - armor_steel
 - armor_wood
 
-as separate armor mods intentionally. All these mods depend on 3d_armor.
-
-[API Reference](https://minetest-mods.github.io/3d_armor/reference/)
+All these mods depend on 3d_armor.
 
 [mod] Visible Wielded Items [wieldview]
 ---------------------------------------
