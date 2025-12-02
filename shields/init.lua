@@ -67,10 +67,10 @@ if armor.materials.wood then
 		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_wood_footstep")
+			play_sound_effect(player, "armor_wood_walk")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_wood_footstep")
+			play_sound_effect(player, "armor_wood_walk")
 		end,
 	})
 	--- Enhanced Wood Shield
@@ -94,10 +94,10 @@ if armor.materials.wood then
 		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=2},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_dig_metal")
+			play_sound_effect(player, "armor_metal_dig")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_dug_metal")
+			play_sound_effect(player, "armor_metal_break")
 		end,
 	})
 	minetest.register_craft({
@@ -137,10 +137,10 @@ if armor.materials.cactus then
 		damage_groups = {cracky=3, snappy=3, choppy=2, crumbly=2, level=1},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_wood_footstep")
+			play_sound_effect(player, "armor_wood_walk")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_wood_footstep")
+			play_sound_effect(player, "armor_wood_walk")
 		end,
 	})
 	--- Enhanced Cactus Shield
@@ -164,10 +164,10 @@ if armor.materials.cactus then
 		damage_groups = {cracky=3, snappy=3, choppy=2, crumbly=2, level=2},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_dig_metal")
+			play_sound_effect(player, "armor_metal_dig")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_dug_metal")
+			play_sound_effect(player, "armor_metal_break")
 		end,
 	})
 	minetest.register_craft({
@@ -210,10 +210,10 @@ if armor.materials.steel then
 		damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_dig_metal")
+			play_sound_effect(player, "armor_metal_dig")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_dug_metal")
+			play_sound_effect(player, "armor_metal_break")
 		end,
 	})
 end
@@ -243,10 +243,10 @@ if armor.materials.bronze then
 		damage_groups = {cracky=2, snappy=3, choppy=2, crumbly=1, level=2},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_dig_metal")
+			play_sound_effect(player, "armor_metal_dig")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_dug_metal")
+			play_sound_effect(player, "armor_metal_break")
 		end,
 	})
 end
@@ -272,10 +272,10 @@ if armor.materials.diamond then
 		damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
+			play_sound_effect(player, "armor_glass_hit")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
+			play_sound_effect(player, "armor_glass_break")
 		end,
 	})
 end
@@ -305,10 +305,10 @@ if armor.materials.gold then
 		damage_groups = {cracky=1, snappy=2, choppy=2, crumbly=3, level=2},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_dig_metal")
+			play_sound_effect(player, "armor_metal_dig")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_dug_metal")
+			play_sound_effect(player, "armor_metal_break")
 		end,
 	})
 end
@@ -333,10 +333,10 @@ if armor.materials.mithril then
 		damage_groups = {cracky=2, snappy=1, level=3},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
+			play_sound_effect(player, "armor_glass_hit")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
+			play_sound_effect(player, "armor_glass_break")
 		end,
 	})
 end
@@ -362,10 +362,10 @@ if armor.materials.crystal then
 		damage_groups = {cracky=2, snappy=1, level=3},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
+			play_sound_effect(player, "armor_glass_hit")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
+			play_sound_effect(player, "armor_glass_break")
 		end,
 	})
 end
@@ -391,10 +391,10 @@ if armor.materials.nether then
 		damage_groups = {cracky=3, snappy=2, level=3},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
+			play_sound_effect(player, "armor_glass_hit")
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
+			play_sound_effect(player, "armor_glass_break")
 		end,
 	})
 end

@@ -114,10 +114,6 @@ armor = {
 	physics = {"jump", "speed", "gravity"},
 	attributes = {"heal", "fire", "water", "feather"},
 	formspec = "image[2.5,0;2,4;armor_preview]"..
-		default.gui_bg..
-		default.gui_bg_img..
-		default.gui_slots..
-		default.get_hotbar_bg(0, 4.7)..
 		"list[current_player;main;0,4.7;8,1;]"..
 		"list[current_player;main;0,5.85;8,3;8]",
 	def = armor_def,
