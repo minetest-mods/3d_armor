@@ -2,12 +2,8 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
 local armor_stand_formspec = "size[8,7]" ..
-	default.gui_bg ..
-	default.gui_bg_img ..
-	default.gui_slots ..
-	default.get_hotbar_bg(0,3) ..
-	"list[current_name;main;3,0.5;2,1;]" ..
-	"list[current_name;main;3,1.5;2,1;2]" ..
+	armor.add_formspec_list("current_name", "main", 3, 0.5, 2, 1) ..
+	armor.add_formspec_list("current_name", "main", 3, 1.5, 2, 1, 2) ..
 	"image[3,0.5;1,1;3d_armor_stand_head.png]" ..
 	"image[4,0.5;1,1;3d_armor_stand_torso.png]" ..
 	"image[3,1.5;1,1;3d_armor_stand_legs.png]" ..
@@ -179,7 +175,7 @@ local function register_armor_stand(def)
 		},
 		groups = {choppy=2, oddly_breakable_by_hand=2},
 		is_ground_content = false,
-		sounds = default.node_sound_wood_defaults(),
+		sounds = armor.sounds.wood,
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
 			meta:set_string("formspec", armor_stand_formspec)

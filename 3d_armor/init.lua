@@ -8,6 +8,11 @@ local worldpath = minetest.get_worldpath()
 local last_punch_time = {}
 local timer = 0
 
+armor = {
+	version = "0.4.13"
+}
+
+dofile(modpath.."/gamecompat.lua")
 dofile(modpath.."/api.lua")
 
 -- local functions
@@ -480,10 +485,12 @@ end)
 
 if armor.config.fire_protect == true then
 
-	-- make torches hurt
-	minetest.override_item("default:torch", {damage_per_second = 1})
-	minetest.override_item("default:torch_wall", {damage_per_second = 1})
-	minetest.override_item("default:torch_ceiling", {damage_per_second = 1})
+	if core.get_modpath("default") then
+		-- make torches hurt
+		minetest.override_item("default:torch", {damage_per_second = 1})
+		minetest.override_item("default:torch_wall", {damage_per_second = 1})
+		minetest.override_item("default:torch_ceiling", {damage_per_second = 1})
+	end
 
 	-- check player damage for any hot nodes we may be protected against
 	minetest.register_on_player_hpchange(function(player, hp_change, reason)

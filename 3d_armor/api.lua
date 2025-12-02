@@ -108,18 +108,16 @@ local armor_textures = setmetatable({}, {
 	end
 })
 
-armor = {
+local armor_fields = {
 	timer = 0,
 	elements = {"head", "torso", "legs", "feet"},
 	physics = {"jump", "speed", "gravity"},
 	attributes = {"heal", "fire", "water", "feather"},
-	formspec = "image[2.5,0;2,4;armor_preview]"..
-		default.gui_bg..
-		default.gui_bg_img..
-		default.gui_slots..
-		default.get_hotbar_bg(0, 4.7)..
-		"list[current_player;main;0,4.7;8,1;]"..
-		"list[current_player;main;0,5.85;8,3;8]",
+	formspec = (
+		"image[2.5,0;2,4;armor_preview]" ..
+		armor.add_formspec_list("current_player", "main", 0, 4.7, 8, 1) ..
+		armor.add_formspec_list("current_player", "main", 0, 5.85, 8, 3, 8)
+	),
 	def = armor_def,
 	textures = armor_textures,
 	default_skin = "character",
@@ -156,9 +154,12 @@ armor = {
 		on_destroy = {},
 	},
 	migrate_old_inventory = true,
-  version = "0.4.13",
   get_translator = S
 }
+
+for k, v in pairs(armor_fields) do
+	armor[k] = v
+end
 
 armor.config = {
 	init_delay = 2,
