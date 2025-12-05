@@ -108,12 +108,23 @@ local armor_textures = setmetatable({}, {
 	end
 })
 
+-- Support for default_bg
+local function armor.default_bg()
+	if core.get_modpath("default") then
+		default.gui_bg..
+		default.gui_bg_img..
+		default.gui_slots..
+		default.get_hotbar_bg(0, 4.7)..
+	end
+end
+
 armor = {
 	timer = 0,
 	elements = {"head", "torso", "legs", "feet"},
 	physics = {"jump", "speed", "gravity"},
 	attributes = {"heal", "fire", "water", "feather"},
 	formspec = "image[2.5,0;2,4;armor_preview]"..
+		armor.default_bg()
 		"list[current_player;main;0,4.7;8,1;]"..
 		"list[current_player;main;0,5.85;8,3;8]",
 	def = armor_def,
