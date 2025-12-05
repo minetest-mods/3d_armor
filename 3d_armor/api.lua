@@ -981,3 +981,69 @@ end
 armor.set_skin_mod = function(mod)
 	skin_mod = mod
 end
+
+
+-- Sounds
+-- Allow game sounds to be used instead
+
+-- This is used by the armor stand
+armor.node_wood_sounds = function()
+	if core.get_modpath("default") then
+		default.node_sound_wood_defaults()
+	end
+	else
+		{
+			footstep = {name = "armor_wood_walk"},
+			dig = {name = "armor_wood_dig"},
+			dug = {name = "armor_wood_walk"}
+		}
+	end
+end
+
+-- These are used for shields
+
+-- wood_hit_sound is also used for breaking
+armor.wood_hit_sound = function(player)
+	if core.get_modpath("default") then
+		play_sound_effect(player, "default_wood_footstep")
+	end
+	else
+		play_sound_effect(player, "armor_wood_walk")
+	end
+end
+
+armor.metal_hit_sound = function(player)
+	if core.get_modpath("default") then
+		play_sound_effect(player, "default_dig_metal")
+	end
+	else
+		play_sound_effect(player, "armor_metal_dig")
+	end
+end
+
+armor.metal_break_sound = function(player)
+	if core.get_modpath("default") then
+		play_sound_effect(player, "default_dug_metal")
+	end
+	else
+		play_sound_effect(player, "armor_metal_break")
+	end
+end
+
+armor.glass_hit_sound = function(player)
+	if core.get_modpath("default") then
+		play_sound_effect(player, "default_glass_footstep")
+	end
+	else
+		play_sound_effect(player, "armor_glass_hit")
+	end
+end
+
+armor.glass_break_sound = function(player)
+	if core.get_modpath("default") then
+		play_sound_effect(player, "default_break_glass")
+	end
+	else
+		play_sound_effect(player, "armor_glass_break")
+	end
+end

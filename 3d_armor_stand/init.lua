@@ -175,11 +175,7 @@ local function register_armor_stand(def)
 		},
 		groups = {choppy=2, oddly_breakable_by_hand=2},
 		is_ground_content = false,
-		sounds = {
-			footstep = {name = "armor_wood_walk"},
-			dig = {name = "armor_wood_dig"},
-			dug = {name = "armor_wood_walk"}
-		},
+		sounds = armor.node_wood_sounds(),
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
 			meta:set_string("formspec", armor_stand_formspec)
