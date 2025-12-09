@@ -1011,43 +1011,45 @@ end
 
 -- These are used for shields
 
+local disable_sounds = minetest.settings:get_bool("shields_disable_sounds")
+
 -- wood_hit_sound is also used for breaking
 armor.wood_hit_sound = function(player)
-	if core.get_modpath("default") then
+	if core.get_modpath("default") and not disable_sounds then
 		return core.sound_play({name = "default_wood_footstep"}, {object = player})
-	else
+	elseif not disable_sounds then
 		return core.sound_play({name = "armor_wood_walk"}, {object = player})
 	end
 end
 
 armor.metal_hit_sound = function(player)
-	if core.get_modpath("default") then
+	if core.get_modpath("default") and not disable_sounds then
 		return core.sound_play({name = "default_dig_metal"}, {object = player})
-	else
+	elseif not disable_sounds then
 		return core.sound_play({name = "armor_metal_dig"}, {object = player})
 	end
 end
 
 armor.metal_break_sound = function(player)
-	if core.get_modpath("default") then
+	if core.get_modpath("default") and not disable_sounds then
 		return core.sound_play({name = "default_dug_metal"}, {object = player})
-	else
+	elseif not disable_sounds then
 		return core.sound_play({name = "armor_metal_break"}, {object = player})
 	end
 end
 
 armor.glass_hit_sound = function(player)
-	if core.get_modpath("default") then
+	if core.get_modpath("default") and not disable_sounds then
 		return core.sound_play({name = "default_glass_footstep"}, {object = player})
-	else
+	elseif not disable_sounds then
 		return core.sound_play({name = "armor_glass_hit"}, {object = player})
 	end
 end
 
 armor.glass_break_sound = function(player)
-	if core.get_modpath("default") then
+	if core.get_modpath("default") and not disable_sounds then
 		return core.sound_play({name = "default_break_glass"}, {object = player})
-	else
+	elseif not disable_sounds then
 		return core.sound_play({name = "armor_glass_break"}, {object = player})
 	end
 end

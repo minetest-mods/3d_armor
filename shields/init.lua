@@ -67,10 +67,10 @@ if armor.materials.wood then
 		damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			armor.node_wood_sounds(player)
+			armor.wood_hit_sound(player)
 		end,
 		on_destroy = function(player, index, stack)
-			armor.node_wood_sounds(player)
+			armor.wood_hit_sound(player)
 		end,
 	})
 	--- Enhanced Wood Shield
