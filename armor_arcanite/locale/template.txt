@@ -1,0 +1,5 @@
+# textdomain: armor_arcanite
+Arcanite Helmet=
+Arcanite Chestplate=
+Arcanite Leggings=
+Arcanite Boots=

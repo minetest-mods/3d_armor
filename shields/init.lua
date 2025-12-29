@@ -375,6 +375,31 @@ if armor.materials.nether then
 	})
 end
 
+if armor.materials.arcanite then
+	--- Arcanite Shield
+	--
+	--  @shield shields:shield_arcanite
+	--  @img shields_inv_shield_arcanite.png
+	--  @grp armor_shield 1
+	--  @grp armor_heal 8
+	--  @grp armor_use 400
+	--  @armorgrp fleshy 12
+	--  @damagegrp cracky 2
+	--  @damagegrp snappy 2
+	--  @damagegrp choppy 2
+	--  @damagegrp level 3
+	armor:register_armor("shields:shield_arcanite", {
+		description = S("Arcanite Shield"),
+		inventory_image = "shields_inv_shield_arcanite.png",
+		groups = {armor_shield=1, armor_heal=8, armor_use=400},
+		armor_groups = {fleshy=12},
+		damage_groups = {cracky=2, snappy=2, choppy=2, level=3},
+		reciprocate_damage = true,
+		on_damage  = on_damage_play_sound(armor.sounds.glass),
+		on_destroy = on_destroy_play_sound(armor.sounds.glass),
+	})
+end
+
 for k, v in pairs(armor.materials) do
 	minetest.register_craft({
 		output = "shields:shield_"..k,

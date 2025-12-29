@@ -131,6 +131,7 @@ local armor_fields = {
 		mithril = "moreores:mithril_ingot",
 		crystal = "ethereal:crystal_ingot",
 		nether = "nether:nether_ingot",
+		arcanite = "magic_materials:arcanite_crystal",
 	},
 	fire_nodes = {
 		{"nether:lava_source",      5, 8},
@@ -178,6 +179,7 @@ armor.config = {
 	material_mithril = true,
 	material_crystal = true,
 	material_nether = true,
+	material_arcanite = true,
 	set_elements = "head torso legs feet shield",
 	set_multiplier = 1.1,
 	water_protect = true,

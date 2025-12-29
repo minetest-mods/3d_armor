@@ -18,6 +18,7 @@ Shields -- Crafting Guide
 [shields:shield_mithril] X = [moreores:mithril_ingot]
 [shields:shield_crystal] X = [ethereal:crystal_ingot]
 [shields:shield_nether] X = [ethereal:nether_ingot]
+[shields:shield_arcanite] X = [magic_materials:arcanite_crystal]
 
 Enhanced Shields
 ----------------
