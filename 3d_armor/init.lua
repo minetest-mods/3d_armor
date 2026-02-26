@@ -335,18 +335,20 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	end
 end)
 
-minetest.register_on_joinplayer(function(player)
+armor.on_joinplayer = function(player)
 	player_api.set_model(player, "3d_armor_character.b3d")
 	init_player_armor(player)
-end)
+end
+minetest.register_on_joinplayer(armor.on_joinplayer)
 
-minetest.register_on_leaveplayer(function(player)
+armor.on_leaveplayer = function(player)
 	local name = player:get_player_name()
 	if name then
 		armor.def[name] = nil
 		armor.textures[name] = nil
 	end
-end)
+end
+minetest.register_on_leaveplayer(armor.on_leaveplayer)
 
 if armor.config.drop == true or armor.config.destroy == true then
 	minetest.register_on_dieplayer(function(player)
