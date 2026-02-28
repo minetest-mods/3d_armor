@@ -351,7 +351,7 @@ end
 minetest.register_on_leaveplayer(armor.on_leaveplayer)
 
 if armor.config.drop == true or armor.config.destroy == true then
-	minetest.register_on_dieplayer(function(player)
+	armor.on_dieplayer = function(player)
 		local name, armor_inv = armor:get_valid_player(player, "[on_dieplayer]")
 		if not name then
 			return
@@ -400,15 +400,17 @@ if armor.config.drop == true or armor.config.destroy == true then
 				end
 			end)
 		end
-	end)
-	minetest.register_on_respawnplayer(function(player)
+	end
+	minetest.register_on_dieplayer(armor.on_dieplayer)
+	armor.on_respawnplayer = function(player)
 		-- reset un-dropped armor and it's effects
 		armor:set_player_armor(player)
-	end)
+	end
+	minetest.register_on_respawnplayer(armor.on_respawnplayer)
 end
 
 if armor.config.punch_damage == true then
-	minetest.register_on_punchplayer(function(player, hitter,
+	armor.on_punchplayer = function(player, hitter,
 			time_from_last_punch, tool_capabilities)
 		local name = player:get_player_name()
 		if hitter then
@@ -422,10 +424,11 @@ if armor.config.punch_damage == true then
 			armor:punch(player, hitter, time_from_last_punch, tool_capabilities)
 			last_punch_time[name] = minetest.get_gametime()
 		end
-	end)
+	end
+	minetest.register_on_punchplayer(armor.on_punchplayer)
 end
 
-minetest.register_on_player_hpchange(function(player, hp_change, reason)
+armor.on_player_hpchange = function(player, hp_change, reason)
 	if not minetest.is_player(player) then
 		return hp_change
 	end
@@ -450,7 +453,8 @@ minetest.register_on_player_hpchange(function(player, hp_change, reason)
 	end
 
 	return hp_change
-end, true)
+end
+minetest.register_on_player_hpchange(armor.on_player_hpchange, true)
 
 minetest.register_globalstep(function(dtime)
 	timer = timer + dtime
@@ -494,6 +498,7 @@ if armor.config.fire_protect == true then
 		minetest.override_item("default:torch_ceiling", {damage_per_second = 1})
 	end
 
+	-- TODO also expose
 	-- check player damage for any hot nodes we may be protected against
 	minetest.register_on_player_hpchange(function(player, hp_change, reason)
 
