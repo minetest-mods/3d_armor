@@ -160,8 +160,8 @@ Wrapper function for `minetest.register_tool`, which enables the easy registrati
 
 ### Additional fields supported by 3d_armor
 
-	texture = <filename>
-	preview = <filename>
+	texture = <filename> (nil for generated texture name, "" for no texture or custom filename)
+	preview = <filename> (nil for generated texture name, "" for no texture or custom filename)
 	armor_groups = <table>
 	damage_groups = <table>
 	reciprocate_damage = <bool>
