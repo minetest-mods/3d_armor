@@ -421,6 +421,7 @@ armor.set_player_armor = function(self, player)
 			end
 			local item = stack:get_name()
 			local tex
+			-- Allow empty texture names for convenience
 			if def.texture ~= "" then
 				tex = def.texture or item:gsub("%:", "_")
 				tex = tex:gsub(".png$", "")
