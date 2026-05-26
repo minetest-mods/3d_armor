@@ -474,7 +474,7 @@ end)
 
 if armor.config.fire_protect then
 
-	if core.get_modpath("default") and armor.config.fire_protect_torch ~= false then
+	if core.get_modpath("default") and armor.config.fire_protect_torch then
 		-- make torches hurt
 		minetest.override_item("default:torch", {damage_per_second = 1})
 		minetest.override_item("default:torch_wall", {damage_per_second = 1})
