@@ -489,7 +489,7 @@ if armor.config.fire_protect then
 			if armor.config.fire_protect and hp_change < 0 then
 				local name = player:get_player_name()
 				local fire_prot = armor.fire_nodes[reason.node]
-				if armor.def[name].fire >= fire_prot then
+				if fire_prot and armor.def[name].fire >= fire_prot then
 					hp_change = 0
 				end
 			end
