@@ -132,6 +132,7 @@ local armor_fields = {
 		crystal = "ethereal:crystal_ingot",
 		nether = "nether:nether_ingot",
 	},
+	-- damage node = fire fire protection level required
 	fire_nodes = {
 		["nether:lava_source"] = 5,
 		["default:lava_source"] = 5,
@@ -182,7 +183,7 @@ armor.config = {
 	set_multiplier = 1.1,
 	water_protect = true,
 	fire_protect = minetest.settings:get_bool("armor_fire_protect") ~= false,
-	fire_protect_torch = minetest.settings:get_bool("armor_fire_protect_torch") == true,
+	fire_protect_torch = minetest.settings:get_bool("armor_fire_protect_torch"),
 	feather_fall = true,
 	punch_damage = true,
 }
