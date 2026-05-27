@@ -132,7 +132,7 @@ local armor_fields = {
 		crystal = "ethereal:crystal_ingot",
 		nether = "nether:nether_ingot",
 	},
-	-- damage node = fire fire protection level required
+	-- damage node = fire protection level required
 	fire_nodes = {
 		["nether:lava_source"] = 5,
 		["default:lava_source"] = 5,
