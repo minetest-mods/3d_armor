@@ -43,10 +43,10 @@ armor_set_multiplier (Armor Set Bonus multiplier) float 1.1
 # Enable water protection (periodically restores breath when activated).
 armor_water_protect (Enable water protection) bool true
 
-# Enable fire protection (defaults true if using ethereal mod).
-armor_fire_protect (Enable fire protection) bool false
+# Enable fire protection.
+armor_fire_protect (Enable fire protection) bool true
 
-# Enable fire damage from torches (defaults true if using ethereal mod).
+# Enable fire damage from torches.
 armor_fire_protect_torch (Enable fire protection torch damage) bool false
 
 # Enable punch damage effects.
