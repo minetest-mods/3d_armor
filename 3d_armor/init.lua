@@ -110,8 +110,15 @@ armor:register_on_damage(function(player, index, stack)
 	local name = player:get_player_name()
 	local def = stack:get_definition()
 	if name and def and def.description and stack:get_wear() > 60100 then
-		minetest.chat_send_player(name, S("Your @1 is almost broken!", def.description))
-		minetest.sound_play("default_tool_breaks", {to_player = name, gain = 2.0})
+		-- Don't spam armor break message
+		local itemmeta = stack:get_meta()
+		local last_msg_time = tonumber(itemmeta:get_string("last_msg_time")) or 0
+		local curr_time = core.get_us_time() / 1000000 -- seconds
+		if curr_time - last_msg_time >= 10 then
+			minetest.chat_send_player(name, S("Your @1 is almost broken!", def.description))
+			itemmeta:set_string("last_msg_time", tostring(curr_time))
+		end
+		minetest.sound_play("default_tool_breaks", {to_player = name, gain = 2.0}, true)
 	end
 end)
 armor:register_on_destroy(function(player, index, stack)
