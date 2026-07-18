@@ -117,6 +117,8 @@ armor:register_on_damage(function(player, index, stack)
 			minetest.chat_send_player(name, S("Your @1 is almost broken!", def.description))
 			core.after(8, function() players_warned[tname] = nil end)
 		end
+		minetest.sound_play("default_tool_breaks", {to_player = name, gain = 2.0}, true)
+	end
 end)
 armor:register_on_destroy(function(player, index, stack)
 	local name = player:get_player_name()
